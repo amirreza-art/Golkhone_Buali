@@ -6,8 +6,10 @@ CONFIG -= qt
 SOURCES += \
         flower.cpp \
         main.cpp \
-        soil.cpp
+        soil.cpp \
+        water.cpp
 
 HEADERS += \
     flower.h \
-    soil.h
+    soil.h \
+    water.h
