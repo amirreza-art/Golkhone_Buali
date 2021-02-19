@@ -7,11 +7,13 @@ SOURCES += \
         flower.cpp \
         main.cpp \
         ordinaryflowers.cpp \
+        ordinaryunion.cpp \
         soil.cpp \
         water.cpp
 
 HEADERS += \
     flower.h \
     ordinaryflowers.h \
+    ordinaryunion.h \
     soil.h \
     water.h
