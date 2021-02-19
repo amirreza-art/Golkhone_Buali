@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        flower.cpp \
+        main.cpp \
+        soil.cpp
+
+HEADERS += \
+    flower.h \
+    soil.h
