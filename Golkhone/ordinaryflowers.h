@@ -8,6 +8,7 @@ class OrdinaryFlowers : public Flower
 {
 public:
     OrdinaryFlowers(OrdinaryUnion);
+    OrdinaryFlowers();
     static void set_ordinaryFlower_count(unsigned int);
     static void inc_ordinaryFlower_count();
     static void dec_ordinaryFlower_count();
