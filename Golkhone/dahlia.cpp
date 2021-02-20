@@ -8,6 +8,11 @@ Dahlia::Dahlia(OrdinaryFlowerBuds orBud, Water water)
     this->water = water;
 }
 
+Dahlia::Dahlia()
+{
+
+}
+
 void Dahlia::set_dahlia_count(unsigned int count)
 {
     dahlia_count = count;

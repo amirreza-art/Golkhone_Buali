@@ -8,6 +8,7 @@ class Dahlia : public OrdinaryFlowerBuds
 {
 public:
     Dahlia(OrdinaryFlowerBuds, Water);
+    Dahlia();
     static void set_dahlia_count(unsigned int);
     static void inc_dahlia_count();
     static void dec_dahlia_count();
