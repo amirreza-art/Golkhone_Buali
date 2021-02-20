@@ -9,6 +9,7 @@ SOURCES += \
         flower.cpp \
         hyacinth.cpp \
         liliumextract.cpp \
+        magnolia.cpp \
         magnoliaextract.cpp \
         main.cpp \
         orchisextract.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     flower.h \
     hyacinth.h \
     liliumextract.h \
+    magnolia.h \
     magnoliaextract.h \
     orchisextract.h \
     ordinaryflowerbuds.h \
