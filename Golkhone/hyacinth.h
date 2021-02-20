@@ -7,6 +7,7 @@
 class Hyacinth : public RareFlowerbuds
 {
 public:
+    Hyacinth();
     Hyacinth(RareFlowerbuds, Water);
     Hyacinth(RareFlowerbuds, Water, SprayingMaterial);
     static void set_hyacinth_count(unsigned int);

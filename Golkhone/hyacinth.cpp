@@ -8,6 +8,11 @@ Hyacinth::Hyacinth(RareFlowerbuds rareBud, Water water)
     this->water = water;
 }
 
+Hyacinth::Hyacinth()
+{
+
+}
+
 Hyacinth::Hyacinth(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
 {
     this->rareBud = rareBud;

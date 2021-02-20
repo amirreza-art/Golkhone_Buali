@@ -8,6 +8,11 @@ Tuberose::Tuberose(RareFlowerbuds rareBud, Water water)
     this->water = water;
 }
 
+Tuberose::Tuberose()
+{
+
+}
+
 Tuberose::Tuberose(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
 {
     this->rareBud = rareBud;

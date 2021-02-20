@@ -9,6 +9,11 @@ Amaryllis::Amaryllis(OrdinaryFlowerBuds orBud, Water water)
     inc_Amaryllis_count();
 }
 
+Amaryllis::Amaryllis()
+{
+
+}
+
 void Amaryllis::set_Amaryllis_count(unsigned int count)
 {
     amaryllis_count = count;

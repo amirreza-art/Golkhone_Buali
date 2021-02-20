@@ -7,6 +7,7 @@
 class Tuberose : public RareFlowerbuds
 {
 public:
+    Tuberose();
     Tuberose(RareFlowerbuds, Water);
     Tuberose(RareFlowerbuds, Water, SprayingMaterial);
     static void set_tuberose_count(unsigned int);
