@@ -15,6 +15,7 @@ SOURCES += \
         rareflowerbuds.cpp \
         rareonion.cpp \
         soil.cpp \
+        sprayingmaterial.cpp \
         water.cpp
 
 HEADERS += \
@@ -28,4 +29,5 @@ HEADERS += \
     rareflowerbuds.h \
     rareonion.h \
     soil.h \
+    sprayingmaterial.h \
     water.h
