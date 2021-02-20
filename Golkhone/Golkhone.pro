@@ -16,6 +16,7 @@ SOURCES += \
         rareonion.cpp \
         soil.cpp \
         sprayingmaterial.cpp \
+        tuberose.cpp \
         tulip.cpp \
         water.cpp
 
@@ -31,5 +32,6 @@ HEADERS += \
     rareonion.h \
     soil.h \
     sprayingmaterial.h \
+    tuberose.h \
     tulip.h \
     water.h
