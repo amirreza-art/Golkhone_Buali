@@ -11,6 +11,7 @@ SOURCES += \
         ordinaryflowerbuds.cpp \
         ordinaryflowers.cpp \
         ordinaryunion.cpp \
+        rareonion.cpp \
         soil.cpp \
         water.cpp
 
@@ -21,5 +22,6 @@ HEADERS += \
     ordinaryflowerbuds.h \
     ordinaryflowers.h \
     ordinaryunion.h \
+    rareonion.h \
     soil.h \
     water.h
