@@ -7,6 +7,7 @@
 class Tulip : public RareFlowerbuds
 {
 public:
+    Tulip();
     Tulip(RareFlowerbuds, Water);
     Tulip(RareFlowerbuds, Water, SprayingMaterial);
     static void set_tulip_count(unsigned int);

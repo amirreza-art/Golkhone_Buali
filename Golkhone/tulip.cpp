@@ -9,6 +9,11 @@ Tulip::Tulip(RareFlowerbuds rareBud, Water water)
     inc_tulip_count();
 }
 
+Tulip::Tulip()
+{
+
+}
+
 Tulip::Tulip(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
 {
     this->rareBud = rareBud;
