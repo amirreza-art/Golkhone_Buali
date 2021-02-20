@@ -15,6 +15,7 @@ SOURCES += \
         ordinaryflowerbuds.cpp \
         ordinaryflowers.cpp \
         ordinaryunion.cpp \
+        ornamentalbud.cpp \
         ornamentalflower.cpp \
         ornamentalonion.cpp \
         rareflower.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     ordinaryflowerbuds.h \
     ordinaryflowers.h \
     ordinaryunion.h \
+    ornamentalbud.h \
     ornamentalflower.h \
     ornamentalonion.h \
     rareflower.h \
