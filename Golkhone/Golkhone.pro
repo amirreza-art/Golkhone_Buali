@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        amaryllis.cpp \
         dahlia.cpp \
         flower.cpp \
         main.cpp \
@@ -14,6 +15,7 @@ SOURCES += \
         water.cpp
 
 HEADERS += \
+    amaryllis.h \
     dahlia.h \
     flower.h \
     ordinaryflowerbuds.h \
