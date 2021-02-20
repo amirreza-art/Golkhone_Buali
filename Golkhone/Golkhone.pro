@@ -8,6 +8,7 @@ SOURCES += \
         dahlia.cpp \
         flower.cpp \
         hyacinth.cpp \
+        magnoliaextract.cpp \
         main.cpp \
         ordinaryflowerbuds.cpp \
         ordinaryflowers.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     dahlia.h \
     flower.h \
     hyacinth.h \
+    magnoliaextract.h \
     ordinaryflowerbuds.h \
     ordinaryflowers.h \
     ordinaryunion.h \
