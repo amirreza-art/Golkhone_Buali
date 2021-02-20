@@ -8,6 +8,7 @@ SOURCES += \
         dahlia.cpp \
         flower.cpp \
         hyacinth.cpp \
+        lilium.cpp \
         liliumextract.cpp \
         magnolia.cpp \
         magnoliaextract.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     dahlia.h \
     flower.h \
     hyacinth.h \
+    lilium.h \
     liliumextract.h \
     magnolia.h \
     magnoliaextract.h \
