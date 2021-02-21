@@ -18,7 +18,7 @@ private:
     OrdinaryFlowerBuds orBud;
     Water water;
     static unsigned int amaryllis_count;
-    static const long int selling_price;
+    static const long int selling_price = 2000;
 };
 
 

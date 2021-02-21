@@ -20,7 +20,7 @@ private:
     Water water;
     SprayingMaterial spraying;
     static unsigned int tulip_count;
-    static const long int selling_price;
+    static const long int selling_price = 20000;
 };
 
 #endif // TULIP_H

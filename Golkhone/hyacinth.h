@@ -8,6 +8,7 @@ class Hyacinth : public RareFlowerbuds
 {
 public:
     Hyacinth();
+    ~Hyacinth();
     Hyacinth(RareFlowerbuds, Water);
     Hyacinth(RareFlowerbuds, Water, SprayingMaterial);
     static void set_hyacinth_count(unsigned int);
@@ -19,6 +20,7 @@ private:
     Water water;
     SprayingMaterial spraying;
     static unsigned int hyacinth_count;
+    static const long int selling_price = 20000;
 };
 
 #endif // HYACINTH_H
