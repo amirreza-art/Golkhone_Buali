@@ -8,6 +8,7 @@ class Tulip : public RareFlowerbuds
 {
 public:
     Tulip();
+    ~Tulip();
     Tulip(RareFlowerbuds, Water);
     Tulip(RareFlowerbuds, Water, SprayingMaterial);
     static void set_tulip_count(unsigned int);
@@ -19,6 +20,7 @@ private:
     Water water;
     SprayingMaterial spraying;
     static unsigned int tulip_count;
+    static const long int selling_price;
 };
 
 #endif // TULIP_H
