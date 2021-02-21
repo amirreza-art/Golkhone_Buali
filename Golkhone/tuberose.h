@@ -8,6 +8,7 @@ class Tuberose : public RareFlowerbuds
 {
 public:
     Tuberose();
+    ~Tuberose();
     Tuberose(RareFlowerbuds, Water);
     Tuberose(RareFlowerbuds, Water, SprayingMaterial);
     static void set_tuberose_count(unsigned int);
@@ -19,6 +20,7 @@ private:
     Water water;
     SprayingMaterial spraying;
     static unsigned int tuberose_count;
+    static const long int selling_price = 20000;
 };
 
 #endif // TUBEROSE_H

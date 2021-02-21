@@ -1,5 +1,7 @@
 #include "tuberose.h"
 
+extern long int money;
+
 unsigned int Tuberose::tuberose_count = 0;
 
 Tuberose::Tuberose(RareFlowerbuds rareBud, Water water)
@@ -11,6 +13,12 @@ Tuberose::Tuberose(RareFlowerbuds rareBud, Water water)
 Tuberose::Tuberose()
 {
 
+}
+
+Tuberose::~Tuberose()
+{
+    money += selling_price;
+    dec_tuberose_count();
 }
 
 Tuberose::Tuberose(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
