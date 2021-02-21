@@ -9,6 +9,7 @@ class OrdinaryFlowerBuds : public OrdinaryFlowers
 public:
     OrdinaryFlowerBuds(OrdinaryFlowers);
     OrdinaryFlowerBuds();
+    ~OrdinaryFlowerBuds();
     static void set_ordinaryFlowerBud_count(unsigned int);
     static void inc_ordinaryFlowerBud_count();
     static void dec_ordinaryFlowerBud_count();
@@ -16,6 +17,7 @@ public:
 private:
     OrdinaryFlowers orFlower;
     static unsigned int ordinaryFlowerBud_count;
+    static const long int return_price = 1000;
 };
 
 #endif // ORDINARYFLOWERBUDS_H

@@ -9,6 +9,7 @@ class OrdinaryFlowers : public Flower
 public:
     OrdinaryFlowers(OrdinaryUnion);
     OrdinaryFlowers();
+    ~OrdinaryFlowers();
     static void set_ordinaryFlower_count(unsigned int);
     static void inc_ordinaryFlower_count();
     static void dec_ordinaryFlower_count();
@@ -16,6 +17,7 @@ public:
 private:
     OrdinaryUnion orUnion;
     static unsigned int ordinaryFlower_count;
+    static const long int return_price = 500;
 };
 
 #endif // ORDINARYFLOWERS_H
