@@ -7,6 +7,7 @@ class Magnolia : public OrnamentalFlowerBud
 {
 public:
     Magnolia();
+    ~Magnolia();
     Magnolia(OrnamentalFlowerBud, MagnoliaExtract);
     static void set_magnolia_count(unsigned int);
     static void inc_magnolia_count();
@@ -16,6 +17,7 @@ private:
     OrnamentalFlowerBud ornamentalFlowerBud;
     MagnoliaExtract magnoliaExtract;
     static unsigned int magnolia_count;
+    static const long int selling_price = 30000;
 };
 
 #endif // MAGNOLIA_H
