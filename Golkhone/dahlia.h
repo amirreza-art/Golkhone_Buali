@@ -9,6 +9,7 @@ class Dahlia : public OrdinaryFlowerBuds
 public:
     Dahlia(OrdinaryFlowerBuds, Water);
     Dahlia();
+    ~Dahlia();
     static void set_dahlia_count(unsigned int);
     static void inc_dahlia_count();
     static void dec_dahlia_count();
@@ -17,6 +18,7 @@ private:
     OrdinaryFlowerBuds orBud;
     Water water;
     static unsigned int dahlia_count;
+    static const long int selling_price = 2000;
 };
 
 #endif // DAHLIA_H
