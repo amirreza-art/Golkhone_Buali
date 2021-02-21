@@ -8,6 +8,7 @@ class RareFlower : public Flower
 {
 public:
     RareFlower();
+    ~RareFlower();
     RareFlower(RareOnion);
     static void set_rareFlower_count(unsigned int);
     static void inc_rareFlower_count();
@@ -16,7 +17,7 @@ public:
 private:
     RareOnion rareOnion;
     static unsigned int rareFlower_count;
-
+    static const long int return_price = 5000;
 };
 
 #endif // RAREFLOWER_H

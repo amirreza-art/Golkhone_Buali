@@ -1,10 +1,18 @@
 #include "rareflowerbuds.h"
 
+extern long int money;
+
 unsigned int RareFlowerbuds::rareFlowerBud_count = 0;
 
 RareFlowerbuds::RareFlowerbuds()
 {
 
+}
+
+RareFlowerbuds::~RareFlowerbuds()
+{
+    money += return_price;
+    dec_rareFlower_count();
 }
 
 RareFlowerbuds::RareFlowerbuds(RareFlower rareFlower)

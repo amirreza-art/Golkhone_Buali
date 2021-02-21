@@ -10,6 +10,7 @@ class RareFlowerbuds : public RareFlower
 public:
     RareFlowerbuds(RareFlower);
     RareFlowerbuds();
+    ~RareFlowerbuds();
     static void set_rareFlowerBud_count(unsigned int);
     static void inc_rareFlowerBud_count();
     static void dec_rareFlowerBud_count();
@@ -17,6 +18,7 @@ public:
 private:
     RareFlower rareFlower;
     static unsigned int rareFlowerBud_count;
+    static const long int return_price = 10000;
 };
 
 #endif // RAREFLOWERBUDS_H
