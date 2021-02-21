@@ -7,6 +7,7 @@ class OrnamentalFlowerBud : public OrnamentalBud
 {
 public:
     OrnamentalFlowerBud();
+    ~OrnamentalFlowerBud();
     OrnamentalFlowerBud(OrnamentalBud, Water);
     static void set_ornamentalFlowerBud_count(unsigned int);
     static void inc_ornamentalFlowerBud_count();
@@ -16,6 +17,7 @@ private:
     OrnamentalBud ornamentalBud;
     Water water;
     static unsigned int ornamentalFlowerBud_count;
+    static const long int return_price = 10000;
 };
 
 #endif // ORNAMENTALFLOWERBUD_H

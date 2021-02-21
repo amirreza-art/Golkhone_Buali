@@ -1,10 +1,18 @@
 #include "ornamentalbud.h"
 
+extern long int money;
+
 unsigned int OrnamentalBud::ornamentalBud_count = 0;
 
 OrnamentalBud::OrnamentalBud()
 {
 
+}
+
+OrnamentalBud::~OrnamentalBud()
+{
+    money += return_price;
+    dec_ornamentalBud_count();
 }
 
 OrnamentalBud::OrnamentalBud(OrnamentalFlower ornamentalFlower)

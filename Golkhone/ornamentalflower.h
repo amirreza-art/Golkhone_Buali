@@ -8,6 +8,7 @@ class OrnamentalFlower : Flower
 {
 public:
     OrnamentalFlower();
+    ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion);
     static void set_ornamentalFlower_count(unsigned int);
     static void inc_ornamentalFlower_count();
@@ -16,7 +17,7 @@ public:
 private:
     OrnamentalOnion ornamentalOnion;
     static unsigned int ornamentalFlower_count;
-
+    static const long int return_price = 10000;
 };
 
 #endif // ORNAMENTALFLOWER_H
