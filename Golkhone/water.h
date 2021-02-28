@@ -7,12 +7,13 @@ class Water
 {
 public:
     Water();
-    std::string getWater();
+    void set_count(unsigned int);
+    unsigned int get_count() const;
+    void inc_count();
+    void dec_count();
     void operator=(const unsigned int &);
 private:
-    std::string water;
-    unsigned int water_count;
-    //static T water_count;
+    unsigned int count;
 };
 
 #endif // WATER_H

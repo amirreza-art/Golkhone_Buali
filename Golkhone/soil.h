@@ -7,7 +7,6 @@ class Soil
 {
 public:
     Soil();
-    Soil(unsigned int);
     void set_count(unsigned int);
     unsigned int get_count() const;
     void inc_count();

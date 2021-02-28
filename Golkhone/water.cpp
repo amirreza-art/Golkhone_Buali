@@ -1,28 +1,26 @@
 #include "water.h"
 
-void Water::operator=(const unsigned int &count)
-{
-    water_count = count;
-}
-
 Water::Water()
 {
 
 }
 
-/*
-template<>
-int Water<int>::water_count = 250;
-
-template<>
-unsigned int Water<unsigned int>::water_count = 0;
-
-
-template <class T>
-Water<T>::Water()
+void Water::set_count(unsigned int count)
 {
-
+    this->count = count;
 }
-*/
-//template class Water<int>;
-//template class Water<unsigned int>;
+
+unsigned int Water::get_count() const
+{
+    return count;
+}
+
+void Water::inc_count()
+{
+    count++;
+}
+
+void Water::dec_count()
+{
+    count--;
+}
