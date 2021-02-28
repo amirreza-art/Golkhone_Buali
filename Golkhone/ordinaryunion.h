@@ -6,12 +6,13 @@ class OrdinaryUnion
 {
 public:
     OrdinaryUnion();
-    std::string getOrdinaryUnion();
-    void operator=(const unsigned int &);
+    void set_count(unsigned int);
+    unsigned int get_count() const;
+    void inc_count();
+    void dec_count();
 private:
-    std::string ordinaryUnion;
-    unsigned int ordinaryUnion_count;
-    //static T water_count;
+    unsigned int count;
 };
 
 #endif // ORDINARYUNION_H
+
