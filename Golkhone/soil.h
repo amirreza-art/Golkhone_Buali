@@ -2,14 +2,18 @@
 #define SOIL_H
 #include <iostream>
 
-template <class T>
+
 class Soil
 {
 public:
     Soil();
+    Soil(unsigned int);
+    void set_count(unsigned int);
+    unsigned int get_count() const;
+    void inc_count();
+    void dec_count();
 private:
-    std::string soil;
-    static T soil_count;
+    unsigned int count;
 };
 
 #endif // SOIL_H
