@@ -21,6 +21,11 @@ OrdinaryFlowers::~OrdinaryFlowers()
     dec_ordinaryFlower_count();
 }
 
+long int OrdinaryFlowers::get_price()
+{
+    return return_price;
+}
+
 void OrdinaryFlowers::set_ordinaryFlower_count(unsigned int count)
 {
     ordinaryFlower_count = count;

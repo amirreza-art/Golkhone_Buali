@@ -10,6 +10,7 @@ public:
     Dahlia(OrdinaryFlowerBuds, Water);
     Dahlia();
     ~Dahlia();
+    static long int get_price();
     static void set_dahlia_count(unsigned int);
     static void inc_dahlia_count();
     static void dec_dahlia_count();

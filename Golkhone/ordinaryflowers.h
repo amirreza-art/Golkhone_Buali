@@ -10,6 +10,7 @@ public:
     OrdinaryFlowers(OrdinaryUnion);
     OrdinaryFlowers();
     ~OrdinaryFlowers();
+    static long int get_price();
     static void set_ordinaryFlower_count(unsigned int);
     static void inc_ordinaryFlower_count();
     static void dec_ordinaryFlower_count();

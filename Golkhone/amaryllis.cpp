@@ -18,8 +18,13 @@ Amaryllis::Amaryllis()
 
 Amaryllis::~Amaryllis()
 {
-    money += selling_price;
+    money = money + selling_price - OrdinaryFlowerBuds::get_price();
     dec_Amaryllis_count();
+}
+
+long int Amaryllis::get_price()
+{
+    return selling_price;
 }
 
 void Amaryllis::set_Amaryllis_count(unsigned int count)

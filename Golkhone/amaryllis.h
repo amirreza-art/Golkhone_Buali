@@ -10,6 +10,7 @@ public:
     Amaryllis(OrdinaryFlowerBuds, Water);
     Amaryllis();
     ~Amaryllis();
+    static long int get_price();
     static void set_Amaryllis_count(unsigned int);
     static void inc_Amaryllis_count();
     static void dec_Amaryllis_count();

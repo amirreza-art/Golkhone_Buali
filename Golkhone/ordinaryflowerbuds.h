@@ -10,6 +10,7 @@ public:
     OrdinaryFlowerBuds(OrdinaryFlowers);
     OrdinaryFlowerBuds();
     ~OrdinaryFlowerBuds();
+    static long int get_price();
     static void set_ordinaryFlowerBud_count(unsigned int);
     static void inc_ordinaryFlowerBud_count();
     static void dec_ordinaryFlowerBud_count();

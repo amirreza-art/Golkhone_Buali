@@ -17,8 +17,13 @@ OrdinaryFlowerBuds::OrdinaryFlowerBuds()
 
 OrdinaryFlowerBuds::~OrdinaryFlowerBuds()
 {
-    money += return_price;
+    money = money + return_price - OrdinaryFlowers::get_price();
     dec_ordinaryFlowerBud_count();
+}
+
+long int OrdinaryFlowerBuds::get_price()
+{
+    return return_price;
 }
 
 void OrdinaryFlowerBuds::set_ordinaryFlowerBud_count(unsigned int count)

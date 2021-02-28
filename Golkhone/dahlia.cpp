@@ -17,8 +17,13 @@ Dahlia::Dahlia()
 
 Dahlia::~Dahlia()
 {
-    money += selling_price;
+    money = money + selling_price - OrdinaryFlowerBuds::get_price();
     dec_dahlia_count();
+}
+
+long int Dahlia::get_price()
+{
+    return selling_price;
 }
 
 void Dahlia::set_dahlia_count(unsigned int count)
