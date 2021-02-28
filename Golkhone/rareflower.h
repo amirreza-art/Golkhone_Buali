@@ -10,6 +10,7 @@ public:
     RareFlower();
     ~RareFlower();
     RareFlower(RareOnion);
+    static long int get_price();
     static void set_rareFlower_count(unsigned int);
     static void inc_rareFlower_count();
     static void dec_rareFlower_count();

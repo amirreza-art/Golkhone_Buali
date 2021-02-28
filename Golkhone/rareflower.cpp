@@ -15,6 +15,11 @@ RareFlower::~RareFlower()
     dec_rareFlower_count();
 }
 
+long int RareFlower::get_price()
+{
+    return return_price;
+}
+
 RareFlower::RareFlower(RareOnion rareOnion)
 {
     this->rareOnion = rareOnion;

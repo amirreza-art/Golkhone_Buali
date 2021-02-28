@@ -17,8 +17,13 @@ Hyacinth::Hyacinth()
 
 Hyacinth::~Hyacinth()
 {
-    money += selling_price;
+    money = money + selling_price - RareFlowerbuds::get_price();
     dec_hyacinth_count();
+}
+
+long int Hyacinth::get_price()
+{
+    return selling_price;
 }
 
 Hyacinth::Hyacinth(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)

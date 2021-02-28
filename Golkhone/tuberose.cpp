@@ -17,8 +17,13 @@ Tuberose::Tuberose()
 
 Tuberose::~Tuberose()
 {
-    money += selling_price;
+    money = money + selling_price - RareFlowerbuds::get_price();
     dec_tuberose_count();
+}
+
+long int Tuberose::get_price()
+{
+    return selling_price;
 }
 
 Tuberose::Tuberose(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)

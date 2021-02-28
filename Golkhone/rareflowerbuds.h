@@ -11,6 +11,7 @@ public:
     RareFlowerbuds(RareFlower);
     RareFlowerbuds();
     ~RareFlowerbuds();
+    static long int get_price();
     static void set_rareFlowerBud_count(unsigned int);
     static void inc_rareFlowerBud_count();
     static void dec_rareFlowerBud_count();

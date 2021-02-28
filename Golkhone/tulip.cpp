@@ -18,8 +18,13 @@ Tulip::Tulip()
 
 Tulip::~Tulip()
 {
-    money += selling_price;
+    money = money + selling_price - RareFlowerbuds::get_price();
     dec_tulip_count();
+}
+
+long int Tulip::get_price()
+{
+    return selling_price;
 }
 
 Tulip::Tulip(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)

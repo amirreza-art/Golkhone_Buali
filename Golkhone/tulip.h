@@ -11,6 +11,7 @@ public:
     ~Tulip();
     Tulip(RareFlowerbuds, Water);
     Tulip(RareFlowerbuds, Water, SprayingMaterial);
+    static long int get_price();
     static void set_tulip_count(unsigned int);
     static void inc_tulip_count();
     static void dec_tulip_count();
