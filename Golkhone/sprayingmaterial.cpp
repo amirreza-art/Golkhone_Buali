@@ -5,25 +5,23 @@ SprayingMaterial::SprayingMaterial()
 
 }
 
-void SprayingMaterial::operator=(const unsigned int &count)
+void SprayingMaterial::set_count(unsigned int count)
 {
-    spraying_count = count;
+    this->count = count;
 }
 
-
-/*
-template<>
-int Water<int>::water_count = 250;
-
-template<>
-unsigned int Water<unsigned int>::water_count = 0;
-
-
-template <class T>
-Water<T>::Water()
+unsigned int SprayingMaterial::get_count() const
 {
-
+    return count;
 }
-*/
-//template class Water<int>;
-//template class Water<unsigned int>;
+
+void SprayingMaterial::inc_count()
+{
+    count++;
+}
+
+void SprayingMaterial::dec_count()
+{
+    count--;
+}
+

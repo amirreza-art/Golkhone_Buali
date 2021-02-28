@@ -11,7 +11,6 @@ public:
     unsigned int get_count() const;
     void inc_count();
     void dec_count();
-    void operator=(const unsigned int &);
 private:
     unsigned int count;
 };
