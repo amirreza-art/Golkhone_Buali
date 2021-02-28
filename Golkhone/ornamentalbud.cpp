@@ -12,6 +12,7 @@ OrnamentalBud::OrnamentalBud()
 OrnamentalBud::~OrnamentalBud()
 {
     money = money + return_price - OrnamentalFlower::get_price();
+    OrnamentalFlower::inc_ornamentalFlower_count();
     dec_ornamentalBud_count();
 }
 

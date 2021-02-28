@@ -19,6 +19,7 @@ Tulip::Tulip()
 Tulip::~Tulip()
 {
     money = money + selling_price - RareFlowerbuds::get_price();
+    RareFlowerbuds::inc_rareFlowerBud_count();
     dec_tulip_count();
 }
 

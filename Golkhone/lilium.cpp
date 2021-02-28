@@ -12,6 +12,7 @@ Lilium::Lilium()
 Lilium::~Lilium()
 {
     money = money + selling_price - OrnamentalFlowerBud::get_price();
+    OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
     dec_lilium_count();
 }
 

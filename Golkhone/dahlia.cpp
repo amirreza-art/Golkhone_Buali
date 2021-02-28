@@ -18,6 +18,7 @@ Dahlia::Dahlia()
 Dahlia::~Dahlia()
 {
     money = money + selling_price - OrdinaryFlowerBuds::get_price();
+    OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
     dec_dahlia_count();
 }
 

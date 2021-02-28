@@ -18,6 +18,7 @@ Tuberose::Tuberose()
 Tuberose::~Tuberose()
 {
     money = money + selling_price - RareFlowerbuds::get_price();
+    RareFlowerbuds::inc_rareFlowerBud_count();
     dec_tuberose_count();
 }
 

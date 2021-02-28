@@ -18,6 +18,7 @@ Hyacinth::Hyacinth()
 Hyacinth::~Hyacinth()
 {
     money = money + selling_price - RareFlowerbuds::get_price();
+    RareFlowerbuds::inc_rareFlowerBud_count();
     dec_hyacinth_count();
 }
 

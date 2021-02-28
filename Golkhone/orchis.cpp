@@ -12,6 +12,7 @@ Orchid::Orchid()
 Orchid::~Orchid()
 {
     money = money + selling_price - OrnamentalFlowerBud::get_price();
+    OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
     dec_orchid_count();
 }
 

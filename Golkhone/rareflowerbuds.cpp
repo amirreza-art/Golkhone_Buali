@@ -12,6 +12,7 @@ RareFlowerbuds::RareFlowerbuds()
 RareFlowerbuds::~RareFlowerbuds()
 {
     money = money + return_price - RareFlower::get_price();
+    RareFlower::inc_rareFlower_count();
     dec_rareFlower_count();
 }
 

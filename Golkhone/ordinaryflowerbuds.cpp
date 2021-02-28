@@ -18,6 +18,7 @@ OrdinaryFlowerBuds::OrdinaryFlowerBuds()
 OrdinaryFlowerBuds::~OrdinaryFlowerBuds()
 {
     money = money + return_price - OrdinaryFlowers::get_price();
+    OrdinaryFlowers::inc_ordinaryFlower_count();
     dec_ordinaryFlowerBud_count();
 }
 
