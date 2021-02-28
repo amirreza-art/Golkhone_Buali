@@ -5,7 +5,23 @@ OrnamentalOnion::OrnamentalOnion()
 
 }
 
-void OrnamentalOnion::operator=(const unsigned int &count)
+void OrnamentalOnion::set_count(unsigned int count)
 {
-    ornamentalOnion_count = count;
+    this->count = count;
 }
+
+unsigned int OrnamentalOnion::get_count() const
+{
+    return count;
+}
+
+void OrnamentalOnion::inc_count()
+{
+    count++;
+}
+
+void OrnamentalOnion::dec_count()
+{
+    count--;
+}
+

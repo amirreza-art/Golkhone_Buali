@@ -7,10 +7,13 @@ class OrnamentalOnion
 {
 public:
     OrnamentalOnion();
-    void operator=(const unsigned int &);
+    void set_count(unsigned int);
+    unsigned int get_count() const;
+    void inc_count();
+    void dec_count();
 private:
-    std::string ornamentalOnion;
-    unsigned int ornamentalOnion_count;
+    unsigned int count;
 };
 
 #endif // ORNAMENTALONION_H
+
