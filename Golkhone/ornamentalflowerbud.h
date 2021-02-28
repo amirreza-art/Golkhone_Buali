@@ -9,6 +9,7 @@ public:
     OrnamentalFlowerBud();
     ~OrnamentalFlowerBud();
     OrnamentalFlowerBud(OrnamentalBud, Water);
+    static long int get_price();
     static void set_ornamentalFlowerBud_count(unsigned int);
     static void inc_ornamentalFlowerBud_count();
     static void dec_ornamentalFlowerBud_count();

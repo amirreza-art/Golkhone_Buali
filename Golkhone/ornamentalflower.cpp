@@ -21,6 +21,11 @@ OrnamentalFlower::OrnamentalFlower(OrnamentalOnion ornamentalOnion)
     inc_ornamentalFlower_count();
 }
 
+long int OrnamentalFlower::get_price()
+{
+    return return_price;
+}
+
 void OrnamentalFlower::set_ornamentalFlower_count(unsigned int count)
 {
     ornamentalFlower_count = count;

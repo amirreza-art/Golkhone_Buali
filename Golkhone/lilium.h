@@ -9,6 +9,7 @@ public:
     Lilium();
     ~Lilium();
     Lilium(OrnamentalFlowerBud, LiliumExtract);
+    static long int get_price();
     static void set_lilium_count(unsigned int);
     static void inc_lilium_count();
     static void dec_lilium_count();

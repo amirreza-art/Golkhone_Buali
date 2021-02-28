@@ -11,7 +11,7 @@ OrnamentalFlowerBud::OrnamentalFlowerBud()
 
 OrnamentalFlowerBud::~OrnamentalFlowerBud()
 {
-    money += return_price;
+    money = money + return_price - OrnamentalBud::get_price();
     dec_ornamentalFlowerBud_count();
 }
 
@@ -20,6 +20,11 @@ OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud ornamentalBud, Water wate
     this->ornamentalBud = ornamentalBud;
     this->water = water;
     inc_ornamentalFlowerBud_count();
+}
+
+long int OrnamentalFlowerBud::get_price()
+{
+    return return_price;
 }
 
 void OrnamentalFlowerBud::set_ornamentalFlowerBud_count(unsigned int count)

@@ -10,6 +10,7 @@ public:
     OrnamentalFlower();
     ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion);
+    static long int get_price();
     static void set_ornamentalFlower_count(unsigned int);
     static void inc_ornamentalFlower_count();
     static void dec_ornamentalFlower_count();

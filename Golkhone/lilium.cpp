@@ -11,7 +11,7 @@ Lilium::Lilium()
 
 Lilium::~Lilium()
 {
-    money += selling_price;
+    money = money + selling_price - OrnamentalFlowerBud::get_price();
     dec_lilium_count();
 }
 
@@ -20,6 +20,11 @@ Lilium::Lilium(OrnamentalFlowerBud ornamentalFlowerBud, LiliumExtract liliumExtr
     this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->liliumExtract = liliumExtract;
     inc_lilium_count();
+}
+
+long int Lilium::get_price()
+{
+    return selling_price;
 }
 
 void Lilium::set_lilium_count(unsigned int count)

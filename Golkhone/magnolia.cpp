@@ -11,7 +11,7 @@ Magnolia::Magnolia()
 
 Magnolia::~Magnolia()
 {
-    money += selling_price;
+    money = money + selling_price - OrnamentalFlowerBud::get_price();
     dec_magnolia_count();
 }
 
@@ -20,6 +20,11 @@ Magnolia::Magnolia(OrnamentalFlowerBud ornamentalFlowerBud, MagnoliaExtract magn
     this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->magnoliaExtract = magnoliaExtract;
     inc_magnolia_count();
+}
+
+long int Magnolia::get_price()
+{
+    return selling_price;
 }
 
 void Magnolia::set_magnolia_count(unsigned int count)

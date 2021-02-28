@@ -9,6 +9,7 @@ public:
     Orchid();
     ~Orchid();
     Orchid(OrnamentalFlowerBud, OrchisExtract);
+    static long int get_price();
     static void set_orchid_count(unsigned int);
     static void inc_orchid_count();
     static void dec_orchid_count();

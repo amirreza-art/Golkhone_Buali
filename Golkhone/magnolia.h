@@ -9,6 +9,7 @@ public:
     Magnolia();
     ~Magnolia();
     Magnolia(OrnamentalFlowerBud, MagnoliaExtract);
+    static long int get_price();
     static void set_magnolia_count(unsigned int);
     static void inc_magnolia_count();
     static void dec_magnolia_count();
