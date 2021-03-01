@@ -6,6 +6,9 @@
 #include "magnoliaextract.h"
 #include "orchisextract.h"
 #include <iostream>
+#include "flower.h"
+#include <vector>
+
 
 
 class Person
@@ -14,6 +17,8 @@ public:
     Person();
     void set_name(std::string);
     std::string get_name() const;
+    void set_flower(Flower *);
+    /*
     void set_soil_count(unsigned int);
     unsigned int get_soil_count() const;
     void set_water_count(unsigned int);
@@ -32,14 +37,18 @@ public:
     unsigned int get_total_flower_arranged() const;
     void set_total_flower_planted(unsigned int);
     unsigned int get_total_flower_planted() const;
+    */
 private:
     char name[50] = "Ali Alavi";
+    std::vector<Flower *> flowers;
+
+    /*
     unsigned int soil_count = 0, water_count = 0;
     unsigned int total_flower_planted = 0, total_flower_arranged = 0;
     unsigned int extract_count = 0, spraying_count = 0;
     unsigned int total_ordinary = 0;
     unsigned int total_ornamental = 0;
-    unsigned int total_rare = 0;
+    unsigned int total_rare = 0;*/
     /*
     Water water;
     LiliumExtract liliumExtract;

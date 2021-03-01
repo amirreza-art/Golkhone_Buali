@@ -16,6 +16,12 @@ std::string Person::get_name() const
     return std::string(name);
 }
 
+void Person::set_flower(Flower *ptr)
+{
+    flowers.push_back(ptr);
+}
+
+/*
 void Person::set_soil_count(unsigned int soil_count)
 {
     this->soil_count = soil_count;
@@ -105,3 +111,4 @@ unsigned int Person::get_total_flower_planted() const
 {
     return total_flower_planted;
 }
+*/
