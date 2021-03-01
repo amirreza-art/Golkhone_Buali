@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Hyacinth::hyacinth_count = 0;
 
+void Hyacinth::picking()
+{
+    inc_hyacinth_count();
+}
+
 Hyacinth::Hyacinth(RareFlowerbuds rareBud, Water water)
 {
     this->rareBud = rareBud;

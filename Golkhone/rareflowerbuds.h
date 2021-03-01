@@ -8,6 +8,7 @@
 class RareFlowerbuds : public RareFlower
 {
 public:
+    virtual void picking();
     RareFlowerbuds(RareFlower);
     RareFlowerbuds();
     ~RareFlowerbuds();

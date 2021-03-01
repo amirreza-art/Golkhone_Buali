@@ -7,6 +7,7 @@
 class RareFlower : public Flower
 {
 public:
+    virtual void picking();
     RareFlower();
     ~RareFlower();
     RareFlower(RareOnion);

@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int RareFlowerbuds::rareFlowerBud_count = 0;
 
+void RareFlowerbuds::picking()
+{
+    inc_rareFlowerBud_count();
+}
+
 RareFlowerbuds::RareFlowerbuds()
 {
 
@@ -24,7 +29,6 @@ long int RareFlowerbuds::get_price()
 RareFlowerbuds::RareFlowerbuds(RareFlower rareFlower)
 {
     this->rareFlower = rareFlower;
-    inc_rareFlowerBud_count();
 }
 
 void RareFlowerbuds::set_rareFlowerBud_count(unsigned int count)

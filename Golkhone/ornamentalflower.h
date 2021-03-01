@@ -7,6 +7,7 @@
 class OrnamentalFlower : Flower
 {
 public:
+    virtual void picking();
     OrnamentalFlower();
     ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion);

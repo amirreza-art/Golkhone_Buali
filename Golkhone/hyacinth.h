@@ -7,6 +7,7 @@
 class Hyacinth : public RareFlowerbuds
 {
 public:
+    virtual void picking();
     Hyacinth();
     ~Hyacinth();
     Hyacinth(RareFlowerbuds, Water);

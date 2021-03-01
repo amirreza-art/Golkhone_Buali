@@ -7,6 +7,7 @@
 class Amaryllis : public OrdinaryFlowerBuds
 {
 public:
+    virtual void picking();
     Amaryllis(OrdinaryFlowerBuds, Water);
     Amaryllis();
     ~Amaryllis();

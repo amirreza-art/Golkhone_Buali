@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int OrnamentalFlower::ornamentalFlower_count = 0;
 
+void OrnamentalFlower::picking()
+{
+    inc_ornamentalFlower_count();
+}
+
 OrnamentalFlower::OrnamentalFlower()
 {
 
@@ -18,7 +23,6 @@ OrnamentalFlower::~OrnamentalFlower()
 OrnamentalFlower::OrnamentalFlower(OrnamentalOnion ornamentalOnion)
 {
     this->ornamentalOnion = ornamentalOnion;
-    inc_ornamentalFlower_count();
 }
 
 long int OrnamentalFlower::get_price()

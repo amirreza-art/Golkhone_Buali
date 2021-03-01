@@ -4,11 +4,15 @@ extern long int money;
 
 unsigned int Amaryllis::amaryllis_count = 0;
 
+void Amaryllis::picking()
+{
+    inc_Amaryllis_count();
+}
+
 Amaryllis::Amaryllis(OrdinaryFlowerBuds orBud, Water water)
 {
     this->orBud = orBud;
     this->water = water;
-    inc_Amaryllis_count();
 }
 
 Amaryllis::Amaryllis()

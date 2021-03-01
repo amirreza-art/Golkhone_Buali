@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Magnolia::magnolia_count = 0;
 
+void Magnolia::picking()
+{
+    inc_magnolia_count();
+}
+
 Magnolia::Magnolia()
 {
 
@@ -20,7 +25,6 @@ Magnolia::Magnolia(OrnamentalFlowerBud ornamentalFlowerBud, MagnoliaExtract magn
 {
     this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->magnoliaExtract = magnoliaExtract;
-    inc_magnolia_count();
 }
 
 long int Magnolia::get_price()

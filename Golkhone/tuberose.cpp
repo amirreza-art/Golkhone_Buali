@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Tuberose::tuberose_count = 0;
 
+void Tuberose::picking()
+{
+    inc_tuberose_count();
+}
+
 Tuberose::Tuberose(RareFlowerbuds rareBud, Water water)
 {
     this->rareBud = rareBud;

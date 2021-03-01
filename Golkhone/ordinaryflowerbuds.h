@@ -7,6 +7,7 @@
 class OrdinaryFlowerBuds : public OrdinaryFlowers
 {
 public:
+    virtual void picking();
     OrdinaryFlowerBuds(OrdinaryFlowers);
     OrdinaryFlowerBuds();
     ~OrdinaryFlowerBuds();

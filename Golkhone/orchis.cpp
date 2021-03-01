@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Orchid::orchid_count = 0;
 
+void Orchid::picking()
+{
+    inc_orchid_count();
+}
+
 Orchid::Orchid()
 {
 
@@ -20,7 +25,6 @@ Orchid::Orchid(OrnamentalFlowerBud ornamentalFlowerBud, OrchisExtract orchisExtr
 {
     this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->orchisExtract = orchisExtract;
-    inc_orchid_count();
 }
 
 long int Orchid::get_price()

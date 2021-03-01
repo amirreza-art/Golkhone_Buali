@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Dahlia::dahlia_count = 0;
 
+void Dahlia::picking()
+{
+    inc_dahlia_count();
+}
+
 Dahlia::Dahlia(OrdinaryFlowerBuds orBud, Water water)
 {
     this->orBud = orBud;

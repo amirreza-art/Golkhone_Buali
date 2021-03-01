@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int OrnamentalFlowerBud::ornamentalFlowerBud_count = 0;
 
+void OrnamentalFlowerBud::picking()
+{
+    inc_ornamentalFlowerBud_count();
+}
+
 OrnamentalFlowerBud::OrnamentalFlowerBud()
 {
 
@@ -20,7 +25,6 @@ OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud ornamentalBud, Water wate
 {
     this->ornamentalBud = ornamentalBud;
     this->water = water;
-    inc_ornamentalFlowerBud_count();
 }
 
 long int OrnamentalFlowerBud::get_price()

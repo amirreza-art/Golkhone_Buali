@@ -4,6 +4,7 @@
 class Flower
 {
 public:
+    virtual void picking() = 0;
     //Flower();
 };
 

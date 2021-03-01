@@ -7,6 +7,7 @@
 class Tulip : public RareFlowerbuds
 {
 public:
+    virtual void picking();
     Tulip();
     ~Tulip();
     Tulip(RareFlowerbuds, Water);

@@ -7,6 +7,7 @@
 class Dahlia : public OrdinaryFlowerBuds
 {
 public:
+    virtual void picking();
     Dahlia(OrdinaryFlowerBuds, Water);
     Dahlia();
     ~Dahlia();

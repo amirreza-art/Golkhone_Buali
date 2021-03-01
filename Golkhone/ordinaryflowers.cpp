@@ -4,10 +4,14 @@ extern long int money;
 
 unsigned int OrdinaryFlowers::ordinaryFlower_count = 0;
 
+void OrdinaryFlowers::picking()
+{
+    inc_ordinaryFlower_count();
+}
+
 OrdinaryFlowers::OrdinaryFlowers(OrdinaryUnion orUnion)
 {
     this->orUnion = orUnion;
-    ordinaryFlower_count++;
 }
 
 OrdinaryFlowers::OrdinaryFlowers()

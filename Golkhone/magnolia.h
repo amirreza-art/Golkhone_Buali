@@ -6,6 +6,7 @@
 class Magnolia : public OrnamentalFlowerBud
 {
 public:
+    virtual void picking();
     Magnolia();
     ~Magnolia();
     Magnolia(OrnamentalFlowerBud, MagnoliaExtract);

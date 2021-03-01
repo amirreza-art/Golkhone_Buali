@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int Lilium::lilium_count = 0;
 
+void Lilium::picking()
+{
+    inc_lilium_count();
+}
+
 Lilium::Lilium()
 {
 
@@ -20,7 +25,6 @@ Lilium::Lilium(OrnamentalFlowerBud ornamentalFlowerBud, LiliumExtract liliumExtr
 {
     this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->liliumExtract = liliumExtract;
-    inc_lilium_count();
 }
 
 long int Lilium::get_price()

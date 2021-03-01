@@ -7,6 +7,7 @@
 class Tuberose : public RareFlowerbuds
 {
 public:
+    virtual void picking();
     Tuberose();
     ~Tuberose();
     Tuberose(RareFlowerbuds, Water);

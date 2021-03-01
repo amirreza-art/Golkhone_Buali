@@ -6,6 +6,7 @@
 class Lilium : public OrnamentalFlowerBud
 {
 public:
+    virtual void picking();
     Lilium();
     ~Lilium();
     Lilium(OrnamentalFlowerBud, LiliumExtract);

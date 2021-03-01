@@ -4,6 +4,11 @@ extern long int money;
 
 unsigned int RareFlower::rareFlower_count = 0;
 
+void RareFlower::picking()
+{
+    inc_rareFlower_count();
+}
+
 RareFlower::RareFlower()
 {
 
@@ -23,7 +28,6 @@ long int RareFlower::get_price()
 RareFlower::RareFlower(RareOnion rareOnion)
 {
     this->rareOnion = rareOnion;
-    inc_rareFlower_count();
 }
 
 void RareFlower::set_rareFlower_count(unsigned int count)

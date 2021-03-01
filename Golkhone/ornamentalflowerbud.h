@@ -6,6 +6,7 @@
 class OrnamentalFlowerBud : public OrnamentalBud
 {
 public:
+    virtual void picking();
     OrnamentalFlowerBud();
     ~OrnamentalFlowerBud();
     OrnamentalFlowerBud(OrnamentalBud, Water);
