@@ -21,7 +21,7 @@ OrchisExtract::OrchisExtract(Hyacinth *hyacinth, Water water)
 // bara delet logical tedad dasti kam kon
 OrchisExtract::~OrchisExtract()
 {
-    money = money - Hyacinth::get_price() + RareFlowerbuds::get_price();
+    money -= Hyacinth::get_price();
     Hyacinth::inc_hyacinth_count();
     delete hyacinth;
 }
