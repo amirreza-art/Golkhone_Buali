@@ -14,8 +14,13 @@ OrnamentalBud::OrnamentalBud(const OrnamentalBud &ob):OrnamentalFlower(ob)
     this->soil = ob.soil;
 }
 
-OrnamentalBud::OrnamentalBud(OrnamentalFlower ornamentalFlower, Soil soil):OrnamentalFlower(ornamentalFlower)
+OrnamentalBud::OrnamentalBud(OrnamentalFlower *ornamentalFlower, Soil soil)
+    :OrnamentalFlower(*ornamentalFlower)
 {
+    money -= OrnamentalFlower::get_price();
+    OrnamentalFlower::inc_ornamentalFlower_count();
+    delete ornamentalFlower;
+
     this->soil = soil;
 }
 

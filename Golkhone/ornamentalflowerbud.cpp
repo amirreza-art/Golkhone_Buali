@@ -9,7 +9,7 @@ void OrnamentalFlowerBud::picking()
     inc_ornamentalFlowerBud_count();
 }
 
-OrnamentalFlowerBud::OrnamentalFlowerBud(const OrnamentalFlowerBud ofb):OrnamentalBud(ofb)
+OrnamentalFlowerBud::OrnamentalFlowerBud(const OrnamentalFlowerBud &ofb):OrnamentalBud(ofb)
 {
     this->water = ofb.water;
 }
@@ -21,8 +21,14 @@ OrnamentalFlowerBud::~OrnamentalFlowerBud()
     dec_ornamentalFlowerBud_count();
 }
 
-OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud ornamentalBud, Water water):OrnamentalBud(ornamentalBud)
+OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud *ornamentalBud, Water water)
+    :OrnamentalBud(*ornamentalBud)
 {
+    money = money - OrnamentalBud::get_price() + OrnamentalFlower::get_price();
+    OrnamentalFlower::dec_ornamentalFlower_count();
+    OrnamentalBud::inc_ornamentalBud_count();
+    delete ornamentalBud;
+
     this->water = water;
 }
 

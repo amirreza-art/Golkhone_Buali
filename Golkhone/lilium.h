@@ -7,8 +7,8 @@ class Lilium : public OrnamentalFlowerBud
 {
 public:
     virtual void picking();
-    ~Lilium();
-    Lilium(OrnamentalFlowerBud, LiliumExtract);
+    virtual ~Lilium();
+    Lilium(OrnamentalFlowerBud *, LiliumExtract);
     static long int get_price();
     static void set_lilium_count(unsigned int);
     static void inc_lilium_count();

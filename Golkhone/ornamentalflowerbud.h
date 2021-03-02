@@ -8,8 +8,8 @@ class OrnamentalFlowerBud : public OrnamentalBud
 public:
     virtual void picking();
     OrnamentalFlowerBud(const OrnamentalFlowerBud &);
-    ~OrnamentalFlowerBud();
-    OrnamentalFlowerBud(OrnamentalBud, Water);
+    virtual ~OrnamentalFlowerBud();
+    OrnamentalFlowerBud(OrnamentalBud *, Water);
     static long int get_price();
     static void set_ornamentalFlowerBud_count(unsigned int);
     static void inc_ornamentalFlowerBud_count();

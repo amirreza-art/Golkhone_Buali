@@ -16,8 +16,14 @@ Lilium::~Lilium()
     dec_lilium_count();
 }
 
-Lilium::Lilium(OrnamentalFlowerBud ornamentalFlowerBud, LiliumExtract liliumExtract):OrnamentalFlowerBud(ornamentalFlowerBud)
+Lilium::Lilium(OrnamentalFlowerBud *ornamentalFlowerBud, LiliumExtract liliumExtract)
+    :OrnamentalFlowerBud(*ornamentalFlowerBud)
 {
+    money = money - OrnamentalFlowerBud::get_price() + OrnamentalBud::get_price();
+    OrnamentalBud::dec_ornamentalBud_count();
+    OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
+    delete ornamentalFlowerBud;
+
     this->liliumExtract = liliumExtract;
 }
 

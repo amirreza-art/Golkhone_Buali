@@ -16,9 +16,14 @@ Orchid::~Orchid()
     dec_orchid_count();
 }
 
-Orchid::Orchid(OrnamentalFlowerBud ornamentalFlowerBud, OrchisExtract orchisExtract)
-    :OrnamentalFlowerBud(ornamentalFlowerBud)
+Orchid::Orchid(OrnamentalFlowerBud *ornamentalFlowerBud, OrchisExtract orchisExtract)
+    :OrnamentalFlowerBud(*ornamentalFlowerBud)
 {
+    money = money - OrnamentalFlowerBud::get_price() + OrnamentalBud::get_price();
+    OrnamentalBud::dec_ornamentalBud_count();
+    OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
+    delete ornamentalFlowerBud;
+
     this->orchisExtract = orchisExtract;
 }
 

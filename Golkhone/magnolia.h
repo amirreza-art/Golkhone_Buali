@@ -7,8 +7,8 @@ class Magnolia : public OrnamentalFlowerBud
 {
 public:
     virtual void picking();
-    ~Magnolia();
-    Magnolia(OrnamentalFlowerBud, MagnoliaExtract);
+    virtual ~Magnolia();
+    Magnolia(OrnamentalFlowerBud *, MagnoliaExtract);
     static long int get_price();
     static void set_magnolia_count(unsigned int);
     static void inc_magnolia_count();

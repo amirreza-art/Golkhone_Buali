@@ -9,7 +9,7 @@ class OrnamentalFlower : Flower
 public:
     virtual void picking();
     OrnamentalFlower(const OrnamentalFlower &);
-    ~OrnamentalFlower();
+    virtual ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion);
     static long int get_price();
     static void set_ornamentalFlower_count(unsigned int);
