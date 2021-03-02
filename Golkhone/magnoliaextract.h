@@ -8,14 +8,14 @@
 class MagnoliaExtract
 {
 public:
-    MagnoliaExtract();
-    MagnoliaExtract(Dahlia, Tulip, Water);
+    ~MagnoliaExtract();
+    MagnoliaExtract(Dahlia *, Tulip *, Water);
     void operator=(const unsigned int &);
 private:
     //std::string m;
     Water water;
-    Dahlia dahlia;
-    Tulip tulip;
+    Dahlia *dahlia;
+    Tulip *tulip;
     unsigned int magnoliaExtract_count;
 };
 
