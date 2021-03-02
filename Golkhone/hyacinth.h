@@ -8,9 +8,9 @@ class Hyacinth : public RareFlowerbuds
 {
 public:
     virtual void picking();
-    ~Hyacinth();
-    Hyacinth(RareFlowerbuds, Water);
-    Hyacinth(RareFlowerbuds, Water, SprayingMaterial);
+    virtual ~Hyacinth();
+    Hyacinth(RareFlowerbuds *, Water);
+    Hyacinth(RareFlowerbuds *, Water, SprayingMaterial);
     static long int get_price();
     static void set_hyacinth_count(unsigned int);
     static void inc_hyacinth_count();

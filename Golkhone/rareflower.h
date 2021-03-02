@@ -9,7 +9,7 @@ class RareFlower : public Flower
 public:
     virtual void picking();
     RareFlower(const RareFlower &);
-    ~RareFlower();
+    virtual ~RareFlower();
     RareFlower(RareOnion);
     static long int get_price();
     static void set_rareFlower_count(unsigned int);
