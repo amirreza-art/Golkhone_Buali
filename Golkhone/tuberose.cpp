@@ -9,15 +9,15 @@ void Tuberose::picking()
     inc_tuberose_count();
 }
 
-Tuberose::Tuberose(RareFlowerbuds rareBud, Water water)
+Tuberose::Tuberose(RareFlowerbuds rareBud, Water water):RareFlowerbuds(rareBud)
 {
-    this->rareBud = rareBud;
     this->water = water;
 }
 
-Tuberose::Tuberose()
+Tuberose::Tuberose(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying):RareFlowerbuds(rareBud)
 {
-
+    this->water = water;
+    this->spraying = spraying;
 }
 
 Tuberose::~Tuberose()
@@ -32,12 +32,6 @@ long int Tuberose::get_price()
     return selling_price;
 }
 
-Tuberose::Tuberose(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
-{
-    this->rareBud = rareBud;
-    this->water = water;
-    this->spraying = spraying;
-}
 void Tuberose::set_tuberose_count(unsigned int count)
 {
     tuberose_count = count;

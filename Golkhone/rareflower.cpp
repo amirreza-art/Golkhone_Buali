@@ -9,9 +9,9 @@ void RareFlower::picking()
     inc_rareFlower_count();
 }
 
-RareFlower::RareFlower()
+RareFlower::RareFlower(const RareFlower &rf)
 {
-
+    this->rareOnion = rf.rareOnion;
 }
 
 RareFlower::~RareFlower()

@@ -8,7 +8,7 @@ class RareFlower : public Flower
 {
 public:
     virtual void picking();
-    RareFlower();
+    RareFlower(const RareFlower &);
     ~RareFlower();
     RareFlower(RareOnion);
     static long int get_price();

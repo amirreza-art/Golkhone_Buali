@@ -8,7 +8,6 @@ class Tulip : public RareFlowerbuds
 {
 public:
     virtual void picking();
-    Tulip();
     ~Tulip();
     Tulip(RareFlowerbuds, Water);
     Tulip(RareFlowerbuds, Water, SprayingMaterial);
@@ -18,7 +17,6 @@ public:
     static void dec_tulip_count();
     static unsigned int get_tulip_count();
 private:
-    RareFlowerbuds rareBud;
     Water water;
     SprayingMaterial spraying;
     static unsigned int tulip_count;

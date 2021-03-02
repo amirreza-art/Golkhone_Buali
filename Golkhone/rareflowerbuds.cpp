@@ -9,9 +9,9 @@ void RareFlowerbuds::picking()
     inc_rareFlowerBud_count();
 }
 
-RareFlowerbuds::RareFlowerbuds()
+RareFlowerbuds::RareFlowerbuds(const RareFlowerbuds &rfb):RareFlower(rfb)
 {
-
+    this->soil = rfb.soil;
 }
 
 RareFlowerbuds::~RareFlowerbuds()
@@ -21,14 +21,14 @@ RareFlowerbuds::~RareFlowerbuds()
     dec_rareFlower_count();
 }
 
+RareFlowerbuds::RareFlowerbuds(RareFlower rareFlower, Soil soil):RareFlower(rareFlower)
+{
+    this->soil = soil;
+}
+
 long int RareFlowerbuds::get_price()
 {
     return return_price;
-}
-
-RareFlowerbuds::RareFlowerbuds(RareFlower rareFlower)
-{
-    this->rareFlower = rareFlower;
 }
 
 void RareFlowerbuds::set_rareFlowerBud_count(unsigned int count)

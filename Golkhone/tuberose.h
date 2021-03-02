@@ -8,7 +8,6 @@ class Tuberose : public RareFlowerbuds
 {
 public:
     virtual void picking();
-    Tuberose();
     ~Tuberose();
     Tuberose(RareFlowerbuds, Water);
     Tuberose(RareFlowerbuds, Water, SprayingMaterial);
@@ -18,7 +17,6 @@ public:
     static void dec_tuberose_count();
     static unsigned int get_tuberose_count();
 private:
-    RareFlowerbuds rareBud;
     Water water;
     SprayingMaterial spraying;
     static unsigned int tuberose_count;

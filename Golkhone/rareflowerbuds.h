@@ -9,8 +9,8 @@ class RareFlowerbuds : public RareFlower
 {
 public:
     virtual void picking();
-    RareFlowerbuds(RareFlower);
-    RareFlowerbuds();
+    RareFlowerbuds(RareFlower, Soil);
+    RareFlowerbuds(const RareFlowerbuds &);
     ~RareFlowerbuds();
     static long int get_price();
     static void set_rareFlowerBud_count(unsigned int);
@@ -18,7 +18,7 @@ public:
     static void dec_rareFlowerBud_count();
     static unsigned int get_rareFlowerBud_count();
 private:
-    RareFlower rareFlower;
+    Soil soil;
     static unsigned int rareFlowerBud_count;
     static const long int return_price = 10000;
 };

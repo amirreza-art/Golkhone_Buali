@@ -9,15 +9,15 @@ void Tulip::picking()
     inc_tulip_count();
 }
 
-Tulip::Tulip(RareFlowerbuds rareBud, Water water)
+Tulip::Tulip(RareFlowerbuds rareBud, Water water):RareFlowerbuds(rareBud)
 {
-    this->rareBud = rareBud;
     this->water = water;
 }
 
-Tulip::Tulip()
+Tulip::Tulip(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying):RareFlowerbuds(rareBud)
 {
-
+    this->water = water;
+    this->spraying = spraying;
 }
 
 Tulip::~Tulip()
@@ -30,13 +30,6 @@ Tulip::~Tulip()
 long int Tulip::get_price()
 {
     return selling_price;
-}
-
-Tulip::Tulip(RareFlowerbuds rareBud, Water water, SprayingMaterial spraying)
-{
-    this->rareBud = rareBud;
-    this->water = water;
-    this->spraying = spraying;
 }
 
 void Tulip::set_tulip_count(unsigned int count)
