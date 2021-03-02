@@ -8,7 +8,7 @@ class OrnamentalFlower : Flower
 {
 public:
     virtual void picking();
-    OrnamentalFlower();
+    OrnamentalFlower(const OrnamentalFlower &);
     ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion);
     static long int get_price();

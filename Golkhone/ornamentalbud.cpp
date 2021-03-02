@@ -9,9 +9,14 @@ void OrnamentalBud::picking()
     inc_ornamentalBud_count();
 }
 
-OrnamentalBud::OrnamentalBud()
+OrnamentalBud::OrnamentalBud(const OrnamentalBud &ob):OrnamentalFlower(ob)
 {
+    this->soil = ob.soil;
+}
 
+OrnamentalBud::OrnamentalBud(OrnamentalFlower ornamentalFlower, Soil soil):OrnamentalFlower(ornamentalFlower)
+{
+    this->soil = soil;
 }
 
 OrnamentalBud::~OrnamentalBud()
@@ -19,11 +24,6 @@ OrnamentalBud::~OrnamentalBud()
     money = money + return_price - OrnamentalFlower::get_price();
     OrnamentalFlower::inc_ornamentalFlower_count();
     dec_ornamentalBud_count();
-}
-
-OrnamentalBud::OrnamentalBud(OrnamentalFlower ornamentalFlower)
-{
-    this->ornamentalFlower = ornamentalFlower;
 }
 
 long int OrnamentalBud::get_price()

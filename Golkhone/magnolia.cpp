@@ -9,11 +9,6 @@ void Magnolia::picking()
     inc_magnolia_count();
 }
 
-Magnolia::Magnolia()
-{
-
-}
-
 Magnolia::~Magnolia()
 {
     money = money + selling_price - OrnamentalFlowerBud::get_price();
@@ -22,8 +17,8 @@ Magnolia::~Magnolia()
 }
 
 Magnolia::Magnolia(OrnamentalFlowerBud ornamentalFlowerBud, MagnoliaExtract magnoliaExtract)
+    :OrnamentalFlowerBud(ornamentalFlowerBud)
 {
-    this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->magnoliaExtract = magnoliaExtract;
 }
 

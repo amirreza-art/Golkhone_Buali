@@ -7,7 +7,7 @@ class OrnamentalFlowerBud : public OrnamentalBud
 {
 public:
     virtual void picking();
-    OrnamentalFlowerBud();
+    OrnamentalFlowerBud(const OrnamentalFlowerBud &);
     ~OrnamentalFlowerBud();
     OrnamentalFlowerBud(OrnamentalBud, Water);
     static long int get_price();
@@ -16,7 +16,6 @@ public:
     static void dec_ornamentalFlowerBud_count();
     static unsigned int get_ornamentalFlowerBud_count();
 private:
-    OrnamentalBud ornamentalBud;
     Water water;
     static unsigned int ornamentalFlowerBud_count;
     static const long int return_price = 10000;

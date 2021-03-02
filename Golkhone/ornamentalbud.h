@@ -9,16 +9,16 @@ class OrnamentalBud : public OrnamentalFlower
 {
 public:
     virtual void picking();
-    OrnamentalBud();
+    OrnamentalBud(const OrnamentalBud &);
     ~OrnamentalBud();
-    OrnamentalBud(OrnamentalFlower);
+    OrnamentalBud(OrnamentalFlower, Soil);
     static long int get_price();
     static void set_ornamentalBud_count(unsigned int);
     static void inc_ornamentalBud_count();
     static void dec_ornamentalBud_count();
     static unsigned int get_ornamentalBud_count();
 private:
-    OrnamentalFlower ornamentalFlower;
+    Soil soil;
     static unsigned int ornamentalBud_count;
     static const long int return_price = 10000;
 };

@@ -9,9 +9,9 @@ void OrnamentalFlower::picking()
     inc_ornamentalFlower_count();
 }
 
-OrnamentalFlower::OrnamentalFlower()
+OrnamentalFlower::OrnamentalFlower(const OrnamentalFlower &of)
 {
-
+    this->ornamentalOnion = of.ornamentalOnion;
 }
 
 OrnamentalFlower::~OrnamentalFlower()

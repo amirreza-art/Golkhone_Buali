@@ -9,11 +9,6 @@ void Orchid::picking()
     inc_orchid_count();
 }
 
-Orchid::Orchid()
-{
-
-}
-
 Orchid::~Orchid()
 {
     money = money + selling_price - OrnamentalFlowerBud::get_price();
@@ -22,8 +17,8 @@ Orchid::~Orchid()
 }
 
 Orchid::Orchid(OrnamentalFlowerBud ornamentalFlowerBud, OrchisExtract orchisExtract)
+    :OrnamentalFlowerBud(ornamentalFlowerBud)
 {
-    this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->orchisExtract = orchisExtract;
 }
 

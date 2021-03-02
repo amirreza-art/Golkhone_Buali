@@ -9,11 +9,6 @@ void Lilium::picking()
     inc_lilium_count();
 }
 
-Lilium::Lilium()
-{
-
-}
-
 Lilium::~Lilium()
 {
     money = money + selling_price - OrnamentalFlowerBud::get_price();
@@ -21,9 +16,8 @@ Lilium::~Lilium()
     dec_lilium_count();
 }
 
-Lilium::Lilium(OrnamentalFlowerBud ornamentalFlowerBud, LiliumExtract liliumExtract)
+Lilium::Lilium(OrnamentalFlowerBud ornamentalFlowerBud, LiliumExtract liliumExtract):OrnamentalFlowerBud(ornamentalFlowerBud)
 {
-    this->ornamentalFlowerBud = ornamentalFlowerBud;
     this->liliumExtract = liliumExtract;
 }
 
