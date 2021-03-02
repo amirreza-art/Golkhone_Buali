@@ -9,14 +9,14 @@ void OrdinaryFlowerBuds::picking()
     inc_ordinaryFlowerBud_count();
 }
 
-OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers orFlower)
+OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers orFlower, Soil soil):OrdinaryFlowers(orFlower)
 {
-    this->orFlower = orFlower;
+    this->soil = soil;
 }
 
-OrdinaryFlowerBuds::OrdinaryFlowerBuds()
+OrdinaryFlowerBuds::OrdinaryFlowerBuds(const OrdinaryFlowerBuds &ofb):OrdinaryFlowers(ofb)
 {
-
+    this->soil = ofb.soil;
 }
 
 OrdinaryFlowerBuds::~OrdinaryFlowerBuds()

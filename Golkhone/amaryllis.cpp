@@ -9,15 +9,9 @@ void Amaryllis::picking()
     inc_Amaryllis_count();
 }
 
-Amaryllis::Amaryllis(OrdinaryFlowerBuds orBud, Water water)
+Amaryllis::Amaryllis(OrdinaryFlowerBuds orBud, Water water):OrdinaryFlowerBuds(orBud)
 {
-    this->orBud = orBud;
     this->water = water;
-}
-
-Amaryllis::Amaryllis()
-{
-
 }
 
 Amaryllis::~Amaryllis()

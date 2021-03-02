@@ -9,15 +9,10 @@ void Dahlia::picking()
     inc_dahlia_count();
 }
 
-Dahlia::Dahlia(OrdinaryFlowerBuds orBud, Water water)
+Dahlia::Dahlia(OrdinaryFlowerBuds orBud, Water water):OrdinaryFlowerBuds(orBud)
 {
-    this->orBud = orBud;
+
     this->water = water;
-}
-
-Dahlia::Dahlia()
-{
-
 }
 
 Dahlia::~Dahlia()

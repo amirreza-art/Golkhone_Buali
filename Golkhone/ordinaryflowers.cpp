@@ -14,9 +14,9 @@ OrdinaryFlowers::OrdinaryFlowers(OrdinaryUnion orUnion)
     this->orUnion = orUnion;
 }
 
-OrdinaryFlowers::OrdinaryFlowers()
+OrdinaryFlowers::OrdinaryFlowers(const OrdinaryFlowers &of)
 {
-
+    this->orUnion = of.orUnion;
 }
 
 OrdinaryFlowers::~OrdinaryFlowers()
