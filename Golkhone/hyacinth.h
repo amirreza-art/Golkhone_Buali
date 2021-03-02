@@ -11,6 +11,7 @@ public:
     virtual ~Hyacinth();
     Hyacinth(RareFlowerbuds *, Water);
     Hyacinth(RareFlowerbuds *, Water, SprayingMaterial);
+    Hyacinth(const Hyacinth &);
     static long int get_price();
     static void set_hyacinth_count(unsigned int);
     static void inc_hyacinth_count();

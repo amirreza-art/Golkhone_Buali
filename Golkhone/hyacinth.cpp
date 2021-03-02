@@ -37,6 +37,12 @@ Hyacinth::~Hyacinth()
     dec_hyacinth_count();
 }
 
+Hyacinth::Hyacinth(const Hyacinth &h):RareFlowerbuds(h)
+{
+    this->water = h.water;
+    this->spraying = h.spraying;
+}
+
 long int Hyacinth::get_price()
 {
     return selling_price;
