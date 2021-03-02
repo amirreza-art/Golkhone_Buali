@@ -8,8 +8,8 @@ class Dahlia : public OrdinaryFlowerBuds
 {
 public:
     virtual void picking();
-    Dahlia(OrdinaryFlowerBuds, Water);
-    ~Dahlia();
+    Dahlia(OrdinaryFlowerBuds *, Water);
+    virtual ~Dahlia();
     static long int get_price();
     static void set_dahlia_count(unsigned int);
     static void inc_dahlia_count();

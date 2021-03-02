@@ -9,9 +9,9 @@ class OrdinaryFlowerBuds : public OrdinaryFlowers
 {
 public:
     virtual void picking();
-    OrdinaryFlowerBuds(OrdinaryFlowers, Soil);
+    OrdinaryFlowerBuds(OrdinaryFlowers *, Soil);
     OrdinaryFlowerBuds(const OrdinaryFlowerBuds &);
-    ~OrdinaryFlowerBuds();
+    virtual ~OrdinaryFlowerBuds();
     static long int get_price();
     static void set_ordinaryFlowerBud_count(unsigned int);
     static void inc_ordinaryFlowerBud_count();

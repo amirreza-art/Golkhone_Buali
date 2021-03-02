@@ -9,8 +9,12 @@ void OrdinaryFlowerBuds::picking()
     inc_ordinaryFlowerBud_count();
 }
 
-OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers orFlower, Soil soil):OrdinaryFlowers(orFlower)
+OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers *orFlower, Soil soil):OrdinaryFlowers(*orFlower)
 {
+    OrdinaryFlowers::inc_ordinaryFlower_count();
+    money -= OrdinaryFlowers::get_price();
+    delete orFlower;
+
     this->soil = soil;
 }
 

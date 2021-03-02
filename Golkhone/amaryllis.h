@@ -8,8 +8,8 @@ class Amaryllis : public OrdinaryFlowerBuds
 {
 public:
     virtual void picking();
-    Amaryllis(OrdinaryFlowerBuds, Water);
-    ~Amaryllis();
+    Amaryllis(OrdinaryFlowerBuds *, Water);
+    virtual ~Amaryllis();
     static long int get_price();
     static void set_Amaryllis_count(unsigned int);
     static void inc_Amaryllis_count();

@@ -9,8 +9,12 @@ void Dahlia::picking()
     inc_dahlia_count();
 }
 
-Dahlia::Dahlia(OrdinaryFlowerBuds orBud, Water water):OrdinaryFlowerBuds(orBud)
+Dahlia::Dahlia(OrdinaryFlowerBuds *orBud, Water water):OrdinaryFlowerBuds(*orBud)
 {
+    OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
+    OrdinaryFlowers::dec_ordinaryFlower_count();
+    money = money - OrdinaryFlowerBuds::get_price() + OrdinaryFlowers::get_price();
+    delete orBud;
 
     this->water = water;
 }

@@ -9,8 +9,13 @@ void Amaryllis::picking()
     inc_Amaryllis_count();
 }
 
-Amaryllis::Amaryllis(OrdinaryFlowerBuds orBud, Water water):OrdinaryFlowerBuds(orBud)
+Amaryllis::Amaryllis(OrdinaryFlowerBuds *orBud, Water water):OrdinaryFlowerBuds(*orBud)
 {
+    OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
+    OrdinaryFlowers::dec_ordinaryFlower_count();
+    money = money - OrdinaryFlowerBuds::get_price() + OrdinaryFlowers::get_price();
+    delete orBud;
+
     this->water = water;
 }
 

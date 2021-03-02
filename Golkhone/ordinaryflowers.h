@@ -10,7 +10,7 @@ public:
     virtual void picking();
     OrdinaryFlowers(OrdinaryUnion);
     OrdinaryFlowers(const OrdinaryFlowers &);
-    ~OrdinaryFlowers();
+    virtual ~OrdinaryFlowers();
     static long int get_price();
     static void set_ordinaryFlower_count(unsigned int);
     static void inc_ordinaryFlower_count();
