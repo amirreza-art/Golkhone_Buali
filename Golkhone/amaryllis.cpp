@@ -26,6 +26,11 @@ Amaryllis::~Amaryllis()
     dec_Amaryllis_count();
 }
 
+std::string Amaryllis::get_name() const
+{
+    return name;
+}
+
 long int Amaryllis::get_price()
 {
     return selling_price;

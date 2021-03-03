@@ -32,6 +32,11 @@ OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud *ornamentalBud, Water wat
     this->water = water;
 }
 
+std::string OrnamentalFlowerBud::get_name() const
+{
+    return name;
+}
+
 long int OrnamentalFlowerBud::get_price()
 {
     return return_price;

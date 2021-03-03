@@ -30,6 +30,11 @@ RareFlowerbuds::RareFlowerbuds(RareFlower *rareFlower, Soil soil):RareFlower(*ra
     this->soil = soil;
 }
 
+std::string RareFlowerbuds::get_name() const
+{
+    return name;
+}
+
 long int RareFlowerbuds::get_price()
 {
     return return_price;

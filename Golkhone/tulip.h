@@ -8,6 +8,7 @@ class Tulip : public RareFlowerbuds
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     virtual ~Tulip();
     Tulip(RareFlowerbuds *, Water);
     Tulip(RareFlowerbuds *, Water, SprayingMaterial);
@@ -17,6 +18,7 @@ public:
     static void dec_tulip_count();
     static unsigned int get_tulip_count();
 private:
+    const std::string name = "Tulip";
     Water water;
     SprayingMaterial spraying;
     static unsigned int tulip_count;

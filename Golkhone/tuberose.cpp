@@ -38,6 +38,11 @@ Tuberose::~Tuberose()
     dec_tuberose_count();
 }
 
+std::string Tuberose::get_name() const
+{
+    return name;
+}
+
 long int Tuberose::get_price()
 {
     return selling_price;

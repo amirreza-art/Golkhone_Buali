@@ -8,6 +8,7 @@ class Tuberose : public RareFlowerbuds
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     virtual ~Tuberose();
     Tuberose(RareFlowerbuds *, Water);
     Tuberose(RareFlowerbuds *, Water, SprayingMaterial);
@@ -17,6 +18,7 @@ public:
     static void dec_tuberose_count();
     static unsigned int get_tuberose_count();
 private:
+    const std::string name = "Tubrose";
     Water water;
     SprayingMaterial spraying;
     static unsigned int tuberose_count;

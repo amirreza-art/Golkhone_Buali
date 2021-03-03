@@ -27,6 +27,11 @@ Lilium::Lilium(OrnamentalFlowerBud *ornamentalFlowerBud, LiliumExtract liliumExt
     this->liliumExtract = liliumExtract;
 }
 
+std::string Lilium::get_name() const
+{
+    return name;
+}
+
 long int Lilium::get_price()
 {
     return selling_price;

@@ -43,6 +43,11 @@ Hyacinth::Hyacinth(const Hyacinth &h):RareFlowerbuds(h)
     this->spraying = h.spraying;
 }
 
+std::string Hyacinth::get_name() const
+{
+    return name;
+}
+
 long int Hyacinth::get_price()
 {
     return selling_price;

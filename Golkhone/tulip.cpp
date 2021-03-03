@@ -38,6 +38,11 @@ Tulip::~Tulip()
     dec_tulip_count();
 }
 
+std::string Tulip::get_name() const
+{
+    return name;
+}
+
 long int Tulip::get_price()
 {
     return selling_price;

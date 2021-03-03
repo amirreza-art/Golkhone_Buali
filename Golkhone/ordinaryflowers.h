@@ -8,6 +8,7 @@ class OrdinaryFlowers : public Flower
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     OrdinaryFlowers(OrdinaryUnion);
     OrdinaryFlowers(const OrdinaryFlowers &);
     virtual ~OrdinaryFlowers();
@@ -17,6 +18,7 @@ public:
     static void dec_ordinaryFlower_count();
     static unsigned int get_ordinaryFlower_count();
 private:
+    const std::string name = "Ordinary Flower";
     OrdinaryUnion orUnion;
     static unsigned int ordinaryFlower_count;
     static const long int return_price = 500;

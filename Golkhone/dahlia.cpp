@@ -26,6 +26,11 @@ Dahlia::~Dahlia()
     dec_dahlia_count();
 }
 
+std::string Dahlia::get_name() const
+{
+    return name;
+}
+
 long int Dahlia::get_price()
 {
     return selling_price;

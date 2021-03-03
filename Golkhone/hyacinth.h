@@ -8,6 +8,7 @@ class Hyacinth : public RareFlowerbuds
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     virtual ~Hyacinth();
     Hyacinth(RareFlowerbuds *, Water);
     Hyacinth(RareFlowerbuds *, Water, SprayingMaterial);
@@ -18,6 +19,7 @@ public:
     static void dec_hyacinth_count();
     static unsigned int get_hyacinth_count();
 private:
+    const std::string name = "Hyacinith";
     Water water;
     SprayingMaterial spraying;
     static unsigned int hyacinth_count;

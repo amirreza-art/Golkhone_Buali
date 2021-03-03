@@ -9,6 +9,7 @@ class OrnamentalBud : public OrnamentalFlower
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     OrnamentalBud(const OrnamentalBud &);
     virtual ~OrnamentalBud();
     OrnamentalBud(OrnamentalFlower *, Soil);
@@ -18,6 +19,7 @@ public:
     static void dec_ornamentalBud_count();
     static unsigned int get_ornamentalBud_count();
 private:
+    const std::string name = "Ornamental Bud";
     Soil soil;
     static unsigned int ornamentalBud_count;
     static const long int return_price = 10000;

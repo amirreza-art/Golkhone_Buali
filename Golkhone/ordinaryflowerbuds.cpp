@@ -30,6 +30,11 @@ OrdinaryFlowerBuds::~OrdinaryFlowerBuds()
     dec_ordinaryFlowerBud_count();
 }
 
+std::string OrdinaryFlowerBuds::get_name() const
+{
+    return name;
+}
+
 long int OrdinaryFlowerBuds::get_price()
 {
     return return_price;

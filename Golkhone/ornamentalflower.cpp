@@ -25,6 +25,11 @@ OrnamentalFlower::OrnamentalFlower(OrnamentalOnion ornamentalOnion)
     this->ornamentalOnion = ornamentalOnion;
 }
 
+std::string OrnamentalFlower::get_name() const
+{
+    return name;
+}
+
 long int OrnamentalFlower::get_price()
 {
     return return_price;

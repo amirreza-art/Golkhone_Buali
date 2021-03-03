@@ -27,6 +27,11 @@ Orchid::Orchid(OrnamentalFlowerBud *ornamentalFlowerBud, OrchisExtract orchisExt
     this->orchisExtract = orchisExtract;
 }
 
+std::string Orchid::get_name() const
+{
+    return name;
+}
+
 long int Orchid::get_price()
 {
     return selling_price;

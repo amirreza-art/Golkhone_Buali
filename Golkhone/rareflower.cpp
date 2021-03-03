@@ -20,6 +20,11 @@ RareFlower::~RareFlower()
     dec_rareFlower_count();
 }
 
+std::string RareFlower::get_name() const
+{
+    return name;
+}
+
 long int RareFlower::get_price()
 {
     return return_price;

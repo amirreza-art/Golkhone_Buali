@@ -27,6 +27,11 @@ Magnolia::Magnolia(OrnamentalFlowerBud *ornamentalFlowerBud, MagnoliaExtract mag
     this->magnoliaExtract = magnoliaExtract;
 }
 
+std::string Magnolia::get_name() const
+{
+    return name;
+}
+
 long int Magnolia::get_price()
 {
     return selling_price;

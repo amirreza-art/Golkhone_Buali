@@ -31,6 +31,11 @@ OrnamentalBud::~OrnamentalBud()
     dec_ornamentalBud_count();
 }
 
+std::string OrnamentalBud::get_name() const
+{
+    return name;
+}
+
 long int OrnamentalBud::get_price()
 {
     return return_price;

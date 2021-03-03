@@ -30,6 +30,11 @@ long int OrdinaryFlowers::get_price()
     return return_price;
 }
 
+std::string OrdinaryFlowers::get_name() const
+{
+    return name;
+}
+
 void OrdinaryFlowers::set_ordinaryFlower_count(unsigned int count)
 {
     ordinaryFlower_count = count;

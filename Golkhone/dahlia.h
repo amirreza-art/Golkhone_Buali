@@ -8,6 +8,7 @@ class Dahlia : public OrdinaryFlowerBuds
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     Dahlia(OrdinaryFlowerBuds *, Water);
     virtual ~Dahlia();
     static long int get_price();
@@ -16,6 +17,7 @@ public:
     static void dec_dahlia_count();
     static unsigned int get_dahlia_count();
 private:
+    const std::string name = "Dahlia";
     Water water;
     static unsigned int dahlia_count;
     static const long int selling_price = 2000;

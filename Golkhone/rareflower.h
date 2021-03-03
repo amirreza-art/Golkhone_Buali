@@ -8,6 +8,7 @@ class RareFlower : public Flower
 {
 public:
     virtual void picking();
+    virtual std::string get_name() const;
     RareFlower(const RareFlower &);
     virtual ~RareFlower();
     RareFlower(RareOnion);
@@ -17,6 +18,7 @@ public:
     static void dec_rareFlower_count();
     static unsigned int get_rareFlower_count();
 private:
+    const std::string name = "Rare Flower";
     RareOnion rareOnion;
     static unsigned int rareFlower_count;
     static const long int return_price = 5000;
