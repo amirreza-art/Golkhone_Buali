@@ -8,7 +8,7 @@
 #include <iostream>
 #include "flower.h"
 #include <vector>
-
+#include "sprayingmaterial.h"
 
 
 class Person
@@ -30,9 +30,12 @@ public:
     Soil * get_Soil();
     unsigned int get_Soil_count() const;
     void add_Soil(Soil *);
-    Water * ge_Water();
+    Water * get_Water();
     unsigned int get_Water_count() const;
     void add_Water(Water *);
+    SprayingMaterial * get_SprayingMaterial();
+    unsigned int get_SprayingMaterial_count() const;
+    void add_SprayingMaterial(SprayingMaterial *);
 private:
     char name[50] = "Ali Alavi";
     std::vector<Flower *> flowers;
@@ -41,6 +44,7 @@ private:
     std::vector<OrchisExtract *> orchidExtracts;
     std::vector<Soil *> soils;
     std::vector<Water *> waters;
+    std::vector<SprayingMaterial *> sprayingMaterials;
 };
 
 #endif // PERSON_H

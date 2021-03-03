@@ -114,7 +114,7 @@ void Person::add_Soil(Soil *sptr)
     soils.push_back(sptr);
 }
 
-Water * Person::ge_Water()
+Water * Person::get_Water()
 {
     if (waters.empty())
     {
@@ -136,5 +136,41 @@ void Person::add_Water(Water *wptr)
 {
     waters.push_back(wptr);
 }
+
+SprayingMaterial * Person::get_SprayingMaterial()
+{
+    if (sprayingMaterials.empty())
+    {
+        throw std::runtime_error("you dont have enough SprayingMaterial!!");
+    }
+
+    SprayingMaterial *ptr = sprayingMaterials.back();
+    sprayingMaterials.erase(sprayingMaterials.end() - 1);
+    return ptr;
+}
+
+unsigned int Person::get_SprayingMaterial_count() const
+{
+    unsigned int temp = sprayingMaterials.size();
+    return temp;
+}
+
+void Person::add_SprayingMaterial(SprayingMaterial *smptr)
+{
+    sprayingMaterials.push_back(smptr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
