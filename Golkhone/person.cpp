@@ -114,3 +114,27 @@ void Person::add_Soil(Soil *sptr)
     soils.push_back(sptr);
 }
 
+Water * Person::ge_Water()
+{
+    if (waters.empty())
+    {
+        throw std::runtime_error("you dont have enough Water!!");
+    }
+
+    Water *ptr = waters.back();
+    waters.erase(waters.end() - 1);
+    return ptr;
+}
+
+unsigned int Person::get_Water_count() const
+{
+    unsigned int temp = waters.size();
+    return temp;
+}
+
+void Person::add_Water(Water *wptr)
+{
+    waters.push_back(wptr);
+}
+
+

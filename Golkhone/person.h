@@ -30,6 +30,9 @@ public:
     Soil * get_Soil();
     unsigned int get_Soil_count() const;
     void add_Soil(Soil *);
+    Water * ge_Water();
+    unsigned int get_Water_count() const;
+    void add_Water(Water *);
 private:
     char name[50] = "Ali Alavi";
     std::vector<Flower *> flowers;
@@ -37,6 +40,7 @@ private:
     std::vector<LiliumExtract *> liliumExtracts;
     std::vector<OrchisExtract *> orchidExtracts;
     std::vector<Soil *> soils;
+    std::vector<Water *> waters;
 };
 
 #endif // PERSON_H
