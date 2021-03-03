@@ -9,7 +9,7 @@ public:
     virtual void picking();
     virtual std::string get_name() const;
     virtual ~Orchid();
-    Orchid(OrnamentalFlowerBud *, OrchisExtract);
+    Orchid(OrnamentalFlowerBud *, OrchisExtract *);
     static long int get_price();
     static void set_orchid_count(unsigned int);
     static void inc_orchid_count();
@@ -17,7 +17,7 @@ public:
     static unsigned int get_orchid_count();
 private:
     const std::string name = "Orchid";
-    OrchisExtract orchisExtract;
+    OrchisExtract *orchidExtract;
     static unsigned int orchid_count;
     static const long int selling_price = 30000;
 };

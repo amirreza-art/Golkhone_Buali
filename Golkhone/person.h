@@ -18,6 +18,16 @@ public:
     void set_name(std::string);
     std::string get_name() const;
     void set_flower(Flower *);
+    MagnoliaExtract * get_MagnoliaExtract();
+    LiliumExtract * get_LiliumExtract();
+    OrchisExtract * get_OrchidExtract();
+    unsigned int get_MagnoliaExtract_count() const;
+    unsigned int get_LiliumExtract_count() const;
+    unsigned int get_OrchidExtract() const;
+    void add_MagnoliaExtract(MagnoliaExtract *);
+    void add_LiliumExtract(LiliumExtract *);
+    void add_OrchidExtract(OrchisExtract *);
+
     /*
     void set_soil_count(unsigned int);
     unsigned int get_soil_count() const;
@@ -41,6 +51,9 @@ public:
 private:
     char name[50] = "Ali Alavi";
     std::vector<Flower *> flowers;
+    std::vector<MagnoliaExtract *> magnoliExtracts;
+    std::vector<LiliumExtract *> liliumExtracts;
+    std::vector<OrchisExtract *> orchidExtracts;
 
     /*
     unsigned int soil_count = 0, water_count = 0;

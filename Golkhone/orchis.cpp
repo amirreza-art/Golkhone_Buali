@@ -14,9 +14,11 @@ Orchid::~Orchid()
     money = money + selling_price - OrnamentalFlowerBud::get_price();
     OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
     dec_orchid_count();
+
+    delete orchidExtract;
 }
 
-Orchid::Orchid(OrnamentalFlowerBud *ornamentalFlowerBud, OrchisExtract orchisExtract)
+Orchid::Orchid(OrnamentalFlowerBud *ornamentalFlowerBud, OrchisExtract *orchidExtract)
     :OrnamentalFlowerBud(*ornamentalFlowerBud)
 {
     money = money - OrnamentalFlowerBud::get_price() + OrnamentalBud::get_price();
@@ -24,7 +26,7 @@ Orchid::Orchid(OrnamentalFlowerBud *ornamentalFlowerBud, OrchisExtract orchisExt
     OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
     delete ornamentalFlowerBud;
 
-    this->orchisExtract = orchisExtract;
+    this->orchidExtract = orchidExtract;
 }
 
 std::string Orchid::get_name() const

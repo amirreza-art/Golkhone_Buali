@@ -9,7 +9,7 @@ public:
     virtual void picking();
     virtual std::string get_name() const;
     virtual ~Lilium();
-    Lilium(OrnamentalFlowerBud *, LiliumExtract);
+    Lilium(OrnamentalFlowerBud *, LiliumExtract *);
     static long int get_price();
     static void set_lilium_count(unsigned int);
     static void inc_lilium_count();
@@ -17,7 +17,7 @@ public:
     static unsigned int get_lilium_count();
 private:
     const std::string name = "Lilium";
-    LiliumExtract liliumExtract;
+    LiliumExtract *liliumExtract;
     static unsigned int lilium_count;
     static const long int selling_price = 30000;
 };

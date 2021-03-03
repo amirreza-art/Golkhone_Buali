@@ -14,9 +14,11 @@ Magnolia::~Magnolia()
     money = money + selling_price - OrnamentalFlowerBud::get_price();
     OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
     dec_magnolia_count();
+
+    delete magnoliaExtract;
 }
 
-Magnolia::Magnolia(OrnamentalFlowerBud *ornamentalFlowerBud, MagnoliaExtract magnoliaExtract)
+Magnolia::Magnolia(OrnamentalFlowerBud *ornamentalFlowerBud, MagnoliaExtract *magnoliaExtract)
     :OrnamentalFlowerBud(*ornamentalFlowerBud)
 {
     money = money - OrnamentalFlowerBud::get_price() + OrnamentalBud::get_price();
