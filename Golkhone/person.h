@@ -9,6 +9,9 @@
 #include "flower.h"
 #include <vector>
 #include "sprayingmaterial.h"
+#include "ordinaryunion.h"
+#include "rareonion.h"
+#include "ornamentalonion.h"
 
 
 class Person
@@ -36,6 +39,15 @@ public:
     SprayingMaterial * get_SprayingMaterial();
     unsigned int get_SprayingMaterial_count() const;
     void add_SprayingMaterial(SprayingMaterial *);
+    OrdinaryUnion * get_OrdinaryUnion();
+    unsigned int get_OrdinaryUnion_count() const;
+    void add_OrdinaryUnion(OrdinaryUnion *);
+    OrnamentalOnion * get_OrnamentalOnion();
+    unsigned int get_OrnamentalOnion_count() const;
+    void add_OrnamentalOnion(OrnamentalOnion *);
+    RareOnion * get_RareOnion();
+    unsigned int get_RareOnion_count() const;
+    void add_RareOnion(RareOnion *);
 private:
     char name[50] = "Ali Alavi";
     std::vector<Flower *> flowers;
@@ -45,6 +57,9 @@ private:
     std::vector<Soil *> soils;
     std::vector<Water *> waters;
     std::vector<SprayingMaterial *> sprayingMaterials;
+    std::vector<OrdinaryUnion *> ordinaryUnions;
+    std::vector<OrnamentalOnion *> ornamentalOnions;
+    std::vector<RareOnion *> rareOnions;
 };
 
 #endif // PERSON_H

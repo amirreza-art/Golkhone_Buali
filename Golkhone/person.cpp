@@ -160,17 +160,71 @@ void Person::add_SprayingMaterial(SprayingMaterial *smptr)
     sprayingMaterials.push_back(smptr);
 }
 
+OrdinaryUnion * Person::get_OrdinaryUnion()
+{
+    if (ordinaryUnions.empty())
+    {
+        throw std::runtime_error("you dont have enough OrdinaryUnion!!");
+    }
 
+    OrdinaryUnion *ptr = ordinaryUnions.back();
+    ordinaryUnions.erase(ordinaryUnions.end() - 1);
+    return ptr;
+}
 
+unsigned int Person::get_OrdinaryUnion_count() const
+{
+    unsigned int temp = ordinaryUnions.size();
+    return temp;
+}
 
+void Person::add_OrdinaryUnion(OrdinaryUnion *ooptr)
+{
+    ordinaryUnions.push_back(ooptr);
+}
 
+OrnamentalOnion * Person::get_OrnamentalOnion()
+{
+    if (ornamentalOnions.empty())
+    {
+        throw std::runtime_error("you dont have enough OrnamentalOnion!!");
+    }
 
+    OrnamentalOnion *ptr = ornamentalOnions.back();
+    ornamentalOnions.erase(ornamentalOnions.end() - 1);
+    return ptr;
+}
 
+unsigned int Person::get_OrnamentalOnion_count() const
+{
+    unsigned int temp = ornamentalOnions.size();
+    return temp;
+}
 
+void Person::add_OrnamentalOnion(OrnamentalOnion *ooptr)
+{
+    ornamentalOnions.push_back(ooptr);
+}
 
+RareOnion * Person::get_RareOnion()
+{
+    if (rareOnions.empty())
+    {
+        throw std::runtime_error("you dont have enough RareOnion!!");
+    }
 
+    RareOnion *ptr = rareOnions.back();
+    rareOnions.erase(rareOnions.end() - 1);
+    return ptr;
+}
 
+unsigned int Person::get_RareOnion_count() const
+{
+    unsigned int temp = rareOnions.size();
+    return temp;
+}
 
-
-
-
+void Person::add_RareOnion(RareOnion *roptr)
+{
+    rareOnions.push_back(roptr);
+}
