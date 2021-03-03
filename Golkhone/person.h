@@ -27,50 +27,16 @@ public:
     void add_MagnoliaExtract(MagnoliaExtract *);
     void add_LiliumExtract(LiliumExtract *);
     void add_OrchidExtract(OrchisExtract *);
-
-    /*
-    void set_soil_count(unsigned int);
-    unsigned int get_soil_count() const;
-    void set_water_count(unsigned int);
-    unsigned int get_water_count() const;
-    void set_extract_count(unsigned int);
-    unsigned int get_extract_count(unsigned int) const;
-    void set_spraying_count(unsigned int);
-    unsigned int get_spraying_count() const;
-    void set_total_ordinary(unsigned int);
-    unsigned int get_total_ordinary() const;
-    void set_total_ornamental(unsigned int);
-    unsigned int get_total_ornamental() const;
-    void set_total_rare(unsigned int);
-    unsigned int get_total_rare() const;
-    void set_total_flower_arranged(unsigned int);
-    unsigned int get_total_flower_arranged() const;
-    void set_total_flower_planted(unsigned int);
-    unsigned int get_total_flower_planted() const;
-    */
+    Soil * get_Soil();
+    unsigned int get_Soil_count() const;
+    void add_Soil(Soil *);
 private:
     char name[50] = "Ali Alavi";
     std::vector<Flower *> flowers;
     std::vector<MagnoliaExtract *> magnoliExtracts;
     std::vector<LiliumExtract *> liliumExtracts;
     std::vector<OrchisExtract *> orchidExtracts;
-
-    /*
-    unsigned int soil_count = 0, water_count = 0;
-    unsigned int total_flower_planted = 0, total_flower_arranged = 0;
-    unsigned int extract_count = 0, spraying_count = 0;
-    unsigned int total_ordinary = 0;
-    unsigned int total_ornamental = 0;
-    unsigned int total_rare = 0;*/
-    /*
-    Water water;
-    LiliumExtract liliumExtract;
-    MagnoliaExtract magnoliaExtract;
-    OrchisExtract orchisExtract;
-    static Water water_count;
-    static LiliumExtract liliumExtract_count;
-    static MagnoliaExtract magnoliaExtract_count;
-    static OrchisExtract orchidExtract_count;*/
+    std::vector<Soil *> soils;
 };
 
 #endif // PERSON_H
