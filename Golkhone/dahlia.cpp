@@ -9,7 +9,7 @@ void Dahlia::picking()
     inc_dahlia_count();
 }
 
-Dahlia::Dahlia(OrdinaryFlowerBuds *orBud, Water water):OrdinaryFlowerBuds(*orBud)
+Dahlia::Dahlia(OrdinaryFlowerBuds *orBud, Water *water):OrdinaryFlowerBuds(*orBud)
 {
     OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
     OrdinaryFlowers::dec_ordinaryFlower_count();
@@ -24,6 +24,8 @@ Dahlia::~Dahlia()
     money = money + selling_price - OrdinaryFlowerBuds::get_price();
     OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
     dec_dahlia_count();
+
+    delete water;
 }
 
 std::string Dahlia::get_name() const

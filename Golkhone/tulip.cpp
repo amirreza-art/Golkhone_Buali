@@ -9,7 +9,7 @@ void Tulip::picking()
     inc_tulip_count();
 }
 
-Tulip::Tulip(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud)
+Tulip::Tulip(RareFlowerbuds *rareBud, Water *water):RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
     RareFlower::dec_rareFlower_count();
@@ -19,7 +19,7 @@ Tulip::Tulip(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud)
     this->water = water;
 }
 
-Tulip::Tulip(RareFlowerbuds *rareBud, Water water, SprayingMaterial spraying)
+Tulip::Tulip(RareFlowerbuds *rareBud, Water *water, SprayingMaterial *spraying)
     :RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
@@ -36,6 +36,9 @@ Tulip::~Tulip()
     money = money + selling_price - RareFlowerbuds::get_price();
     RareFlowerbuds::inc_rareFlowerBud_count();
     dec_tulip_count();
+
+    delete water;
+    delete spraying;
 }
 
 std::string Tulip::get_name() const

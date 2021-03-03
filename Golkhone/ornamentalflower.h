@@ -11,7 +11,7 @@ public:
     virtual std::string get_name() const;
     OrnamentalFlower(const OrnamentalFlower &);
     virtual ~OrnamentalFlower();
-    OrnamentalFlower(OrnamentalOnion);
+    OrnamentalFlower(OrnamentalOnion *);
     static long int get_price();
     static void set_ornamentalFlower_count(unsigned int);
     static void inc_ornamentalFlower_count();
@@ -19,7 +19,7 @@ public:
     static unsigned int get_ornamentalFlower_count();
 private:
     const std::string name = "Ornamental Flower";
-    OrnamentalOnion ornamentalOnion;
+    OrnamentalOnion *ornamentalOnion;
     static unsigned int ornamentalFlower_count;
     static const long int return_price = 10000;
 };

@@ -11,7 +11,7 @@ public:
     virtual std::string get_name() const;
     RareFlower(const RareFlower &);
     virtual ~RareFlower();
-    RareFlower(RareOnion);
+    RareFlower(RareOnion *);
     static long int get_price();
     static void set_rareFlower_count(unsigned int);
     static void inc_rareFlower_count();
@@ -19,7 +19,7 @@ public:
     static unsigned int get_rareFlower_count();
 private:
     const std::string name = "Rare Flower";
-    RareOnion rareOnion;
+    RareOnion *rareOnion;
     static unsigned int rareFlower_count;
     static const long int return_price = 5000;
 };

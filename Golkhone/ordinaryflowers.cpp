@@ -9,7 +9,7 @@ void OrdinaryFlowers::picking()
     inc_ordinaryFlower_count();
 }
 
-OrdinaryFlowers::OrdinaryFlowers(OrdinaryUnion orUnion)
+OrdinaryFlowers::OrdinaryFlowers(OrdinaryUnion *orUnion)
 {
     this->orUnion = orUnion;
 }
@@ -23,6 +23,8 @@ OrdinaryFlowers::~OrdinaryFlowers()
 {
     money += return_price;
     dec_ordinaryFlower_count();
+
+    delete orUnion;
 }
 
 long int OrdinaryFlowers::get_price()

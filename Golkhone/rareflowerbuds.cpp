@@ -19,9 +19,11 @@ RareFlowerbuds::~RareFlowerbuds()
     money = money + return_price - RareFlower::get_price();
     RareFlower::inc_rareFlower_count();
     dec_rareFlowerBud_count();
+
+    delete soil;
 }
 
-RareFlowerbuds::RareFlowerbuds(RareFlower *rareFlower, Soil soil):RareFlower(*rareFlower)
+RareFlowerbuds::RareFlowerbuds(RareFlower *rareFlower, Soil *soil):RareFlower(*rareFlower)
 {
     money -= RareFlower::get_price();
     RareFlower::inc_rareFlower_count();

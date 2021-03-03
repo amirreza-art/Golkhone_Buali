@@ -9,7 +9,7 @@ void OrdinaryFlowerBuds::picking()
     inc_ordinaryFlowerBud_count();
 }
 
-OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers *orFlower, Soil soil):OrdinaryFlowers(*orFlower)
+OrdinaryFlowerBuds::OrdinaryFlowerBuds(OrdinaryFlowers *orFlower, Soil *soil):OrdinaryFlowers(*orFlower)
 {
     OrdinaryFlowers::inc_ordinaryFlower_count();
     money -= OrdinaryFlowers::get_price();
@@ -28,6 +28,8 @@ OrdinaryFlowerBuds::~OrdinaryFlowerBuds()
     money = money + return_price - OrdinaryFlowers::get_price();
     OrdinaryFlowers::inc_ordinaryFlower_count();
     dec_ordinaryFlowerBud_count();
+
+    delete soil;
 }
 
 std::string OrdinaryFlowerBuds::get_name() const

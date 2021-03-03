@@ -18,9 +18,11 @@ OrnamentalFlower::~OrnamentalFlower()
 {
     money += return_price;
     dec_ornamentalFlower_count();
+
+    delete ornamentalOnion;
 }
 
-OrnamentalFlower::OrnamentalFlower(OrnamentalOnion ornamentalOnion)
+OrnamentalFlower::OrnamentalFlower(OrnamentalOnion *ornamentalOnion)
 {
     this->ornamentalOnion = ornamentalOnion;
 }

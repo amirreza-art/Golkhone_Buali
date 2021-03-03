@@ -9,7 +9,7 @@ void Hyacinth::picking()
     inc_hyacinth_count();
 }
 
-Hyacinth::Hyacinth(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud)
+Hyacinth::Hyacinth(RareFlowerbuds *rareBud, Water *water):RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
     RareFlower::dec_rareFlower_count();
@@ -19,7 +19,8 @@ Hyacinth::Hyacinth(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud
     this->water = water;
 }
 
-Hyacinth::Hyacinth(RareFlowerbuds *rareBud, Water water, SprayingMaterial spraying):RareFlowerbuds(*rareBud)
+Hyacinth::Hyacinth(RareFlowerbuds *rareBud, Water *water, SprayingMaterial *spraying)
+    :RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
     RareFlower::dec_rareFlower_count();
@@ -35,6 +36,9 @@ Hyacinth::~Hyacinth()
     money = money + selling_price - RareFlowerbuds::get_price();
     RareFlowerbuds::inc_rareFlowerBud_count();
     dec_hyacinth_count();
+
+    delete water;
+    delete spraying;
 }
 
 Hyacinth::Hyacinth(const Hyacinth &h):RareFlowerbuds(h)

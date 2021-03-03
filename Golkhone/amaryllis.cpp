@@ -9,7 +9,7 @@ void Amaryllis::picking()
     inc_Amaryllis_count();
 }
 
-Amaryllis::Amaryllis(OrdinaryFlowerBuds *orBud, Water water):OrdinaryFlowerBuds(*orBud)
+Amaryllis::Amaryllis(OrdinaryFlowerBuds *orBud, Water *water):OrdinaryFlowerBuds(*orBud)
 {
     OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
     OrdinaryFlowers::dec_ordinaryFlower_count();
@@ -24,6 +24,8 @@ Amaryllis::~Amaryllis()
     money = money + selling_price - OrdinaryFlowerBuds::get_price();
     OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
     dec_Amaryllis_count();
+
+    delete water;
 }
 
 std::string Amaryllis::get_name() const

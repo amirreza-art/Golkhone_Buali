@@ -9,7 +9,7 @@ class Amaryllis : public OrdinaryFlowerBuds
 public:
     virtual void picking();
     virtual std::string get_name() const;
-    Amaryllis(OrdinaryFlowerBuds *, Water);
+    Amaryllis(OrdinaryFlowerBuds *, Water *);
     virtual ~Amaryllis();
     static long int get_price();
     static void set_Amaryllis_count(unsigned int);
@@ -18,7 +18,7 @@ public:
     static unsigned int get_Amaryllis_count();
 private:
     const std::string name = "Amaryllis";
-    Water water;
+    Water *water;
     static unsigned int amaryllis_count;
     static const long int selling_price = 2000;
 };

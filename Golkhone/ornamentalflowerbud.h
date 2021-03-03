@@ -10,7 +10,7 @@ public:
     virtual std::string get_name() const;
     OrnamentalFlowerBud(const OrnamentalFlowerBud &);
     virtual ~OrnamentalFlowerBud();
-    OrnamentalFlowerBud(OrnamentalBud *, Water);
+    OrnamentalFlowerBud(OrnamentalBud *, Water *);
     static long int get_price();
     static void set_ornamentalFlowerBud_count(unsigned int);
     static void inc_ornamentalFlowerBud_count();
@@ -18,7 +18,7 @@ public:
     static unsigned int get_ornamentalFlowerBud_count();
 private:
     const std::string name = "Ornamental Flower Bud";
-    Water water;
+    Water *water;
     static unsigned int ornamentalFlowerBud_count;
     static const long int return_price = 10000;
 };

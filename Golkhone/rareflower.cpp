@@ -18,6 +18,8 @@ RareFlower::~RareFlower()
 {
     money += return_price;
     dec_rareFlower_count();
+
+    delete rareOnion;
 }
 
 std::string RareFlower::get_name() const
@@ -30,7 +32,7 @@ long int RareFlower::get_price()
     return return_price;
 }
 
-RareFlower::RareFlower(RareOnion rareOnion)
+RareFlower::RareFlower(RareOnion *rareOnion)
 {
     this->rareOnion = rareOnion;
 }

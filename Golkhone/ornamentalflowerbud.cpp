@@ -19,9 +19,11 @@ OrnamentalFlowerBud::~OrnamentalFlowerBud()
     money = money + return_price - OrnamentalBud::get_price();
     OrnamentalBud::inc_ornamentalBud_count();
     dec_ornamentalFlowerBud_count();
+
+    delete water;
 }
 
-OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud *ornamentalBud, Water water)
+OrnamentalFlowerBud::OrnamentalFlowerBud(OrnamentalBud *ornamentalBud, Water *water)
     :OrnamentalBud(*ornamentalBud)
 {
     money = money - OrnamentalBud::get_price() + OrnamentalFlower::get_price();

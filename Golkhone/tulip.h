@@ -10,8 +10,8 @@ public:
     virtual void picking();
     virtual std::string get_name() const;
     virtual ~Tulip();
-    Tulip(RareFlowerbuds *, Water);
-    Tulip(RareFlowerbuds *, Water, SprayingMaterial);
+    Tulip(RareFlowerbuds *, Water *);
+    Tulip(RareFlowerbuds *, Water *, SprayingMaterial *);
     static long int get_price();
     static void set_tulip_count(unsigned int);
     static void inc_tulip_count();
@@ -19,8 +19,8 @@ public:
     static unsigned int get_tulip_count();
 private:
     const std::string name = "Tulip";
-    Water water;
-    SprayingMaterial spraying;
+    Water *water;
+    SprayingMaterial *spraying;
     static unsigned int tulip_count;
     static const long int selling_price = 20000;
 };

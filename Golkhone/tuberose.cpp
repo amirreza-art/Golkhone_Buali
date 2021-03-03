@@ -9,7 +9,7 @@ void Tuberose::picking()
     inc_tuberose_count();
 }
 
-Tuberose::Tuberose(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud)
+Tuberose::Tuberose(RareFlowerbuds *rareBud, Water *water):RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
     RareFlower::dec_rareFlower_count();
@@ -19,7 +19,7 @@ Tuberose::Tuberose(RareFlowerbuds *rareBud, Water water):RareFlowerbuds(*rareBud
     this->water = water;
 }
 
-Tuberose::Tuberose(RareFlowerbuds *rareBud, Water water, SprayingMaterial spraying)
+Tuberose::Tuberose(RareFlowerbuds *rareBud, Water *water, SprayingMaterial *spraying)
     :RareFlowerbuds(*rareBud)
 {
     money =money - RareFlowerbuds::get_price() + RareFlower::get_price();
@@ -36,6 +36,9 @@ Tuberose::~Tuberose()
     money = money + selling_price - RareFlowerbuds::get_price();
     RareFlowerbuds::inc_rareFlowerBud_count();
     dec_tuberose_count();
+
+    delete water;
+    delete spraying;
 }
 
 std::string Tuberose::get_name() const
