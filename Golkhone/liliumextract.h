@@ -8,15 +8,14 @@
 class LiliumExtract
 {
 public:
-    LiliumExtract(Tuberose *, Amaryllis *, Water);
+    LiliumExtract(Tuberose *, Amaryllis *, Water *);
+    std::string get_name() const;
     ~LiliumExtract();
-    void operator=(const unsigned int &);
 private:
-    //std::string m;
-    Water water;
+    const std::string name = "Lilium Extract";
+    Water *water;
     Amaryllis *amaryllis;
     Tuberose *tuberose;
-    unsigned int liliumExtract_count;
 };
 
 #endif // LILIUMEXTRACT_H

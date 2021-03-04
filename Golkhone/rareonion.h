@@ -6,10 +6,9 @@ class RareOnion
 {
 public:
     RareOnion();
-    void operator=(const unsigned int &);
+    std::string get_name() const;
 private:
-    std::string rareOnion;
-    unsigned int rareOnion_count;
+    const std::string name = "Rare Onion";
 };
 
 

@@ -2,12 +2,7 @@
 
 extern long int money;
 
-void MagnoliaExtract::operator=(const unsigned int &count)
-{
-    magnoliaExtract_count = count;
-}
-
-MagnoliaExtract::MagnoliaExtract(Dahlia *dahlia, Tulip *tulip, Water water)
+MagnoliaExtract::MagnoliaExtract(Dahlia *dahlia, Tulip *tulip, Water *water)
 {
     this->dahlia = dahlia;
     this->tulip = tulip;
@@ -24,4 +19,10 @@ MagnoliaExtract::~MagnoliaExtract()
 
     delete  dahlia;
     delete  tulip;
+    delete water;
+}
+
+std::string MagnoliaExtract::get_name() const
+{
+    return name;
 }

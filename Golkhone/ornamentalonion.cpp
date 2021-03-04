@@ -5,23 +5,8 @@ OrnamentalOnion::OrnamentalOnion()
 
 }
 
-void OrnamentalOnion::set_count(unsigned int count)
+std::string OrnamentalOnion::get_name() const
 {
-    this->count = count;
-}
-
-unsigned int OrnamentalOnion::get_count() const
-{
-    return count;
-}
-
-void OrnamentalOnion::inc_count()
-{
-    count++;
-}
-
-void OrnamentalOnion::dec_count()
-{
-    count--;
+    return name;
 }
 

@@ -5,7 +5,7 @@ RareOnion::RareOnion()
 
 }
 
-void RareOnion::operator=(const unsigned int &count)
+std::string RareOnion::get_name() const
 {
-    rareOnion_count = count;
+    return name;
 }

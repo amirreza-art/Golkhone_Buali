@@ -5,22 +5,7 @@ OrdinaryUnion::OrdinaryUnion()
 
 }
 
-void OrdinaryUnion::set_count(unsigned int count)
+std::string OrdinaryUnion::get_name() const
 {
-    this->count = count;
-}
-
-unsigned int OrdinaryUnion::get_count() const
-{
-    return count;
-}
-
-void OrdinaryUnion::inc_count()
-{
-    count++;
-}
-
-void OrdinaryUnion::dec_count()
-{
-    count--;
+    return name;
 }

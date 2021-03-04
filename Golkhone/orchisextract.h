@@ -7,14 +7,13 @@
 class OrchisExtract
 {
 public:
-    OrchisExtract(Hyacinth *, Water);
+    OrchisExtract(Hyacinth *, Water *);
     ~OrchisExtract();
-    void operator=(const unsigned int &);
+    std::string get_name() const;
 private:
-    //std::string m;
-    Water water;
+    const std::string name = "Orchid Extract";
+    Water *water;
     Hyacinth *hyacinth;
-    unsigned int orchidsExtract_count;
 };
 
 #endif // ORCHISEXTRACT_H

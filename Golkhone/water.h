@@ -7,12 +7,9 @@ class Water
 {
 public:
     Water();
-    void set_count(unsigned int);
-    unsigned int get_count() const;
-    void inc_count();
-    void dec_count();
+    std::string get_name() const;
 private:
-    unsigned int count;
+    const std::string name = "Water";
 };
 
 #endif // WATER_H

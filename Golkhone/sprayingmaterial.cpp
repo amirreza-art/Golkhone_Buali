@@ -5,23 +5,7 @@ SprayingMaterial::SprayingMaterial()
 
 }
 
-void SprayingMaterial::set_count(unsigned int count)
+std::string SprayingMaterial::get_name() const
 {
-    this->count = count;
+    return name;
 }
-
-unsigned int SprayingMaterial::get_count() const
-{
-    return count;
-}
-
-void SprayingMaterial::inc_count()
-{
-    count++;
-}
-
-void SprayingMaterial::dec_count()
-{
-    count--;
-}
-

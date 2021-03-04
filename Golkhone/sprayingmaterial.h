@@ -7,13 +7,9 @@ class SprayingMaterial
 {
 public:
     SprayingMaterial();
-    void set_count(unsigned int);
-    unsigned int get_count() const;
-    void inc_count();
-    void dec_count();
+    std::string get_name() const;
 private:
-    std::string spraying;
-    unsigned int count;
+    const std::string name = "Spraying Material";
 };
 
 #endif // SPRAYINGMATERIAL_H

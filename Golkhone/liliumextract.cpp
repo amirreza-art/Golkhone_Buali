@@ -2,12 +2,7 @@
 
 extern long int money;
 
-void LiliumExtract::operator=(const unsigned int &count)
-{
-    liliumExtract_count = count;
-}
-
-LiliumExtract::LiliumExtract(Tuberose *tuberose, Amaryllis *amaryllis, Water water)
+LiliumExtract::LiliumExtract(Tuberose *tuberose, Amaryllis *amaryllis, Water *water)
 {
     this->tuberose = tuberose;
     this->amaryllis = amaryllis;
@@ -25,4 +20,10 @@ LiliumExtract::~LiliumExtract()
 
     delete tuberose;
     delete amaryllis;
+    delete water;
+}
+
+std::string LiliumExtract::get_name() const
+{
+    return name;
 }

@@ -3,12 +3,7 @@
 
 extern long int money;
 
-void OrchisExtract::operator=(const unsigned int &count)
-{
-    orchidsExtract_count = count;
-}
-
-OrchisExtract::OrchisExtract(Hyacinth *hyacinth, Water water)
+OrchisExtract::OrchisExtract(Hyacinth *hyacinth, Water *water)
 {
     if (money < 5000)
     {
@@ -23,6 +18,12 @@ OrchisExtract::~OrchisExtract()
 {
     money -= Hyacinth::get_price();
     Hyacinth::inc_hyacinth_count();
+
     delete hyacinth;
+    delete water;
 }
 
+std::string OrchisExtract::get_name() const
+{
+    return name;
+}

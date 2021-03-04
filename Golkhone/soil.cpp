@@ -6,25 +6,11 @@ Soil::Soil()
 
 }
 
-void Soil::set_count(unsigned int count)
+std::string Soil::get_name() const
 {
-    this->count = count;
+    return name;
 }
 
-unsigned int Soil::get_count() const
-{
-    return count;
-}
-
-void Soil::inc_count()
-{
-    count++;
-}
-
-void Soil::dec_count()
-{
-    count--;
-}
 /*
 template <>
 int Soil<int>::soil_count = 450;
