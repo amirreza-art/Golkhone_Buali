@@ -12,10 +12,10 @@ MagnoliaExtract::MagnoliaExtract(Dahlia *dahlia, Tulip *tulip, Water *water)
 MagnoliaExtract::~MagnoliaExtract()
 {
     money -= Dahlia::get_price();
-    Dahlia::dec_dahlia_count();
+    Dahlia::inc_dahlia_count();
 
     money -= Tulip::get_price();
-    Tulip::dec_tulip_count();
+    Tulip::inc_tulip_count();
 
     delete  dahlia;
     delete  tulip;

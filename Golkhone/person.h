@@ -18,6 +18,7 @@ class Person
 {
 public:
     Person();
+    ~Person();
     void set_name(std::string);
     std::string get_name() const;
     void set_flower(Flower *);

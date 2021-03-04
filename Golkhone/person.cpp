@@ -7,6 +7,59 @@ Person::Person()
 
 }
 
+Person::~Person()
+{
+    for (auto item : flowers)
+    {
+        delete item;
+    }
+
+    for (auto item : liliumExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : magnoliExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : orchidExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : soils)
+    {
+        delete item;
+    }
+
+    for (auto item : waters)
+    {
+        delete item;
+    }
+
+    for (auto item : sprayingMaterials)
+    {
+        delete item;
+    }
+
+    for (auto item : ordinaryUnions)
+    {
+        delete item;
+    }
+
+    for (auto item : ornamentalOnions)
+    {
+        delete item;
+    }
+
+    for (auto item : rareOnions)
+    {
+        delete item;
+    }
+}
+
 MagnoliaExtract * Person::get_MagnoliaExtract()
 {
     if (magnoliExtracts.empty())

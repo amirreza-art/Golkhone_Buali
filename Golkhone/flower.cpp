@@ -1,8 +1,8 @@
 #include "flower.h"
 
-/*
-Flower::Flower()
+
+Flower::~Flower()
 {
 
 }
-*/
+

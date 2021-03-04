@@ -13,10 +13,10 @@ LiliumExtract::LiliumExtract(Tuberose *tuberose, Amaryllis *amaryllis, Water *wa
 LiliumExtract::~LiliumExtract()
 {
     money -= Tuberose::get_price();
-    Tuberose::dec_tuberose_count();
+    Tuberose::inc_tuberose_count();
 
     money -= Amaryllis::get_price();
-    Amaryllis::dec_Amaryllis_count();
+    Amaryllis::inc_Amaryllis_count();
 
     delete tuberose;
     delete amaryllis;
