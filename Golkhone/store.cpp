@@ -5,7 +5,68 @@ extern long int money;
 
 Store::Store()
 {
+    for(size_t i = 0; i < 450; i++)
+    {
+        soils.push_back(new Soil);
+    }
 
+    for(size_t i = 0; i < 550; i++)
+    {
+        waters.push_back(new Water);
+    }
+
+    for(size_t i = 0; i < 500; i++)
+    {
+        sprayingMaterials.push_back(new SprayingMaterial);
+    }
+
+    for(size_t i = 0; i < 750; i++)
+    {
+        ordinaryUnions.push_back(new OrdinaryUnion);
+    }
+
+    for(size_t i = 0; i < 650; i++)
+    {
+        ornamentalOnions.push_back(new OrnamentalOnion);
+    }
+
+    for(size_t i = 0; i < 550; i++)
+    {
+        rareOnions.push_back(new RareOnion);
+    }
+}
+
+Store::~Store()
+{
+    for (auto item : soils)
+    {
+        delete item;
+    }
+
+    for (auto item : waters)
+    {
+        delete item;
+    }
+
+    for (auto item : sprayingMaterials)
+    {
+        delete item;
+    }
+
+    for (auto item : ordinaryUnions)
+    {
+        delete item;
+    }
+
+    for (auto item : ornamentalOnions)
+    {
+        delete item;
+    }
+
+    for (auto item : rareOnions)
+    {
+        delete item;
+    }
 }
 
 Soil * Store::get_Soil()

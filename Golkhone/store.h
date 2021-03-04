@@ -14,6 +14,7 @@ class Store
 {
 public:
     Store();
+    ~Store();
     Soil * get_Soil();
     unsigned int get_Soil_count() const;
     void add_Soil(Soil *);
