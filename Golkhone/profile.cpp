@@ -11,7 +11,9 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
 
     setLoadAndSavPic();
 
+    WindowButtons();
 
+/*
     QLabel *l1 = new QLabel("مجموع گل های عادی:",this);
     //QFont font = l1->setFont();
     //font.setPointSize(16);
@@ -31,15 +33,39 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     QLabel *l55 = new QLabel("00",this);
     QLabel *l6 = new QLabel("مجموع عصاره ها:",this);
     QLabel *l66 = new QLabel("",this);
-
+*/
     QLabel *storeLable = new QLabel("", this);
     QPixmap storePic("C:/Users/Abisys/Desktop/nnn/Asset0.png");
     storeLable->setPixmap(storePic);
     storeLable->setFixedSize(storePic.rect().size());
-    storeLable->setGeometry(1053,700,150,150);
+    storeLable->setGeometry(1053,690,150,150);
 
 
 
+}
+
+void Profile:: WindowButtons()
+{
+    profile = new QPushButton("prof", this);
+    profile->setGeometry(1245,0,150,73);
+    //profile->setStyleSheet("QPushButton{background:transparent;}");
+
+    greenHouse = new QPushButton("gr", this);
+    greenHouse->setGeometry(1095,0,150,73);
+
+    store = new QPushButton("st", this);
+    store->setGeometry(945,0,150,73);
+
+    laboratory = new QPushButton("lab", this);
+    laboratory->setGeometry(795,0,150,73);
+
+/*
+    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/music0.png");
+    QIcon ButtonIcon(pixmap);
+    soundOff->setIcon(ButtonIcon);
+    soundOff->setStyleSheet("QPushButton{background:transparent;}");
+    soundOff->setIconSize(pixmap.rect().size());
+    soundOff->setFixedSize(pixmap.rect().size());*/
 }
 
 void Profile::setLoadAndSavPic()
@@ -59,6 +85,12 @@ void Profile::setLoadAndSavPic()
     load->setIconSize(pixmap2.rect().size());
     load->setFixedSize(pixmap2.rect().size());
     load->setGeometry(220, 550,5,5);
+
+    QLabel *saveLable = new QLabel("kkkkk", this);
+    saveLable->setGeometry(650, 550,100,100);
+    QLabel *loadLable = new QLabel("", this);
+    loadLable->setGeometry(220, 550,5,5);
+
 }
 
 void Profile::setSoundPics()
@@ -107,7 +139,7 @@ void Profile::OnSoundOn()
 void Profile::setBackground()
 {
 
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//back.png");
+    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//background.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);

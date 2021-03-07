@@ -20,6 +20,8 @@ private:
     void setBackground();
     void setSoundPics();
     void setLoadAndSavPic();
+    void WindowButtons();
+    QPushButton *profile, *store, *laboratory, *greenHouse;
     QGridLayout *gridLayout;
     QPushButton *soundOff;
     QPushButton *soundOn;
