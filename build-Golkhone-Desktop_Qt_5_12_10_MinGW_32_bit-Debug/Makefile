@@ -223,6 +223,7 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 		../../5.12.10/mingw73_32/mkspecs/features/qt_config.prf \
 		../../5.12.10/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		../../5.12.10/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/toolchain.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/default_pre.prf \
@@ -230,17 +231,28 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 		../../5.12.10/mingw73_32/mkspecs/features/resolve_config.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds_post.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/default_post.prf \
-		../../5.12.10/mingw73_32/mkspecs/features/win32/console.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/qml_debug.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/precompile_header.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/warn_on.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/qt.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/resources.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/moc.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/win32/opengl.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/uic.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/qmake_use.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/file_copies.prf \
+		../../5.12.10/mingw73_32/mkspecs/features/win32/windows.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/testcase_targets.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/exceptions.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/yacc.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/lex.prf \
-		../Golkhone/Golkhone.pro
+		../Golkhone/Golkhone.pro \
+		../../5.12.10/mingw73_32/lib/Qt5Multimedia.prl \
+		../../5.12.10/mingw73_32/lib/Qt5Widgets.prl \
+		../../5.12.10/mingw73_32/lib/Qt5Gui.prl \
+		../../5.12.10/mingw73_32/lib/Qt5Network.prl \
+		../../5.12.10/mingw73_32/lib/Qt5Core.prl \
+		../../5.12.10/mingw73_32/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\Golkhone\Golkhone.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../5.12.10/mingw73_32/mkspecs/features/spec_pre.prf:
 ../../5.12.10/mingw73_32/mkspecs/qdevice.pri:
@@ -402,6 +414,7 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 ../../5.12.10/mingw73_32/mkspecs/features/qt_config.prf:
 ../../5.12.10/mingw73_32/mkspecs/win32-g++/qmake.conf:
 ../../5.12.10/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/toolchain.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/default_pre.prf:
@@ -409,17 +422,28 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 ../../5.12.10/mingw73_32/mkspecs/features/resolve_config.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds_post.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/default_post.prf:
-../../5.12.10/mingw73_32/mkspecs/features/win32/console.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/qml_debug.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/precompile_header.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/warn_on.prf:
+../../5.12.10/mingw73_32/mkspecs/features/qt.prf:
+../../5.12.10/mingw73_32/mkspecs/features/resources.prf:
+../../5.12.10/mingw73_32/mkspecs/features/moc.prf:
+../../5.12.10/mingw73_32/mkspecs/features/win32/opengl.prf:
+../../5.12.10/mingw73_32/mkspecs/features/uic.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/qmake_use.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/file_copies.prf:
+../../5.12.10/mingw73_32/mkspecs/features/win32/windows.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/testcase_targets.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/exceptions.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/yacc.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/lex.prf:
 ../Golkhone/Golkhone.pro:
+../../5.12.10/mingw73_32/lib/Qt5Multimedia.prl:
+../../5.12.10/mingw73_32/lib/Qt5Widgets.prl:
+../../5.12.10/mingw73_32/lib/Qt5Gui.prl:
+../../5.12.10/mingw73_32/lib/Qt5Network.prl:
+../../5.12.10/mingw73_32/lib/Qt5Core.prl:
+../../5.12.10/mingw73_32/lib/qtmain.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Golkhone\Golkhone.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
@@ -431,6 +455,18 @@ clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
+
+debug-mocclean:
+	$(MAKE) -f $(MAKEFILE).Debug mocclean
+release-mocclean:
+	$(MAKE) -f $(MAKEFILE).Release mocclean
+mocclean: debug-mocclean release-mocclean
+
+debug-mocables:
+	$(MAKE) -f $(MAKEFILE).Debug mocables
+release-mocables:
+	$(MAKE) -f $(MAKEFILE).Release mocables
+mocables: debug-mocables release-mocables
 
 check: first
 

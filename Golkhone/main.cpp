@@ -1,13 +1,25 @@
 #include <iostream>
+#include <QApplication>
+#include "profile.h"
+
+#include <QDialog>
+#include <QStackedWidget>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 using namespace std;
 
-enum Element {SOIL, WATER, SPRAYING_MATERIAL, MAGNOLIA_EX, LILIUM_EX, ORCHIS_EX};
 
 long int money = 100000;
 
-int main()
+int main(int argc, char *argv[])
 {
-    cout << "Hello World!" << endl;
-    return 0;
+    QApplication a(argc, argv);
+    Profile w;
+    w.show();
+    return a.exec();
 }
+
+// 876 * 473
