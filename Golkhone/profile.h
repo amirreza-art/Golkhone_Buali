@@ -32,6 +32,7 @@ private:
 private slots:
     void OnSoundOff();
     void OnSoundOn();
+    void OnLaboratory();
 };
 
 #endif // PROFILE_H

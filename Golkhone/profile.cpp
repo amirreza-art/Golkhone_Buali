@@ -1,5 +1,8 @@
 #include "profile.h"
+#include "laboratory.h"
 
+Laboratory *labptr;
+Profile *ptr1;
 
 Profile::Profile(QWidget *parent) : QWidget(parent)
 {
@@ -12,6 +15,11 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     setLoadAndSavPic();
 
     WindowButtons();
+
+    connect(laboratory, &QPushButton::clicked, this, &Profile::OnLaboratory);
+
+    ptr1 = this;
+    labptr = new Laboratory();
 
 /*
     QLabel *l1 = new QLabel("مجموع گل های عادی:",this);
@@ -44,7 +52,13 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
 
 }
 
-void Profile:: WindowButtons()
+void Profile::OnLaboratory()
+{
+    hide();
+    labptr->show();
+}
+
+void Profile::WindowButtons()
 {
     profile = new QPushButton("prof", this);
     profile->setGeometry(1245,0,150,73);

@@ -23,7 +23,7 @@ private:
     QPushButton *magnoilaExtractBtn;
     QPushButton *orchidExtractBtn;
 private slots:
-
+    void OnProfile();
 signals:
 
 };
