@@ -22,6 +22,7 @@ debug/profile.o
 debug/rareflower.o
 debug/rareflowerbuds.o
 debug/rareonion.o
+debug/shop.o
 debug/soil.o
 debug/sprayingmaterial.o
 debug/store.o
@@ -30,3 +31,4 @@ debug/tulip.o
 debug/water.o
 debug/moc_laboratory.o
 debug/moc_profile.o
+debug/moc_shop.o

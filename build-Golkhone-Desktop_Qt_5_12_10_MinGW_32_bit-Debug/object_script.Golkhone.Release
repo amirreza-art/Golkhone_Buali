@@ -22,6 +22,7 @@ release/profile.o
 release/rareflower.o
 release/rareflowerbuds.o
 release/rareonion.o
+release/shop.o
 release/soil.o
 release/sprayingmaterial.o
 release/store.o
@@ -30,3 +31,4 @@ release/tulip.o
 release/water.o
 release/moc_laboratory.o
 release/moc_profile.o
+release/moc_shop.o

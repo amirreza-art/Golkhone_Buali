@@ -41,6 +41,7 @@ SOURCES += \
         rareflower.cpp \
         rareflowerbuds.cpp \
         rareonion.cpp \
+        shop.cpp \
         soil.cpp \
         sprayingmaterial.cpp \
         store.cpp \
@@ -72,6 +73,7 @@ HEADERS += \
     rareflower.h \
     rareflowerbuds.h \
     rareonion.h \
+    shop.h \
     soil.h \
     sprayingmaterial.h \
     store.h \
