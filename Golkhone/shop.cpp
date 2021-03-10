@@ -1,7 +1,9 @@
 #include "shop.h"
 #include "profile.h"
+#include "laboratory.h"
 
-extern Profile *ptr1;
+extern Profile *profilePtr;
+extern Laboratory *laboratoryPtr;
 
 class Profile;
 
@@ -11,7 +13,8 @@ Shop::Shop(QWidget *parent) : QWidget(parent)
 
     WindowButtons();
 
-    //connect(profile, &QPushButton::clicked, this, &Laboratory::OnProfile);
+    connect(profile, &QPushButton::clicked, this, &Shop::OnProfile);
+    connect(laboratory, &QPushButton::clicked, this, &Shop::OnLaboratory);
 
     QPushButton *btn = new QPushButton("", this);
     btn->setGeometry(877,560,300,73);
@@ -42,16 +45,18 @@ Shop::Shop(QWidget *parent) : QWidget(parent)
 
 
 }
-/*
+
 void Shop::OnProfile()
 {
     hide();
-    ptr1->show();
-    //Profile *w = new Profile;
-    //w->show();
+    profilePtr->show();
 }
-*/
-//void createExtractButtons();
+
+void Shop::OnLaboratory()
+{
+    hide();
+    laboratoryPtr->show();
+}
 
 void Shop::WindowButtons()
 {
@@ -62,8 +67,8 @@ void Shop::WindowButtons()
     greenHouse = new QPushButton("gr", this);
     greenHouse->setGeometry(1095,0,150,73);
 
-    store = new QPushButton("st", this);
-    store->setGeometry(945,0,150,73);
+    shop = new QPushButton("st", this);
+    shop->setGeometry(945,0,150,73);
 
     laboratory = new QPushButton("lab", this);
     laboratory->setGeometry(795,0,150,73);

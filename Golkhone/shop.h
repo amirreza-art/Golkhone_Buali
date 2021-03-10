@@ -18,12 +18,13 @@ public:
 private:
     void setBackground();
     void WindowButtons();
-    QPushButton *profile, *store, *laboratory, *greenHouse;
+    QPushButton *profile, *shop, *laboratory, *greenHouse;
     QPushButton *liliumExtractBtn;
     QPushButton *magnoilaExtractBtn;
     QPushButton *orchidExtractBtn;
 private slots:
-    //void OnProfile();
+    void OnProfile();
+    void OnLaboratory();
 signals:
 
 };

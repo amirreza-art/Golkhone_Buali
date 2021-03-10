@@ -1,11 +1,17 @@
 #include "profile.h"
 #include "laboratory.h"
+#include "shop.h"
 
-Laboratory *labptr;
-Profile *ptr1;
+Laboratory *laboratoryPtr = nullptr;
+Profile *profilePtr = nullptr;
+Shop *shopPtr = nullptr;
 
 Profile::Profile(QWidget *parent) : QWidget(parent)
 {
+    profilePtr = this;
+    laboratoryPtr = new Laboratory();
+    shopPtr = new Shop();
+
     setBackground();
 
     setSoundPics();
@@ -17,9 +23,8 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     WindowButtons();
 
     connect(laboratory, &QPushButton::clicked, this, &Profile::OnLaboratory);
+    connect(shop, &QPushButton::clicked, this, &Profile::OnShop);
 
-    ptr1 = this;
-    labptr = new Laboratory();
 
 /*
     QLabel *l1 = new QLabel("مجموع گل های عادی:",this);
@@ -55,7 +60,13 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
 void Profile::OnLaboratory()
 {
     hide();
-    labptr->show();
+    laboratoryPtr->show();
+}
+
+void Profile::OnShop()
+{
+    hide();
+    shopPtr->show();
 }
 
 void Profile::WindowButtons()
@@ -67,8 +78,8 @@ void Profile::WindowButtons()
     greenHouse = new QPushButton("gr", this);
     greenHouse->setGeometry(1095,0,150,73);
 
-    store = new QPushButton("st", this);
-    store->setGeometry(945,0,150,73);
+    shop = new QPushButton("st", this);
+    shop->setGeometry(945,0,150,73);
 
     laboratory = new QPushButton("lab", this);
     laboratory->setGeometry(795,0,150,73);

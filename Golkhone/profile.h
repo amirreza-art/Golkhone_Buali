@@ -21,7 +21,7 @@ private:
     void setSoundPics();
     void setLoadAndSavPic();
     void WindowButtons();
-    QPushButton *profile, *store, *laboratory, *greenHouse;
+    QPushButton *profile, *shop, *laboratory, *greenHouse;
     QGridLayout *gridLayout;
     QPushButton *soundOff;
     QPushButton *soundOn;
@@ -33,6 +33,7 @@ private slots:
     void OnSoundOff();
     void OnSoundOn();
     void OnLaboratory();
+    void OnShop();
 };
 
 #endif // PROFILE_H
