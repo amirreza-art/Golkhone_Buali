@@ -7,57 +7,99 @@ Person::Person()
 
 }
 
-Person::~Person()
+void Person::set_flower(Flower *ptr)
+{
+    flowers.push_back(ptr);
+}
+
+Dahlia * Person::get_Dahlia()
 {
     for (auto item : flowers)
     {
-        delete item;
+        if (item->get_name() == "Dahlia")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking Dahlia first");
+            }
+            Dahlia::dec_dahlia_count();
+            Dahlia *ptr = dynamic_cast<Dahlia *>(item);
+            return ptr;
+        }
     }
+    throw std::runtime_error("you dont have any Dahlia");
+}
 
-    for (auto item : liliumExtracts)
+Tulip * Person::get_Tulip()
+{
+    for (auto item : flowers)
     {
-        delete item;
+        if (item->get_name() == "Tulip")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking Tulip first");
+            }
+            Tulip::dec_tulip_count();
+            Tulip *ptr = dynamic_cast<Tulip *>(item);
+            return ptr;
+        }
     }
+    throw std::runtime_error("you dont have any Tulip");
+}
 
-    for (auto item : magnoliExtracts)
+Amaryllis * Person::get_Amaryllis()
+{
+    for (auto item : flowers)
     {
-        delete item;
+        if (item->get_name() == "Amaryllis")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking Amaryllis first");
+            }
+            Amaryllis::dec_Amaryllis_count();
+            Amaryllis *ptr = dynamic_cast<Amaryllis *>(item);
+            return ptr;
+        }
     }
+    throw std::runtime_error("you dont have any Amaryllis");
+}
 
-    for (auto item : orchidExtracts)
+Tuberose * Person::get_Tuberose()
+{
+    for (auto item : flowers)
     {
-        delete item;
+        if (item->get_name() == "Tuberose")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking Tuberose first");
+            }
+            Tuberose::dec_tuberose_count();
+            Tuberose *ptr = dynamic_cast<Tuberose *>(item);
+            return ptr;
+        }
     }
+    throw std::runtime_error("you dont have any Tuberose");
+}
 
-    for (auto item : soils)
+Hyacinth * Person::get_Hyacinth()
+{
+    for (auto item : flowers)
     {
-        delete item;
+        if (item->get_name() == "Hyacinth")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking Hyacinth first");
+            }
+            Hyacinth::dec_hyacinth_count();
+            Hyacinth *ptr = dynamic_cast<Hyacinth *>(item);
+            return ptr;
+        }
     }
-
-    for (auto item : waters)
-    {
-        delete item;
-    }
-
-    for (auto item : sprayingMaterials)
-    {
-        delete item;
-    }
-
-    for (auto item : ordinaryUnions)
-    {
-        delete item;
-    }
-
-    for (auto item : ornamentalOnions)
-    {
-        delete item;
-    }
-
-    for (auto item : rareOnions)
-    {
-        delete item;
-    }
+    throw std::runtime_error("you dont have any Hyacinth");
 }
 
 MagnoliaExtract * Person::get_MagnoliaExtract()
@@ -104,11 +146,6 @@ void Person::set_name(std::string s)
 std::string Person::get_name() const
 {
     return std::string(name);
-}
-
-void Person::set_flower(Flower *ptr)
-{
-    flowers.push_back(ptr);
 }
 
 unsigned int Person::get_MagnoliaExtract_count() const
@@ -280,4 +317,57 @@ unsigned int Person::get_RareOnion_count() const
 void Person::add_RareOnion(RareOnion *roptr)
 {
     rareOnions.push_back(roptr);
+}
+
+Person::~Person()
+{
+    for (auto item : flowers)
+    {
+        delete item;
+    }
+
+    for (auto item : liliumExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : magnoliExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : orchidExtracts)
+    {
+        delete item;
+    }
+
+    for (auto item : soils)
+    {
+        delete item;
+    }
+
+    for (auto item : waters)
+    {
+        delete item;
+    }
+
+    for (auto item : sprayingMaterials)
+    {
+        delete item;
+    }
+
+    for (auto item : ordinaryUnions)
+    {
+        delete item;
+    }
+
+    for (auto item : ornamentalOnions)
+    {
+        delete item;
+    }
+
+    for (auto item : rareOnions)
+    {
+        delete item;
+    }
 }

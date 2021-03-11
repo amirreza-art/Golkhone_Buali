@@ -22,6 +22,11 @@ public:
     void set_name(std::string);
     std::string get_name() const;
     void set_flower(Flower *);
+    Dahlia * get_Dahlia();
+    Tulip * get_Tulip();
+    Amaryllis * get_Amaryllis();
+    Tuberose * get_Tuberose();
+    Hyacinth * get_Hyacinth();
     MagnoliaExtract * get_MagnoliaExtract();
     LiliumExtract * get_LiliumExtract();
     OrchisExtract * get_OrchidExtract();
