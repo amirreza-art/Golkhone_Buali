@@ -60,25 +60,44 @@ void Shop::OnLaboratory()
 
 void Shop::WindowButtons()
 {
-    profile = new QPushButton("prof", this);
+    profile = new QPushButton("", this);
     profile->setGeometry(1245,0,150,73);
-    //profile->setStyleSheet("QPushButton{background:transparent;}");
+    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/menu14.png");
+    QIcon ButtonIcon(pixmap);
+    profile->setIcon(ButtonIcon);
+    profile->setIconSize(pixmap.rect().size());
+    profile->setFixedSize(pixmap.rect().size());
 
-    greenHouse = new QPushButton("gr", this);
+    greenHouse = new QPushButton("", this);
     greenHouse->setGeometry(1095,0,150,73);
+    QPixmap pixmap1("C:/Users/Abisys/Desktop/nnn/menu05.png");
+    QIcon ButtonIcon1(pixmap1);
+    greenHouse->setIcon(ButtonIcon1);
+    greenHouse->setIconSize(pixmap1.rect().size());
+    greenHouse->setFixedSize(pixmap1.rect().size());
 
-    shop = new QPushButton("st", this);
+    shop = new QPushButton("", this);
     shop->setGeometry(945,0,150,73);
+    QPixmap pixmap2("C:/Users/Abisys/Desktop/nnn/menu2.png");
+    QIcon ButtonIcon2(pixmap2);
+    shop->setIcon(ButtonIcon2);
+    shop->setIconSize(pixmap2.rect().size());
+    shop->setFixedSize(pixmap2.rect().size());
 
-    laboratory = new QPushButton("lab", this);
+    laboratory = new QPushButton("", this);
     laboratory->setGeometry(795,0,150,73);
+    QPixmap pixmap3("C:/Users/Abisys/Desktop/nnn/menu04.png");
+    QIcon ButtonIcon3(pixmap3);
+    laboratory->setIcon(ButtonIcon3);
+    laboratory->setIconSize(pixmap3.rect().size());
+    laboratory->setFixedSize(pixmap3.rect().size());
 
 }
 
 void Shop::setBackground()
 {
 
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//labback1.png");
+    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//shopback1.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);

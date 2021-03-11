@@ -9,6 +9,8 @@
 #include <QVBoxLayout>
 #include <QMediaPlaylist>
 #include <QMediaPlayer>
+#include <person.h>
+#include <store.h>
 
 
 class Profile : public QWidget
@@ -17,6 +19,8 @@ class Profile : public QWidget
 public:
     explicit Profile(QWidget *parent = nullptr);
 private:
+    //Person *person;
+    //Store *store;
     void setBackground();
     void setSoundPics();
     void setLoadAndSavPic();

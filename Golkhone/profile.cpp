@@ -5,23 +5,34 @@
 Laboratory *laboratoryPtr = nullptr;
 Profile *profilePtr = nullptr;
 Shop *shopPtr = nullptr;
+Person *personPtr = nullptr;
+Store *storePtr = nullptr;
+//self.textbox.toPlainText()
 
 Profile::Profile(QWidget *parent) : QWidget(parent)
 {
+    // creat windows and save address of them
     profilePtr = this;
     laboratoryPtr = new Laboratory();
     shopPtr = new Shop();
 
+    //
+    personPtr = new Person;
+    storePtr = new Store;
+
+    // Backgrond for profile window
     setBackground();
 
+    // create sound button and connect signals to slots for them
     setSoundPics();
     connect(soundOff, &QPushButton::clicked, this, &Profile::OnSoundOff);
     connect(soundOn, &QPushButton::clicked, this, &Profile::OnSoundOn);
 
+    //
     setLoadAndSavPic();
 
+    // buttons for change window and connect singnals to slots for them
     WindowButtons();
-
     connect(laboratory, &QPushButton::clicked, this, &Profile::OnLaboratory);
     connect(shop, &QPushButton::clicked, this, &Profile::OnShop);
 
@@ -47,12 +58,13 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     QLabel *l6 = new QLabel("مجموع عصاره ها:",this);
     QLabel *l66 = new QLabel("",this);
 */
+    /*
     QLabel *storeLable = new QLabel("", this);
     QPixmap storePic("C:/Users/Abisys/Desktop/nnn/Asset0.png");
     storeLable->setPixmap(storePic);
     storeLable->setFixedSize(storePic.rect().size());
     storeLable->setGeometry(1053,690,150,150);
-
+    */
 
 
 }
@@ -71,26 +83,37 @@ void Profile::OnShop()
 
 void Profile::WindowButtons()
 {
-    profile = new QPushButton("prof", this);
+    profile = new QPushButton("", this);
     profile->setGeometry(1245,0,150,73);
-    //profile->setStyleSheet("QPushButton{background:transparent;}");
-
-    greenHouse = new QPushButton("gr", this);
-    greenHouse->setGeometry(1095,0,150,73);
-
-    shop = new QPushButton("st", this);
-    shop->setGeometry(945,0,150,73);
-
-    laboratory = new QPushButton("lab", this);
-    laboratory->setGeometry(795,0,150,73);
-
-/*
-    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/music0.png");
+    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/menu02.png");
     QIcon ButtonIcon(pixmap);
-    soundOff->setIcon(ButtonIcon);
-    soundOff->setStyleSheet("QPushButton{background:transparent;}");
-    soundOff->setIconSize(pixmap.rect().size());
-    soundOff->setFixedSize(pixmap.rect().size());*/
+    profile->setIcon(ButtonIcon);
+    profile->setIconSize(pixmap.rect().size());
+    profile->setFixedSize(pixmap.rect().size());
+
+    greenHouse = new QPushButton("", this);
+    greenHouse->setGeometry(1095,0,150,73);
+    QPixmap pixmap1("C:/Users/Abisys/Desktop/nnn/menu05.png");
+    QIcon ButtonIcon1(pixmap1);
+    greenHouse->setIcon(ButtonIcon1);
+    greenHouse->setIconSize(pixmap1.rect().size());
+    greenHouse->setFixedSize(pixmap1.rect().size());
+
+    shop = new QPushButton("", this);
+    shop->setGeometry(945,0,150,73);
+    QPixmap pixmap2("C:/Users/Abisys/Desktop/nnn/menu03.png");
+    QIcon ButtonIcon2(pixmap2);
+    shop->setIcon(ButtonIcon2);
+    shop->setIconSize(pixmap2.rect().size());
+    shop->setFixedSize(pixmap2.rect().size());
+
+    laboratory = new QPushButton("", this);
+    laboratory->setGeometry(795,0,150,73);
+    QPixmap pixmap3("C:/Users/Abisys/Desktop/nnn/menu04.png");
+    QIcon ButtonIcon3(pixmap3);
+    laboratory->setIcon(ButtonIcon3);
+    laboratory->setIconSize(pixmap3.rect().size());
+    laboratory->setFixedSize(pixmap3.rect().size());
 }
 
 void Profile::setLoadAndSavPic()
@@ -163,7 +186,6 @@ void Profile::OnSoundOn()
 
 void Profile::setBackground()
 {
-
     QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//background.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
