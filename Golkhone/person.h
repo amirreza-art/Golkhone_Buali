@@ -32,7 +32,7 @@ public:
     OrchisExtract * get_OrchidExtract();
     unsigned int get_MagnoliaExtract_count() const;
     unsigned int get_LiliumExtract_count() const;
-    unsigned int get_OrchidExtract() const;
+    unsigned int get_OrchidExtract_count() const;
     void add_MagnoliaExtract(MagnoliaExtract *);
     void add_LiliumExtract(LiliumExtract *);
     void add_OrchidExtract(OrchisExtract *);

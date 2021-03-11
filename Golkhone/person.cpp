@@ -160,7 +160,7 @@ unsigned int Person::get_LiliumExtract_count() const
     return temp;
 }
 
-unsigned int Person::get_OrchidExtract() const
+unsigned int Person::get_OrchidExtract_count() const
 {
     unsigned int temp = orchidExtracts.size();
     return temp;

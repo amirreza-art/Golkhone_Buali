@@ -5,8 +5,8 @@
 Laboratory *laboratoryPtr = nullptr;
 Profile *profilePtr = nullptr;
 Shop *shopPtr = nullptr;
-Person *personPtr = nullptr;
-Store *storePtr = nullptr;
+extern Person *personPtr;
+extern Store *storePtr;
 //self.textbox.toPlainText()
 
 Profile::Profile(QWidget *parent) : QWidget(parent)
@@ -16,9 +16,6 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     laboratoryPtr = new Laboratory();
     shopPtr = new Shop();
 
-    //
-    personPtr = new Person;
-    storePtr = new Store;
 
     // Backgrond for profile window
     setBackground();
@@ -36,6 +33,7 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     connect(laboratory, &QPushButton::clicked, this, &Profile::OnLaboratory);
     connect(shop, &QPushButton::clicked, this, &Profile::OnShop);
 
+    setInventory();
 
 /*
     QLabel *l1 = new QLabel("مجموع گل های عادی:",this);
@@ -68,6 +66,37 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
 
 
 }
+
+void Profile::setInventory()
+{
+    waterLabel = new QLabel("ذخیره آب: ", this);
+    waterLabel->setGeometry(1000,645,60,150);
+    waterLabelIN = new QLabel(this);
+    waterLabelIN->setText(QString::number(personPtr->get_Water_count()));
+    waterLabelIN->setGeometry(975,645,60,150);
+
+    soilLabel = new QLabel("ذخیره خاک:", this);
+    soilLabel->setGeometry(800,645,70,150);
+    soilLabelIN = new QLabel(this);
+    soilLabelIN->setText(QString::number(personPtr->get_Soil_count()));
+    soilLabelIN->setGeometry(775,645,60,150);
+
+    sprayingMaterialLabel = new QLabel("ماده سمپاشی:", this);
+    sprayingMaterialLabel->setGeometry(530,645,90,150);
+    sprayingMaterialLabelIN = new QLabel(this);
+    sprayingMaterialLabelIN->setText(QString::number(personPtr->get_SprayingMaterial_count()));
+    sprayingMaterialLabelIN->setGeometry(505,645,60,150);
+
+    extractsLabel = new QLabel("عصاره ها:", this);
+    extractsLabel->setGeometry(300,645,70,150);
+    extractsLabelIN = new QLabel(this);
+    unsigned int sum = personPtr->get_LiliumExtract_count()
+                     + personPtr->get_MagnoliaExtract_count()
+                     + personPtr->get_OrchidExtract_count();
+    extractsLabelIN->setText(QString::number(sum));
+    extractsLabelIN->setGeometry(280,645,60,150);
+}
+
 
 void Profile::OnLaboratory()
 {

@@ -18,6 +18,9 @@ public:
 private:
     void setBackground();
     void WindowButtons();
+    void setInventory();
+    QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
+    QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
     QPushButton *liliumExtractBtn;
     QPushButton *magnoilaExtractBtn;

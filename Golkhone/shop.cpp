@@ -4,6 +4,8 @@
 
 extern Profile *profilePtr;
 extern Laboratory *laboratoryPtr;
+extern Person *personPtr;
+extern Store *storePtr;
 
 class Profile;
 
@@ -16,34 +18,38 @@ Shop::Shop(QWidget *parent) : QWidget(parent)
     connect(profile, &QPushButton::clicked, this, &Shop::OnProfile);
     connect(laboratory, &QPushButton::clicked, this, &Shop::OnLaboratory);
 
-    QPushButton *btn = new QPushButton("", this);
-    btn->setGeometry(877,560,300,73);
-    btn->setAutoFillBackground(true);
-    QPalette palette = btn->palette();
-    palette.setColor(QPalette::Window, QColor(Qt::black));
-    btn->setPalette(palette);
-    btn->setStyleSheet("background-color: rgb(170, 170, 127);");
-    btn->setStyleSheet("background-color: #3cbaa2; solid black;");
+    setInventory();
 
-    QPushButton *btn1 = new QPushButton("", this);
-    btn1->setGeometry(552,560,300,73);
-    btn1->setAutoFillBackground(true);
-    QPalette palette1 = btn1->palette();
-    palette1.setColor(QPalette::Window, QColor(Qt::black));
-    btn1->setPalette(palette1);
-    btn1->setStyleSheet("background-color: rgb(170, 170, 127);");
-    btn1->setStyleSheet("background-color: #3cbaa2; solid black;");
+}
 
-    QPushButton *btn2 = new QPushButton("", this);
-    btn2->setGeometry(227,560,300,73);
-    btn2->setAutoFillBackground(true);
-    QPalette palette2 = btn2->palette();
-    palette2.setColor(QPalette::Window, QColor(Qt::black));
-    btn2->setPalette(palette2);
-    btn2->setStyleSheet("background-color: rgb(170, 170, 127);");
-    btn2->setStyleSheet("background-color: #3cbaa2; solid black;");
+void Shop::setInventory()
+{
+    waterLabel = new QLabel("ذخیره آب: ", this);
+    waterLabel->setGeometry(1000,645,60,150);
+    waterLabelIN = new QLabel(this);
+    waterLabelIN->setText(QString::number(personPtr->get_Water_count()));
+    waterLabelIN->setGeometry(975,645,60,150);
 
+    soilLabel = new QLabel("ذخیره خاک:", this);
+    soilLabel->setGeometry(800,645,70,150);
+    soilLabelIN = new QLabel(this);
+    soilLabelIN->setText(QString::number(personPtr->get_Soil_count()));
+    soilLabelIN->setGeometry(775,645,60,150);
 
+    sprayingMaterialLabel = new QLabel("ماده سمپاشی:", this);
+    sprayingMaterialLabel->setGeometry(530,645,90,150);
+    sprayingMaterialLabelIN = new QLabel(this);
+    sprayingMaterialLabelIN->setText(QString::number(personPtr->get_SprayingMaterial_count()));
+    sprayingMaterialLabelIN->setGeometry(505,645,60,150);
+
+    extractsLabel = new QLabel("عصاره ها:", this);
+    extractsLabel->setGeometry(300,645,70,150);
+    extractsLabelIN = new QLabel(this);
+    unsigned int sum = personPtr->get_LiliumExtract_count()
+                     + personPtr->get_MagnoliaExtract_count()
+                     + personPtr->get_OrchidExtract_count();
+    extractsLabelIN->setText(QString::number(sum));
+    extractsLabelIN->setGeometry(280,645,60,150);
 }
 
 void Shop::OnProfile()

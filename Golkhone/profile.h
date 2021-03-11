@@ -19,12 +19,13 @@ class Profile : public QWidget
 public:
     explicit Profile(QWidget *parent = nullptr);
 private:
-    //Person *person;
-    //Store *store;
+    void setInventory();
     void setBackground();
     void setSoundPics();
     void setLoadAndSavPic();
     void WindowButtons();
+    QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
+    QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
     QGridLayout *gridLayout;
     QPushButton *soundOff;

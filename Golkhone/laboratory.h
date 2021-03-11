@@ -18,6 +18,14 @@ private:
     void setBackground();
     void createExtractButtons();
     void WindowButtons();
+    void setInventory();
+    void setLabels();
+    QLabel *magnoliaExtracLabel, *liliumExtracLabel, *orchidExtractLabel;
+    QLabel *waterLabel1, *dahliaLabel, *tulipLabel;
+    QLabel *waterLabel2, *amarylilisLabel, *tuberoseLabel;
+    QLabel *waterLabel3, *hyacinthLabel, *moneyLabel;
+    QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
+    QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
     QPushButton *liliumExtractBtn;
     QPushButton *magnoilaExtractBtn;
@@ -25,6 +33,9 @@ private:
 private slots:
     void OnProfile();
     void OnShop();
+    void OnLiliumExtractBtn();
+    void OnMagnoilaExtractBtn();
+    void OnOrchidExtractBtn();
 signals:
 
 };
