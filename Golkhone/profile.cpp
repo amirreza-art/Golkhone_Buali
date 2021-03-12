@@ -1,6 +1,9 @@
 #include "profile.h"
 #include "laboratory.h"
 #include "shop.h"
+#include "magnolia.h"
+#include "lilium.h"
+#include "orchis.h"
 
 Laboratory *laboratoryPtr = nullptr;
 Profile *profilePtr = nullptr;
@@ -20,6 +23,13 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     // Backgrond for profile window
     setBackground();
 
+    playList = new QMediaPlaylist();
+    playList->addMedia(QUrl("C:/Users/Abisys/Downloads/Music/Chaartaar - Adineh.mp3"));
+    playList->setPlaybackMode(QMediaPlaylist::Loop);
+
+    music = new QMediaPlayer();
+    music->setPlaylist(playList);
+
     // create sound button and connect signals to slots for them
     setSoundPics();
     connect(soundOff, &QPushButton::clicked, this, &Profile::OnSoundOff);
@@ -35,27 +45,7 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
 
     setInventory();
 
-/*
-    QLabel *l1 = new QLabel("مجموع گل های عادی:",this);
-    //QFont font = l1->setFont();
-    //font.setPointSize(16);
-
-    QLabel *l11 = new QLabel("",this);
-    unsigned int a = 100;
-    l11->setText(QString::number(a));
-    l11->setGeometry(1000,440,50,50);
-    l1->setGeometry(1050,440,150,50);
-    QLabel *l2 = new QLabel("مجموع گل های کاشته شده:",this);
-    QLabel *l22 = new QLabel("00",this);
-    QLabel *l3 = new QLabel("مجموع گل های نادر:",this);
-    QLabel *l33 = new QLabel("00",this);
-    QLabel *l4 = new QLabel("مجموع گل های زینتی:",this);
-    QLabel *l44 = new QLabel("",this);
-    QLabel *l5 = new QLabel("مجموع گل های حذف شدع:",this);
-    QLabel *l55 = new QLabel("00",this);
-    QLabel *l6 = new QLabel("مجموع عصاره ها:",this);
-    QLabel *l66 = new QLabel("",this);
-*/
+    setLabels();
     /*
     QLabel *storeLable = new QLabel("", this);
     QPixmap storePic("C:/Users/Abisys/Desktop/nnn/Asset0.png");
@@ -65,6 +55,78 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     */
 
 
+}
+
+void Profile::setLabels()
+{
+        totalOrdinary = new QLabel("مجموع گل های عادی:",this);
+        totalOrdinary->setGeometry(1030,302,150,50);
+
+        totalOrdinary1 = new QLabel(this);
+        unsigned int sum = Dahlia::get_dahlia_count() +
+                           Tulip::get_tulip_count();
+        totalOrdinary1->setText(QString::number(sum));
+        totalOrdinary1->setGeometry(750,302,50,50);
+
+
+        totalRare = new QLabel("مجموع گل های نادر:",this);
+        totalRare->setGeometry(1030,375,150,50);
+
+        totalRare1 = new QLabel(this);
+        unsigned int sum1 = Amaryllis::get_Amaryllis_count() +
+                            Tuberose::get_tuberose_count() +
+                            Hyacinth::get_hyacinth_count();
+        totalRare1->setText(QString::number(sum1));
+        totalRare1->setGeometry(750,375,50,50);
+
+        totalOrnamental = new QLabel("مجموع گل های زینتی:",this);
+        totalOrnamental->setGeometry(1030,445,150,50);
+
+        unsigned int sum3 = Magnolia::get_magnolia_count() +
+                            Orchid::get_orchid_count() +
+                            Lilium::get_lilium_count();
+        totalOrnamental1 = new QLabel(this);
+        totalOrnamental1->setText(QString::number(sum3));
+        totalOrnamental1->setGeometry(750,445,50,50);
+
+        totalCreated = new QLabel("مجموع گل های کاشته شده:",this);
+        totalCreated->setGeometry(480,302,170,50);
+
+        unsigned int sum4 =  Magnolia::get_magnolia_count() +
+                             Orchid::get_orchid_count() +
+                             Lilium::get_lilium_count() +
+                             Amaryllis::get_Amaryllis_count() +
+                             Tuberose::get_tuberose_count() +
+                             Hyacinth::get_hyacinth_count() +
+                             Dahlia::get_dahlia_count() +
+                             Tulip::get_tulip_count();
+        totalCreated1 = new QLabel(this);
+        totalCreated1->setText(QString::number(sum4));
+        totalCreated1->setGeometry(230,302,50,50);
+
+        totalDeleted = new QLabel("مجموع گل های حذف شده:",this);
+        totalDeleted->setGeometry(480,375,170,50);
+
+        unsigned int sum5 = OrdinaryFlowers::get_ordinaryFlower_count() +
+                            OrdinaryFlowerBuds::get_ordinaryFlowerBud_count() +
+                            RareFlower::get_rareFlower_count() +
+                            RareFlowerbuds::get_rareFlowerBud_count() +
+                            OrnamentalFlower::get_ornamentalFlower_count() +
+                            OrnamentalBud::get_ornamentalBud_count() +
+                            OrnamentalFlowerBud::get_ornamentalFlowerBud_count();
+        totalDeleted1 = new QLabel(this);
+        totalDeleted1->setText(QString::number(sum5));
+        totalDeleted1->setGeometry(230,375,50,50);
+
+        totalExtract = new QLabel("مجموع عصاره ها:",this);
+        totalExtract->setGeometry(500,445,150,50);
+
+        totalExtract1 = new QLabel(this);
+        unsigned int sum6 = personPtr->get_MagnoliaExtract_count() +
+                            personPtr->get_LiliumExtract_count() +
+                            personPtr->get_OrchidExtract_count();
+        totalExtract1->setText(QString::number(sum6));
+        totalExtract1->setGeometry(230,445,50,50);
 }
 
 void Profile::setInventory()
@@ -95,6 +157,12 @@ void Profile::setInventory()
                      + personPtr->get_OrchidExtract_count();
     extractsLabelIN->setText(QString::number(sum));
     extractsLabelIN->setGeometry(280,645,60,150);
+
+    saveLable = new QLabel("ذخیره بازی", this);
+    saveLable->setGeometry(770, 550,100,100);
+
+    loadLabel = new QLabel("بارگذاری بازی", this);
+    loadLabel->setGeometry(340, 550,100,100);
 }
 
 
@@ -162,12 +230,6 @@ void Profile::setLoadAndSavPic()
     load->setIconSize(pixmap2.rect().size());
     load->setFixedSize(pixmap2.rect().size());
     load->setGeometry(220, 550,5,5);
-
-    QLabel *saveLable = new QLabel("kkkkk", this);
-    saveLable->setGeometry(650, 550,100,100);
-    QLabel *loadLable = new QLabel("", this);
-    loadLable->setGeometry(220, 550,5,5);
-
 }
 
 void Profile::setSoundPics()
@@ -195,12 +257,6 @@ void Profile::setSoundPics()
 
 void Profile::OnSoundOff()
 {
-    playList = new QMediaPlaylist();
-    playList->addMedia(QUrl("C:/Users/Abisys/Downloads/Music/Chaartaar - Adineh.mp3"));
-    playList->setPlaybackMode(QMediaPlaylist::Loop);
-
-    music = new QMediaPlayer();
-    music->setPlaylist(playList);
     music->play();
     soundOff->setVisible(false);
     soundOn->setVisible(true);
@@ -208,36 +264,58 @@ void Profile::OnSoundOff()
 
 void Profile::OnSoundOn()
 {
-    music->stop();
+    music->pause();
     soundOff->setVisible(true);
     soundOn->setVisible(false);
 }
 
 void Profile::setBackground()
 {
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//background.png");
+    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//profback.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);
     this->setFixedSize(bkgnd.rect().size());
     this->setWindowTitle("گلخونه");
 }
-/*
+
 Profile::~Profile()
 {
     delete waterLabel;
-    delete
-    QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
-    QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
-    QPushButton *profile, *shop, *laboratory, *greenHouse;
-    QGridLayout *gridLayout;
-    QPushButton *soundOff;
-    QPushButton *soundOn;
-    QPushButton *save;
-    QPushButton *load;
-    QMediaPlaylist *playList;
-    QMediaPlayer *music;
-}*/
+    delete totalOrdinary;
+    delete totalOrnamental;
+    delete totalRare;
+    delete totalExtract;
+    delete totalDeleted;
+    delete totalCreated;
+    delete totalOrdinary1;
+    delete totalOrnamental1;
+    delete totalRare1;
+    delete totalExtract1;
+    delete totalDeleted1;
+    delete totalCreated1;
+    delete waterLabel;
+    delete soilLabel;
+    delete sprayingMaterialLabel;
+    delete extractsLabel;
+    delete waterLabelIN;
+    delete soilLabelIN;
+    delete sprayingMaterialLabelIN;
+    delete extractsLabelIN;
+    delete saveLable;
+    delete loadLabel;
+    delete profile;
+    delete shop;
+    delete laboratory;
+    delete greenHouse;
+    delete gridLayout;
+    delete soundOff;
+    delete soundOn;
+    delete save;
+    delete load;
+    delete playList;
+    delete music;
+}
 
 
 

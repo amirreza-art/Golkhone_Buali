@@ -18,15 +18,21 @@ class Profile : public QWidget
     Q_OBJECT
 public:
     explicit Profile(QWidget *parent = nullptr);
-    //~Profile();
+    virtual ~Profile();
 private:
     void setInventory();
     void setBackground();
     void setSoundPics();
     void setLoadAndSavPic();
     void WindowButtons();
+    void setLabels();
+    QLabel *totalOrdinary, *totalOrnamental, *totalRare;
+    QLabel *totalExtract, *totalDeleted, *totalCreated;
+    QLabel *totalOrdinary1, *totalOrnamental1, *totalRare1;
+    QLabel *totalExtract1, *totalDeleted1, *totalCreated1;
     QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
     QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
+    QLabel *saveLable, *loadLabel;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
     QGridLayout *gridLayout;
     QPushButton *soundOff;
