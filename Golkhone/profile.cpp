@@ -222,6 +222,22 @@ void Profile::setBackground()
     this->setFixedSize(bkgnd.rect().size());
     this->setWindowTitle("گلخونه");
 }
+/*
+Profile::~Profile()
+{
+    delete waterLabel;
+    delete
+    QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
+    QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
+    QPushButton *profile, *shop, *laboratory, *greenHouse;
+    QGridLayout *gridLayout;
+    QPushButton *soundOff;
+    QPushButton *soundOn;
+    QPushButton *save;
+    QPushButton *load;
+    QMediaPlaylist *playList;
+    QMediaPlayer *music;
+}*/
 
 
 

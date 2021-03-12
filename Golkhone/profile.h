@@ -18,6 +18,7 @@ class Profile : public QWidget
     Q_OBJECT
 public:
     explicit Profile(QWidget *parent = nullptr);
+    //~Profile();
 private:
     void setInventory();
     void setBackground();
