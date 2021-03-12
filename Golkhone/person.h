@@ -30,6 +30,14 @@ public:
     MagnoliaExtract * get_MagnoliaExtract();
     LiliumExtract * get_LiliumExtract();
     OrchisExtract * get_OrchidExtract();
+    void sel_Tulip(unsigned int);
+    void sel_Dahlia(unsigned int);
+    void sel_Tuberose(unsigned int);
+    void sel_Amaryllis(unsigned int);
+    void sel_Hyacinth(unsigned int);
+    void sel_Magnolia(unsigned int);
+    void sel_Lilium(unsigned int);
+    void sel_Orchid(unsigned int);
     unsigned int get_MagnoliaExtract_count() const;
     unsigned int get_LiliumExtract_count() const;
     unsigned int get_OrchidExtract_count() const;

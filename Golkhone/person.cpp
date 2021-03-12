@@ -12,6 +12,134 @@ void Person::set_flower(Flower *ptr)
     flowers.push_back(ptr);
 }
 
+void Person::sel_Tulip(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Tulip")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Dahlia(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Dahlia")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Tuberose(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Tuberose")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Amaryllis(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Amaryllis")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Hyacinth(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Hyacinth")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Magnolia(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Magnolia")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Lilium(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Lilium")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
+void Person::sel_Orchid(unsigned int count)
+{
+    for (size_t i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < flowers.size(); j++)
+        {
+            if (flowers.at(j)->get_name() == "Orchid")
+            {
+                delete flowers.at(j);
+                flowers.erase(flowers.begin() + j);
+                break;
+            }
+        }
+    }
+}
+
 Dahlia * Person::get_Dahlia()
 {
     for (auto item : flowers)
