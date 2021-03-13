@@ -1,6 +1,7 @@
 #include "shop.h"
 #include "profile.h"
 #include "laboratory.h"
+#include "greenhouse.h"
 #include <QInputDialog>
 #include <QMessageBox>
 #include "orchis.h"
@@ -11,6 +12,8 @@
 extern long int money;
 extern Profile *profilePtr;
 extern Laboratory *laboratoryPtr;
+extern GreenHouse *greenHousePtr;
+
 extern Person *personPtr;
 extern Store *storePtr;
 
@@ -24,6 +27,7 @@ Shop::Shop(QWidget *parent) : QWidget(parent)
 
     connect(profile, &QPushButton::clicked, this, &Shop::OnProfile);
     connect(laboratory, &QPushButton::clicked, this, &Shop::OnLaboratory);
+    connect(greenHouse, &QPushButton::clicked, this, &Shop::OnGreenHouse);
 
     setInventory();
 
@@ -717,6 +721,12 @@ void Shop::OnLaboratory()
 {
     hide();
     laboratoryPtr->show();
+}
+
+void Shop::OnGreenHouse()
+{
+    hide();
+    greenHousePtr->show();
 }
 
 void Shop::WindowButtons()

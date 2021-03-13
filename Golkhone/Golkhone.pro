@@ -20,6 +20,7 @@ SOURCES += \
         amaryllis.cpp \
         dahlia.cpp \
         flower.cpp \
+        greenhouse.cpp \
         hyacinth.cpp \
         laboratory.cpp \
         lilium.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     amaryllis.h \
     dahlia.h \
     flower.h \
+    greenhouse.h \
     hyacinth.h \
     laboratory.h \
     lilium.h \

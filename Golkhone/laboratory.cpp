@@ -1,9 +1,12 @@
 #include "laboratory.h"
 #include "profile.h"
 #include "shop.h"
+#include "greenhouse.h"
 
 extern Profile *profilePtr;
 extern Shop *shopPtr;
+extern GreenHouse *greenHousePtr;
+
 extern Person *personPtr;
 extern Store *storePtr;
 
@@ -16,6 +19,7 @@ Laboratory::Laboratory(QWidget *parent) : QWidget(parent)
     WindowButtons();
     connect(profile, &QPushButton::clicked, this, &Laboratory::OnProfile);
     connect(shop, &QPushButton::clicked, this, &Laboratory::OnShop);
+    connect(greenHouse, &QPushButton::clicked, this, &Laboratory::OnGreenHouse);
 
     createExtractButtons();
     connect(magnoilaExtractBtn, &QPushButton::clicked, this, &Laboratory::OnMagnoilaExtractBtn);
@@ -105,6 +109,12 @@ void Laboratory::OnShop()
 {
     hide();
     shopPtr->show();
+}
+
+void Laboratory::OnGreenHouse()
+{
+    hide();
+    greenHousePtr->show();
 }
 
 void Laboratory::createExtractButtons()

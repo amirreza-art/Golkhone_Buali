@@ -18,7 +18,7 @@ class Profile : public QWidget
     Q_OBJECT
 public:
     explicit Profile(QWidget *parent = nullptr);
-    virtual ~Profile();
+    //virtual ~Profile();
 private:
     void setInventory();
     void setBackground();
@@ -46,6 +46,7 @@ private slots:
     void OnSoundOn();
     void OnLaboratory();
     void OnShop();
+    void OnGreenHouse();
 };
 
 #endif // PROFILE_H

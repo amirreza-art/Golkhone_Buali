@@ -1,6 +1,7 @@
 #include "profile.h"
 #include "laboratory.h"
 #include "shop.h"
+#include "greenhouse.h"
 #include "magnolia.h"
 #include "lilium.h"
 #include "orchis.h"
@@ -8,6 +9,8 @@
 Laboratory *laboratoryPtr = nullptr;
 Profile *profilePtr = nullptr;
 Shop *shopPtr = nullptr;
+GreenHouse *greenHousePtr = nullptr;
+
 extern Person *personPtr;
 extern Store *storePtr;
 //self.textbox.toPlainText()
@@ -18,7 +21,7 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     profilePtr = this;
     laboratoryPtr = new Laboratory();
     shopPtr = new Shop();
-
+    greenHousePtr = new GreenHouse();
 
     // Backgrond for profile window
     setBackground();
@@ -42,6 +45,7 @@ Profile::Profile(QWidget *parent) : QWidget(parent)
     WindowButtons();
     connect(laboratory, &QPushButton::clicked, this, &Profile::OnLaboratory);
     connect(shop, &QPushButton::clicked, this, &Profile::OnShop);
+    connect(greenHouse, &QPushButton::clicked, this, &Profile::OnGreenHouse);
 
     setInventory();
 
@@ -178,6 +182,12 @@ void Profile::OnShop()
     shopPtr->show();
 }
 
+void Profile::OnGreenHouse()
+{
+    hide();
+    greenHousePtr->show();
+}
+
 void Profile::WindowButtons()
 {
     profile = new QPushButton("", this);
@@ -278,7 +288,7 @@ void Profile::setBackground()
     this->setFixedSize(bkgnd.rect().size());
     this->setWindowTitle("گلخونه");
 }
-
+/*
 Profile::~Profile()
 {
     delete waterLabel;
@@ -316,7 +326,7 @@ Profile::~Profile()
     delete playList;
     delete music;
 }
-
+*/
 
 
 /*

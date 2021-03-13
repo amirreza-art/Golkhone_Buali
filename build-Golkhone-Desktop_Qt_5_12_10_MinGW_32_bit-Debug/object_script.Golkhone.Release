@@ -1,6 +1,7 @@
 release/amaryllis.o
 release/dahlia.o
 release/flower.o
+release/greenhouse.o
 release/hyacinth.o
 release/laboratory.o
 release/lilium.o
@@ -29,6 +30,7 @@ release/store.o
 release/tuberose.o
 release/tulip.o
 release/water.o
+release/moc_greenhouse.o
 release/moc_laboratory.o
 release/moc_profile.o
 release/moc_shop.o

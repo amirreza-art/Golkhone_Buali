@@ -33,6 +33,7 @@ private:
 private slots:
     void OnProfile();
     void OnShop();
+    void OnGreenHouse();
     void OnLiliumExtractBtn();
     void OnMagnoilaExtractBtn();
     void OnOrchidExtractBtn();

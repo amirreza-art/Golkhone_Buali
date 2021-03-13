@@ -32,6 +32,7 @@ private:
 private slots:
     void OnProfile();
     void OnLaboratory();
+    void OnGreenHouse();
     void OnTuberoseBtn();
     void OnHyacinthBtn();
     void OnAmarylilisBtn();
