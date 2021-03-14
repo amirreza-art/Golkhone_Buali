@@ -140,18 +140,145 @@ void Person::sel_Orchid(unsigned int count)
     }
 }
 
+OrdinaryFlowers * Person::get_OrdinaryFlower()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Ordinary Flower")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            OrdinaryFlowers *ptr = dynamic_cast<OrdinaryFlowers *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+OrdinaryFlowerBuds * Person::get_OrdinaryFlowerBud()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Ordinary Flower Bud")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            OrdinaryFlowerBuds *ptr = dynamic_cast<OrdinaryFlowerBuds *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+RareFlower * Person::get_RareFlower()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Rare Flower")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            RareFlower *ptr = dynamic_cast<RareFlower *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+RareFlowerbuds * Person::get_RareFlowerbud()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Rare Flower Bud")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            RareFlowerbuds *ptr = dynamic_cast<RareFlowerbuds *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+OrnamentalFlower * Person::get_OrnamentalFlower()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Ornamental Flower")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            OrnamentalFlower *ptr = dynamic_cast<OrnamentalFlower *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+OrnamentalBud * Person::get_OrnamentalBud()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Ornamental Bud")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            OrnamentalBud *ptr = dynamic_cast<OrnamentalBud *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+OrnamentalFlowerBud * Person::get_OrnamentalFlowerBud()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Ornamental Flower Bud")
+        {
+            if (Dahlia::get_dahlia_count() == 0)
+            {
+                throw std::runtime_error("you should picking first");
+            }
+            OrnamentalFlowerBud *ptr = dynamic_cast<OrnamentalFlowerBud *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
+            return ptr;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
 Dahlia * Person::get_Dahlia()
 {
-    for (auto item : flowers)
+    for (size_t i = 0; i < flowers.size(); i++)
     {
-        if (item->get_name() == "Dahlia")
+        if (flowers.at(i)->get_name() == "Dahlia")
         {
             if (Dahlia::get_dahlia_count() == 0)
             {
                 throw std::runtime_error("you should picking Dahlia first");
             }
             Dahlia::dec_dahlia_count();
-            Dahlia *ptr = dynamic_cast<Dahlia *>(item);
+            Dahlia *ptr = dynamic_cast<Dahlia *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
             return ptr;
         }
     }
@@ -160,16 +287,17 @@ Dahlia * Person::get_Dahlia()
 
 Tulip * Person::get_Tulip()
 {
-    for (auto item : flowers)
+    for (size_t i = 0; i < flowers.size(); i++)
     {
-        if (item->get_name() == "Tulip")
+        if (flowers.at(i)->get_name() == "Tulip")
         {
             if (Dahlia::get_dahlia_count() == 0)
             {
                 throw std::runtime_error("you should picking Tulip first");
             }
             Tulip::dec_tulip_count();
-            Tulip *ptr = dynamic_cast<Tulip *>(item);
+            Tulip *ptr = dynamic_cast<Tulip *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
             return ptr;
         }
     }
@@ -178,16 +306,17 @@ Tulip * Person::get_Tulip()
 
 Amaryllis * Person::get_Amaryllis()
 {
-    for (auto item : flowers)
+    for (size_t i = 0; i < flowers.size(); i++)
     {
-        if (item->get_name() == "Amaryllis")
+        if (flowers.at(i)->get_name() == "Amaryllis")
         {
             if (Dahlia::get_dahlia_count() == 0)
             {
                 throw std::runtime_error("you should picking Amaryllis first");
             }
             Amaryllis::dec_Amaryllis_count();
-            Amaryllis *ptr = dynamic_cast<Amaryllis *>(item);
+            Amaryllis *ptr = dynamic_cast<Amaryllis *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
             return ptr;
         }
     }
@@ -196,16 +325,17 @@ Amaryllis * Person::get_Amaryllis()
 
 Tuberose * Person::get_Tuberose()
 {
-    for (auto item : flowers)
+    for (size_t i = 0; i < flowers.size(); i++)
     {
-        if (item->get_name() == "Tuberose")
+        if (flowers.at(i)->get_name() == "Tuberose")
         {
             if (Dahlia::get_dahlia_count() == 0)
             {
                 throw std::runtime_error("you should picking Tuberose first");
             }
             Tuberose::dec_tuberose_count();
-            Tuberose *ptr = dynamic_cast<Tuberose *>(item);
+            Tuberose *ptr = dynamic_cast<Tuberose *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
             return ptr;
         }
     }
@@ -214,16 +344,17 @@ Tuberose * Person::get_Tuberose()
 
 Hyacinth * Person::get_Hyacinth()
 {
-    for (auto item : flowers)
+    for (size_t i = 0; i < flowers.size(); i++)
     {
-        if (item->get_name() == "Hyacinth")
+        if (flowers.at(i)->get_name() == "Hyacinth")
         {
             if (Dahlia::get_dahlia_count() == 0)
             {
                 throw std::runtime_error("you should picking Hyacinth first");
             }
             Hyacinth::dec_hyacinth_count();
-            Hyacinth *ptr = dynamic_cast<Hyacinth *>(item);
+            Hyacinth *ptr = dynamic_cast<Hyacinth *>(flowers.at(i));
+            flowers.erase(flowers.begin() + i);
             return ptr;
         }
     }

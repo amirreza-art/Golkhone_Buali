@@ -4,14 +4,14 @@
 #include "flower.h"
 #include "ornamentalonion.h"
 
-class OrnamentalFlower : Flower
+class OrnamentalFlower : public Flower
 {
 public:
     virtual void picking();
     virtual std::string get_name() const;
-    OrnamentalFlower(const OrnamentalFlower &);
     virtual ~OrnamentalFlower();
     OrnamentalFlower(OrnamentalOnion *);
+    OrnamentalFlower(const OrnamentalFlower &);
     static long int get_price();
     static void set_ornamentalFlower_count(unsigned int);
     static void inc_ornamentalFlower_count();

@@ -12,7 +12,8 @@
 #include "ordinaryunion.h"
 #include "rareonion.h"
 #include "ornamentalonion.h"
-
+#include "ornamentalflowerbud.h"
+//#include "ornamentalflower.h"
 
 class Person
 {
@@ -38,6 +39,13 @@ public:
     void sel_Magnolia(unsigned int);
     void sel_Lilium(unsigned int);
     void sel_Orchid(unsigned int);
+    OrdinaryFlowers * get_OrdinaryFlower();
+    OrdinaryFlowerBuds * get_OrdinaryFlowerBud();
+    RareFlower * get_RareFlower();
+    RareFlowerbuds * get_RareFlowerbud();
+    OrnamentalFlower * get_OrnamentalFlower();
+    OrnamentalBud * get_OrnamentalBud();
+    OrnamentalFlowerBud * get_OrnamentalFlowerBud();
     unsigned int get_MagnoliaExtract_count() const;
     unsigned int get_LiliumExtract_count() const;
     unsigned int get_OrchidExtract_count() const;
