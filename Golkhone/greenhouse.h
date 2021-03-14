@@ -58,11 +58,50 @@ private:
     QLabel *waterLabel, *soilLabel, *sprayingMaterialLabel, *extractsLabel;
     QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
+    QPushButton *lockBtn1, *lockBtn2, *lockBtn3, *lockBtn4, *lockBtn5, *lockBtn6, *lockBtn7, *lockBtn8;
+    QPushButton *emptyBtn1, *emptyBtn2, *emptyBtn3, *emptyBtn4, *emptyBtn5, *emptyBtn6, *emptyBtn7, *emptyBtn8;
+    QPushButton *orBtn1, *orBtn2, *orBtn3, *orBtn4, *orBtn5, *orBtn6, *orBtn7 , *orBtn8;
+    QPushButton *rareBtn1, *rareBtn2, *rareBtn3, *rareBtn4, *rareBtn5, *rareBtn6, *rareBtn7 , *rareBtn8;
+    QPushButton *ornamBtn1, *ornamBtn2, *ornamBtn3, *ornamBtn4, *ornamBtn5, *ornamBtn6, *ornamBtn7 , *ornamBtn8;
+    QPushButton *orBudBtn1, *orBudBtn2, *orBudBtn3, *orBudBtn4, *orBudBtn5, *orBudBtn6, *orBudBtn7 , *orBudBtn8;
+    QPushButton *rareBudBtn1, *rareBudBtn2, *rareBudBtn3, *rareBudBtn4, *rareBudBtn5, *rareBudBtn6, *rareBudBtn7 , *rareBudBtn8;
+    QPushButton *ornamBudBtn1, *ornamBudBtn2, *ornamBudBtn3, *ornamBudBtn4, *ornamBudBtn5, *ornamBudBtn6, *ornamBudBtn7 , *ornamBudBtn8;
+    QPushButton *dahliaP1, *dahliaP2, *dahliaP3, *dahliaP4, *dahliaP5, *dahliaP6, *dahliaP7, *dahliaP8;
+    QPushButton *tulipP1, *tulipP2, *tulipP3, *tulipP4, *tulipP5, *tulipP6, *tulipP7, *tulipP8;
 
+    void setDahliaPBtn();
+    void setTulipPBtn();
+    void setLockBtn();
+    void setEmptyBtn();
+    void setOrBtn();
+    void setRareBtn();
+    void setOrnamBtn();
+    void setOrBudBtn();
+    void setRareBudBtn();
+    void setOrnamBudBtn();
 private slots:
     void OnProfile();
     void OnShop();
     void OnLaboratory();
+    void OnLockBtn1();
+    void OnLockBtn2();
+    void OnLockBtn3();
+    void OnLockBtn4();
+    void OnLockBtn5();
+    void OnLockBtn6();
+    void OnLockBtn7();
+    void OnLockBtn8();
+    void OnEmptyBtn1();
+    void OnEmptyBtn2();
+    void OnEmptyBtn3();
+    void OnEmptyBtn4();
+    void OnEmptyBtn5();
+    void OnEmptyBtn6();
+    void OnEmptyBtn7();
+    void OnEmptyBtn8();
+    void OnOrnamBtns();
+    void OnOrBtns();
+    void OnRareBtns();
 signals:
 
 };
