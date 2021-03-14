@@ -6,6 +6,10 @@
 #include "QInputDialog"
 #include <iostream>
 #include <ornamentalflower.h>
+#include <random>
+#include <magnolia.h>
+#include <lilium.h>
+#include <orchis.h>
 
 extern Profile *profilePtr;
 extern Shop *shopPtr;
@@ -34,7 +38,7 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     setTulipPic();
     setTuberosePic();
     setAmaryllisPic();
-    //setHyacinthPic();
+    setHyacinthPic();
     setMagnoliaPic();
     seLiliumPic();
     setOrchidPic();
@@ -54,6 +58,16 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     setOrBudBtn();
     setRareBudBtn();
     setOrnamBudBtn();
+    setDahliaPBtn();
+    setTulipPBtn();
+    setAmaryllisPBtn();
+
+    setTubePBtn();
+    sethyacPBtn();
+    setmagPBtn();
+    setliliPBtn();
+    setorchPBtn();
+    //setOrnamFBudBtn();
 
     connect(lockBtn1, &QPushButton::clicked, this, &GreenHouse::OnLockBtn1);
     connect(lockBtn2, &QPushButton::clicked, this, &GreenHouse::OnLockBtn2);
@@ -83,6 +97,15 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     connect(orBtn7, &QPushButton::clicked, this, &GreenHouse::OnOrBtns);
     connect(orBtn8, &QPushButton::clicked, this, &GreenHouse::OnOrBtns);
 
+    connect(orBudBtn1, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn2, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn3, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn4, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn5, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn6, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn7, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+    connect(orBudBtn8, &QPushButton::clicked, this, &GreenHouse::OnOrBudBtns);
+
     connect(rareBtn1, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
     connect(rareBtn2, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
     connect(rareBtn3, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
@@ -91,6 +114,15 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     connect(rareBtn6, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
     connect(rareBtn7, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
     connect(rareBtn8, &QPushButton::clicked, this, &GreenHouse::OnRareBtns);
+
+    connect(rareBudBtn1, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn2, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn3, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn4, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn5, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn6, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn7, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
+    connect(rareBudBtn8, &QPushButton::clicked, this, &GreenHouse::OnRareBudBtns);
 
     connect(ornamBtn1, &QPushButton::clicked, this, &GreenHouse::OnOrnamBtns);
     connect(ornamBtn2, &QPushButton::clicked, this, &GreenHouse::OnOrnamBtns);
@@ -101,7 +133,14 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     connect(ornamBtn7, &QPushButton::clicked, this, &GreenHouse::OnOrnamBtns);
     connect(ornamBtn8, &QPushButton::clicked, this, &GreenHouse::OnOrnamBtns);
 
-
+    connect(ornamBudBtn1, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn2, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn3, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn4, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn5, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn6, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn7, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
+    connect(ornamBudBtn8, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
 
 }
 
@@ -175,6 +214,627 @@ void GreenHouse::setEmptyBtn()
     emptyBtn8->setVisible(false);
 }
 
+void GreenHouse::setTubePBtn()
+{
+    tubeP1 = new QPushButton("چیدن", this);
+    tubeP1->setGeometry(1000,340,160,25);
+    tubeP1->setAutoFillBackground(true);
+    QPalette palette = tubeP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    tubeP1->setPalette(palette);
+    tubeP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP1->setVisible(false);
+
+    tubeP2 = new QPushButton("چیدن", this);
+    tubeP2->setGeometry(740,340,160,25);
+    tubeP2->setAutoFillBackground(true);
+    tubeP2->setPalette(palette);
+    tubeP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP2->setVisible(false);
+
+    tubeP3 = new QPushButton("چیدن", this);
+    tubeP3->setGeometry(480,340,160,25);
+    tubeP3->setAutoFillBackground(true);
+    tubeP3->setPalette(palette);
+    tubeP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP3->setVisible(false);
+
+    tubeP4 = new QPushButton("چیدن", this);
+    tubeP4->setGeometry(230,340,160,25);
+    tubeP4->setAutoFillBackground(true);
+    tubeP4->setPalette(palette);
+    tubeP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP4->setVisible(false);
+
+    tubeP5 = new QPushButton("چیدن", this);
+    tubeP5->setGeometry(1000,630,160,25);
+    tubeP5->setAutoFillBackground(true);
+    tubeP5->setPalette(palette);
+    tubeP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP5->setVisible(false);
+
+    tubeP6 = new QPushButton("چیدن", this);
+    tubeP6->setGeometry(740,630,160,25);
+    tubeP6->setAutoFillBackground(true);
+    tubeP6->setPalette(palette);
+    tubeP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP6->setVisible(false);
+
+    tubeP7 = new QPushButton("چیدن", this);
+    tubeP7->setGeometry(480,630,160,25);
+    tubeP7->setAutoFillBackground(true);
+    tubeP7->setPalette(palette);
+    tubeP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP7->setVisible(false);
+
+    tubeP8 = new QPushButton("چیدن", this);
+    tubeP8->setGeometry(230,630,160,25);
+    tubeP8->setAutoFillBackground(true);
+    tubeP8->setPalette(palette);
+    tubeP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tubeP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tubeP8->setVisible(false);
+}
+
+void GreenHouse::sethyacPBtn()
+{
+    hyacP1 = new QPushButton("چیدن", this);
+    hyacP1->setGeometry(1000,340,160,25);
+    hyacP1->setAutoFillBackground(true);
+    QPalette palette = hyacP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    hyacP1->setPalette(palette);
+    hyacP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP1->setVisible(false);
+
+    hyacP2 = new QPushButton("چیدن", this);
+    hyacP2->setGeometry(740,340,160,25);
+    hyacP2->setAutoFillBackground(true);
+    hyacP2->setPalette(palette);
+    hyacP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP2->setVisible(false);
+
+    hyacP3 = new QPushButton("چیدن", this);
+    hyacP3->setGeometry(480,340,160,25);
+    hyacP3->setAutoFillBackground(true);
+    hyacP3->setPalette(palette);
+    hyacP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP3->setVisible(false);
+
+    hyacP4 = new QPushButton("چیدن", this);
+    hyacP4->setGeometry(230,340,160,25);
+    hyacP4->setAutoFillBackground(true);
+    hyacP4->setPalette(palette);
+    hyacP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP4->setVisible(false);
+
+    hyacP5 = new QPushButton("چیدن", this);
+    hyacP5->setGeometry(1000,630,160,25);
+    hyacP5->setAutoFillBackground(true);
+    hyacP5->setPalette(palette);
+    hyacP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP5->setVisible(false);
+
+    hyacP6 = new QPushButton("چیدن", this);
+    hyacP6->setGeometry(740,630,160,25);
+    hyacP6->setAutoFillBackground(true);
+    hyacP6->setPalette(palette);
+    hyacP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP6->setVisible(false);
+
+    hyacP7 = new QPushButton("چیدن", this);
+    hyacP7->setGeometry(480,630,160,25);
+    hyacP7->setAutoFillBackground(true);
+    hyacP7->setPalette(palette);
+    hyacP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP7->setVisible(false);
+
+    hyacP8 = new QPushButton("چیدن", this);
+    hyacP8->setGeometry(230,630,160,25);
+    hyacP8->setAutoFillBackground(true);
+    hyacP8->setPalette(palette);
+    hyacP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    hyacP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    hyacP8->setVisible(false);
+}
+
+void GreenHouse::setmagPBtn()
+{
+    magnP1 = new QPushButton("چیدن", this);
+    magnP1->setGeometry(1000,340,160,25);
+    magnP1->setAutoFillBackground(true);
+    QPalette palette = magnP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    magnP1->setPalette(palette);
+    magnP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP1->setVisible(false);
+
+    magnP2 = new QPushButton("چیدن", this);
+    magnP2->setGeometry(740,340,160,25);
+    magnP2->setAutoFillBackground(true);
+    magnP2->setPalette(palette);
+    magnP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP2->setVisible(false);
+
+    magnP3 = new QPushButton("چیدن", this);
+    magnP3->setGeometry(480,340,160,25);
+    magnP3->setAutoFillBackground(true);
+    magnP3->setPalette(palette);
+    magnP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP3->setVisible(false);
+
+    magnP4 = new QPushButton("چیدن", this);
+    magnP4->setGeometry(230,340,160,25);
+    magnP4->setAutoFillBackground(true);
+    magnP4->setPalette(palette);
+    magnP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP4->setVisible(false);
+
+    magnP5 = new QPushButton("چیدن", this);
+    magnP5->setGeometry(1000,630,160,25);
+    magnP5->setAutoFillBackground(true);
+    magnP5->setPalette(palette);
+    magnP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP5->setVisible(false);
+
+    magnP6 = new QPushButton("چیدن", this);
+    magnP6->setGeometry(740,630,160,25);
+    magnP6->setAutoFillBackground(true);
+    magnP6->setPalette(palette);
+    magnP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP6->setVisible(false);
+
+    magnP7 = new QPushButton("چیدن", this);
+    magnP7->setGeometry(480,630,160,25);
+    magnP7->setAutoFillBackground(true);
+    magnP7->setPalette(palette);
+    magnP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP7->setVisible(false);
+
+    magnP8 = new QPushButton("چیدن", this);
+    magnP8->setGeometry(230,630,160,25);
+    magnP8->setAutoFillBackground(true);
+    magnP8->setPalette(palette);
+    magnP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    magnP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    magnP8->setVisible(false);
+}
+
+void GreenHouse::setliliPBtn()
+{
+    liliP1 = new QPushButton("چیدن", this);
+    liliP1->setGeometry(1000,340,160,25);
+    liliP1->setAutoFillBackground(true);
+    QPalette palette = liliP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    liliP1->setPalette(palette);
+    liliP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP1->setVisible(false);
+
+    liliP2 = new QPushButton("چیدن", this);
+    liliP2->setGeometry(740,340,160,25);
+    liliP2->setAutoFillBackground(true);
+    liliP2->setPalette(palette);
+    liliP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP2->setVisible(false);
+
+    liliP3 = new QPushButton("چیدن", this);
+    liliP3->setGeometry(480,340,160,25);
+    liliP3->setAutoFillBackground(true);
+    liliP3->setPalette(palette);
+    liliP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP3->setVisible(false);
+
+    liliP4 = new QPushButton("چیدن", this);
+    liliP4->setGeometry(230,340,160,25);
+    liliP4->setAutoFillBackground(true);
+    liliP4->setPalette(palette);
+    liliP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP4->setVisible(false);
+
+    liliP5 = new QPushButton("چیدن", this);
+    liliP5->setGeometry(1000,630,160,25);
+    liliP5->setAutoFillBackground(true);
+    liliP5->setPalette(palette);
+    liliP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP5->setVisible(false);
+
+    liliP6 = new QPushButton("چیدن", this);
+    liliP6->setGeometry(740,630,160,25);
+    liliP6->setAutoFillBackground(true);
+    liliP6->setPalette(palette);
+    liliP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP6->setVisible(false);
+
+    liliP7 = new QPushButton("چیدن", this);
+    liliP7->setGeometry(480,630,160,25);
+    liliP7->setAutoFillBackground(true);
+    liliP7->setPalette(palette);
+    liliP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP7->setVisible(false);
+
+    liliP8 = new QPushButton("چیدن", this);
+    liliP8->setGeometry(230,630,160,25);
+    liliP8->setAutoFillBackground(true);
+    liliP8->setPalette(palette);
+    liliP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    liliP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    liliP8->setVisible(false);
+}
+
+void GreenHouse::setorchPBtn()
+{
+    orchP1 = new QPushButton("چیدن", this);
+    orchP1->setGeometry(1000,340,160,25);
+    orchP1->setAutoFillBackground(true);
+    QPalette palette = orchP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    orchP1->setPalette(palette);
+    orchP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP1->setVisible(false);
+
+    orchP2 = new QPushButton("چیدن", this);
+    orchP2->setGeometry(740,340,160,25);
+    orchP2->setAutoFillBackground(true);
+    orchP2->setPalette(palette);
+    orchP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP2->setVisible(false);
+
+    orchP3 = new QPushButton("چیدن", this);
+    orchP3->setGeometry(480,340,160,25);
+    orchP3->setAutoFillBackground(true);
+    orchP3->setPalette(palette);
+    orchP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP3->setVisible(false);
+
+    orchP4 = new QPushButton("چیدن", this);
+    orchP4->setGeometry(230,340,160,25);
+    orchP4->setAutoFillBackground(true);
+    orchP4->setPalette(palette);
+    orchP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP4->setVisible(false);
+
+    orchP5 = new QPushButton("چیدن", this);
+    orchP5->setGeometry(1000,630,160,25);
+    orchP5->setAutoFillBackground(true);
+    orchP5->setPalette(palette);
+    orchP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP5->setVisible(false);
+
+    orchP6 = new QPushButton("چیدن", this);
+    orchP6->setGeometry(740,630,160,25);
+    orchP6->setAutoFillBackground(true);
+    orchP6->setPalette(palette);
+    orchP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP6->setVisible(false);
+
+    orchP7 = new QPushButton("چیدن", this);
+    orchP7->setGeometry(480,630,160,25);
+    orchP7->setAutoFillBackground(true);
+    orchP7->setPalette(palette);
+    orchP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP7->setVisible(false);
+
+    orchP8 = new QPushButton("چیدن", this);
+    orchP8->setGeometry(230,630,160,25);
+    orchP8->setAutoFillBackground(true);
+    orchP8->setPalette(palette);
+    orchP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    orchP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    orchP8->setVisible(false);
+}
+
+void GreenHouse::setOrnamFBudBtn()
+{
+    ornamFBudBtn1 = new QPushButton("چیدن", this);
+    ornamFBudBtn1->setGeometry(1000,340,160,25);
+    ornamFBudBtn1->setAutoFillBackground(true);
+    QPalette palette = ornamFBudBtn1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    ornamFBudBtn1->setPalette(palette);
+    ornamFBudBtn1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn1->setVisible(false);
+
+    ornamFBudBtn2 = new QPushButton("چیدن", this);
+    ornamFBudBtn2->setGeometry(740,340,160,25);
+    ornamFBudBtn2->setAutoFillBackground(true);
+    ornamFBudBtn2->setPalette(palette);
+    ornamFBudBtn2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn2->setVisible(false);
+
+    ornamFBudBtn3 = new QPushButton("چیدن", this);
+    ornamFBudBtn3->setGeometry(480,340,160,25);
+    ornamFBudBtn3->setAutoFillBackground(true);
+    ornamFBudBtn3->setPalette(palette);
+    ornamFBudBtn3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn3->setVisible(false);
+
+    ornamFBudBtn4 = new QPushButton("چیدن", this);
+    ornamFBudBtn4->setGeometry(230,340,160,25);
+    ornamFBudBtn4->setAutoFillBackground(true);
+    ornamFBudBtn4->setPalette(palette);
+    ornamFBudBtn4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn4->setVisible(false);
+
+    ornamFBudBtn5 = new QPushButton("چیدن", this);
+    ornamFBudBtn5->setGeometry(1000,630,160,25);
+    ornamFBudBtn5->setAutoFillBackground(true);
+    ornamFBudBtn5->setPalette(palette);
+    ornamFBudBtn5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn5->setVisible(false);
+
+    ornamFBudBtn6 = new QPushButton("چیدن", this);
+    ornamFBudBtn6->setGeometry(740,630,160,25);
+    ornamFBudBtn6->setAutoFillBackground(true);
+    ornamFBudBtn6->setPalette(palette);
+    ornamFBudBtn6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn6->setVisible(false);
+
+    ornamFBudBtn7 = new QPushButton("چیدن", this);
+    ornamFBudBtn7->setGeometry(480,630,160,25);
+    ornamFBudBtn7->setAutoFillBackground(true);
+    ornamFBudBtn7->setPalette(palette);
+    ornamFBudBtn7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn7->setVisible(false);
+
+    ornamFBudBtn8 = new QPushButton("افزودن عصاره", this);
+    ornamFBudBtn8->setGeometry(230,630,160,25);
+    ornamFBudBtn8->setAutoFillBackground(true);
+    ornamFBudBtn8->setPalette(palette);
+    ornamFBudBtn8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    ornamFBudBtn8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    ornamFBudBtn8->setVisible(false);
+}
+
+void GreenHouse::setAmaryllisPBtn()
+{
+    amarP1 = new QPushButton("چیدن", this);
+    amarP1->setGeometry(1000,340,160,25);
+    amarP1->setAutoFillBackground(true);
+    QPalette palette = amarP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    amarP1->setPalette(palette);
+    amarP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP1->setVisible(false);
+
+    amarP2 = new QPushButton("چیدن", this);
+    amarP2->setGeometry(740,340,160,25);
+    amarP2->setAutoFillBackground(true);
+    amarP2->setPalette(palette);
+    amarP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP2->setVisible(false);
+
+    amarP3 = new QPushButton("چیدن", this);
+    amarP3->setGeometry(480,340,160,25);
+    amarP3->setAutoFillBackground(true);
+    amarP3->setPalette(palette);
+    amarP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP3->setVisible(false);
+
+    amarP4 = new QPushButton("چیدن", this);
+    amarP4->setGeometry(230,340,160,25);
+    amarP4->setAutoFillBackground(true);
+    amarP4->setPalette(palette);
+    amarP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP4->setVisible(false);
+
+    amarP5 = new QPushButton("چیدن", this);
+    amarP5->setGeometry(1000,630,160,25);
+    amarP5->setAutoFillBackground(true);
+    amarP5->setPalette(palette);
+    amarP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP5->setVisible(false);
+
+    amarP6 = new QPushButton("چیدن", this);
+    amarP6->setGeometry(740,630,160,25);
+    amarP6->setAutoFillBackground(true);
+    amarP6->setPalette(palette);
+    amarP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP6->setVisible(false);
+
+    amarP7 = new QPushButton("چیدن", this);
+    amarP7->setGeometry(480,630,160,25);
+    amarP7->setAutoFillBackground(true);
+    amarP7->setPalette(palette);
+    amarP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP7->setVisible(false);
+
+    amarP8 = new QPushButton("چیدن", this);
+    amarP8->setGeometry(230,630,160,25);
+    amarP8->setAutoFillBackground(true);
+    amarP8->setPalette(palette);
+    amarP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    amarP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    amarP8->setVisible(false);
+}
+
+void GreenHouse::setDahliaPBtn()
+{
+    dahliaP1 = new QPushButton("چیدن", this);
+    dahliaP1->setGeometry(1000,340,160,25);
+    dahliaP1->setAutoFillBackground(true);
+    QPalette palette = dahliaP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    dahliaP1->setPalette(palette);
+    dahliaP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP1->setVisible(false);
+
+    dahliaP2 = new QPushButton("چیدن", this);
+    dahliaP2->setGeometry(740,340,160,25);
+    dahliaP2->setAutoFillBackground(true);
+    dahliaP2->setPalette(palette);
+    dahliaP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP2->setVisible(false);
+
+    dahliaP3 = new QPushButton("چیدن", this);
+    dahliaP3->setGeometry(480,340,160,25);
+    dahliaP3->setAutoFillBackground(true);
+    dahliaP3->setPalette(palette);
+    dahliaP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP3->setVisible(false);
+
+    dahliaP4 = new QPushButton("چیدن", this);
+    dahliaP4->setGeometry(230,340,160,25);
+    dahliaP4->setAutoFillBackground(true);
+    dahliaP4->setPalette(palette);
+    dahliaP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP4->setVisible(false);
+
+    dahliaP5 = new QPushButton("چیدن", this);
+    dahliaP5->setGeometry(1000,630,160,25);
+    dahliaP5->setAutoFillBackground(true);
+    dahliaP5->setPalette(palette);
+    dahliaP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP5->setVisible(false);
+
+    dahliaP6 = new QPushButton("چیدن", this);
+    dahliaP6->setGeometry(740,630,160,25);
+    dahliaP6->setAutoFillBackground(true);
+    dahliaP6->setPalette(palette);
+    dahliaP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP6->setVisible(false);
+
+    dahliaP7 = new QPushButton("چیدن", this);
+    dahliaP7->setGeometry(480,630,160,25);
+    dahliaP7->setAutoFillBackground(true);
+    dahliaP7->setPalette(palette);
+    dahliaP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP7->setVisible(false);
+
+    dahliaP8 = new QPushButton("چیدن", this);
+    dahliaP8->setGeometry(230,630,160,25);
+    dahliaP8->setAutoFillBackground(true);
+    dahliaP8->setPalette(palette);
+    dahliaP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    dahliaP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    dahliaP8->setVisible(false);
+}
+
+void GreenHouse::setTulipPBtn()
+{
+    tulipP1 = new QPushButton("چیدن", this);
+    tulipP1->setGeometry(1000,340,160,25);
+    tulipP1->setAutoFillBackground(true);
+    QPalette palette = tulipP1->palette();
+    palette.setColor(QPalette::Window, QColor(Qt::black));
+    tulipP1->setPalette(palette);
+    tulipP1->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP1->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP1->setVisible(false);
+
+    tulipP2 = new QPushButton("چیدن", this);
+    tulipP2->setGeometry(740,340,160,25);
+    tulipP2->setAutoFillBackground(true);
+    tulipP2->setPalette(palette);
+    tulipP2->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP2->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP2->setVisible(false);
+
+    tulipP3 = new QPushButton("چیدن", this);
+    tulipP3->setGeometry(480,340,160,25);
+    tulipP3->setAutoFillBackground(true);
+    tulipP3->setPalette(palette);
+    tulipP3->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP3->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP3->setVisible(false);
+
+    tulipP4 = new QPushButton("چیدن", this);
+    tulipP4->setGeometry(230,340,160,25);
+    tulipP4->setAutoFillBackground(true);
+    tulipP4->setPalette(palette);
+    tulipP4->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP4->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP4->setVisible(false);
+
+    tulipP5 = new QPushButton("چیدن", this);
+    tulipP5->setGeometry(1000,630,160,25);
+    tulipP5->setAutoFillBackground(true);
+    tulipP5->setPalette(palette);
+    tulipP5->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP5->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP5->setVisible(false);
+
+    tulipP6 = new QPushButton("چیدن", this);
+    tulipP6->setGeometry(740,630,160,25);
+    tulipP6->setAutoFillBackground(true);
+    tulipP6->setPalette(palette);
+    tulipP6->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP6->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP6->setVisible(false);
+
+    tulipP7 = new QPushButton("چیدن", this);
+    tulipP7->setGeometry(480,630,160,25);
+    tulipP7->setAutoFillBackground(true);
+    tulipP7->setPalette(palette);
+    tulipP7->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP7->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP7->setVisible(false);
+
+    tulipP8 = new QPushButton("چیدن", this);
+    tulipP8->setGeometry(230,630,160,25);
+    tulipP8->setAutoFillBackground(true);
+    tulipP8->setPalette(palette);
+    tulipP8->setStyleSheet("background-color: rgb(170, 170, 127);");
+    tulipP8->setStyleSheet("background-color: #3cbaa2; solid black;");
+    tulipP8->setVisible(false);
+}
+
 void GreenHouse::setRareBtn()
 {
     rareBtn1 = new QPushButton("افزودن خاک", this);
@@ -195,7 +855,7 @@ void GreenHouse::setRareBtn()
     rareBtn2->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn2->setVisible(false);
 
-    rareBtn3 = new QPushButton("", this);
+    rareBtn3 = new QPushButton("افزودن خاک", this);
     rareBtn3->setGeometry(480,340,160,25);
     rareBtn3->setAutoFillBackground(true);
     rareBtn3->setPalette(palette);
@@ -648,6 +1308,968 @@ void GreenHouse::setOrnamBudBtn()
     ornamBudBtn8->setStyleSheet("background-color: rgb(170, 170, 127);");
     ornamBudBtn8->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBudBtn8->setVisible(false);
+}
+
+void GreenHouse::OnRareBudBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+    std::default_random_engine eng(static_cast<unsigned int>(time(0)));
+    std::uniform_int_distribution<unsigned int> myrand(1, 2);
+    int a = myrand(eng);
+
+    QStringList items;
+    items << tr("آب") << tr("تخریب");
+    bool ok;
+
+    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                        tr("Season:"), items, 0, false, &ok);
+
+    if (ok && !items.isEmpty())
+    {
+        if (item == "آب")
+        {
+            if (a == 1)
+            {
+                std::default_random_engine eng1(static_cast<unsigned int>(time(0)));
+                std::uniform_int_distribution<unsigned int> myrand1(1, 3);
+                int a1 = myrand1(eng1);
+                if (a1 == 1)
+                {
+                    personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                    temp->setVisible(false);
+                    if (temp == rareBudBtn1)
+                    {
+                        rareBud1->setVisible(false);
+                        tuberose1->setVisible(true);
+                        tubeP1->setVisible(true);
+                    }
+                    if (temp == rareBudBtn2)
+                    {
+                        rareBud2->setVisible(false);
+                        tuberose2->setVisible(true);
+                        tubeP2->setVisible(true);
+                    }
+                    if (temp == rareBudBtn3)
+                    {
+                        rareBud3->setVisible(false);
+                        tuberose3->setVisible(true);
+                        tubeP3->setVisible(true);
+                    }
+                    if (temp == rareBudBtn4)
+                    {
+                        rareBud4->setVisible(false);
+                        tuberose4->setVisible(true);
+                        tubeP4->setVisible(true);
+                    }
+                    if (temp == rareBudBtn5)
+                    {
+                        rareBud5->setVisible(false);
+                        tuberose5->setVisible(true);
+                        tubeP5->setVisible(true);
+                    }
+                    if (temp == rareBudBtn6)
+                    {
+                        rareBud6->setVisible(false);
+                        tuberose6->setVisible(true);
+                        tubeP6->setVisible(true);
+                    }
+                    if (temp == rareBudBtn7)
+                    {
+                        rareBud7->setVisible(false);
+                        tuberose7->setVisible(true);
+                        tubeP7->setVisible(true);
+                    }
+                    if (temp == rareBudBtn8)
+                    {
+                        rareBud8->setVisible(false);
+                        tuberose8->setVisible(true);
+                        tubeP8->setVisible(true);
+                    }
+                }
+                if (a1 == 2)
+                {
+                    personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                    temp->setVisible(false);
+                    if (temp == rareBudBtn1)
+                    {
+                        rareBud1->setVisible(false);
+                        tulip1->setVisible(true);
+                        tulipP1->setVisible(true);
+                    }
+                    if (temp == rareBudBtn2)
+                    {
+                        rareBud2->setVisible(false);
+                        tulip2->setVisible(true);
+                        tulipP2->setVisible(true);
+                    }
+                    if (temp == rareBudBtn1)
+                    {
+                        rareBud3->setVisible(false);
+                        tulip3->setVisible(true);
+                        tulipP3->setVisible(true);
+                    }
+                    if (temp == rareBudBtn4)
+                    {
+                        rareBud4->setVisible(false);
+                        tulip4->setVisible(true);
+                        tulipP4->setVisible(true);
+                    }
+                    if (temp == rareBudBtn5)
+                    {
+                        rareBud5->setVisible(false);
+                        tulip5->setVisible(true);
+                        tulipP5->setVisible(true);
+                    }
+                    if (temp == rareBudBtn6)
+                    {
+                        rareBud6->setVisible(false);
+                        tulip6->setVisible(true);
+                        tulipP6->setVisible(true);
+                    }
+                    if (temp == rareBudBtn7)
+                    {
+                        rareBud7->setVisible(false);
+                        tulip7->setVisible(true);
+                        tulipP7->setVisible(true);
+                    }
+                    if (temp == rareBudBtn8)
+                    {
+                        rareBud8->setVisible(false);
+                        tulip8->setVisible(true);
+                        tulipP8->setVisible(true);
+                    }
+                }
+                if (a1 == 3)
+                {
+                    personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                    temp->setVisible(false);
+                    if (temp == rareBudBtn1)
+                    {
+                        rareBud1->setVisible(false);
+                        hyacinth1->setVisible(true);
+                        hyacP1->setVisible(true);
+                    }
+                    if (temp == rareBudBtn2)
+                    {
+                        rareBud2->setVisible(false);
+                        hyacinth2->setVisible(true);
+                        hyacP2->setVisible(true);
+                    }
+                    if (temp == rareBudBtn3)
+                    {
+                        rareBud3->setVisible(false);
+                        hyacinth3->setVisible(true);
+                        hyacP3->setVisible(true);
+                    }
+                    if (temp == rareBudBtn4)
+                    {
+                        rareBud4->setVisible(false);
+                        hyacinth4->setVisible(true);
+                        hyacP4->setVisible(true);
+                    }
+                    if (temp == rareBudBtn5)
+                    {
+                        rareBud5->setVisible(false);
+                        hyacinth5->setVisible(true);
+                        hyacP5->setVisible(true);
+                    }
+                    if (temp == rareBudBtn6)
+                    {
+                        rareBud6->setVisible(false);
+                        hyacinth6->setVisible(true);
+                        hyacP6->setVisible(true);
+                    }
+                    if (temp == rareBudBtn7)
+                    {
+                        rareBud7->setVisible(false);
+                        hyacinth7->setVisible(true);
+                        hyacP7->setVisible(true);
+                    }
+                    if (temp == rareBudBtn8)
+                    {
+                        rareBud8->setVisible(false);
+                        hyacinth8->setVisible(true);
+                        hyacP8->setVisible(true);
+                    }
+                }
+            }
+            if (a == 2)
+            {
+                QStringList items1;
+                items1 << tr("ماده سمپاشی");
+                bool ok1;
+
+                QString item1 = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                                    tr("Season:"), items1, 0, false, &ok1);
+
+                if (ok1 && !items1.isEmpty())
+                {
+                    if (item1 == "ماده سمپاشی")
+                    {
+                        std::default_random_engine eng1(static_cast<unsigned int>(time(0)));
+                        std::uniform_int_distribution<unsigned int> myrand1(1, 3);
+                        int a1 = myrand1(eng1);
+                        if (a1 == 1)
+                        {
+                            personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                            temp->setVisible(false);
+                            if (temp == rareBudBtn1)
+                            {
+                                rareBud1->setVisible(false);
+                                tuberose1->setVisible(true);
+                                tubeP1->setVisible(true);
+                            }
+                            if (temp == rareBudBtn2)
+                            {
+                                rareBud2->setVisible(false);
+                                tuberose2->setVisible(true);
+                                tubeP2->setVisible(true);
+                            }
+                            if (temp == rareBudBtn3)
+                            {
+                                rareBud3->setVisible(false);
+                                tuberose3->setVisible(true);
+                                tubeP3->setVisible(true);
+                            }
+                            if (temp == rareBudBtn4)
+                            {
+                                rareBud4->setVisible(false);
+                                tuberose4->setVisible(true);
+                                tubeP4->setVisible(true);
+                            }
+                            if (temp == rareBudBtn5)
+                            {
+                                rareBud5->setVisible(false);
+                                tuberose5->setVisible(true);
+                                tubeP5->setVisible(true);
+                            }
+                            if (temp == rareBudBtn6)
+                            {
+                                rareBud6->setVisible(false);
+                                tuberose6->setVisible(true);
+                                tubeP6->setVisible(true);
+                            }
+                            if (temp == rareBudBtn7)
+                            {
+                                rareBud7->setVisible(false);
+                                tuberose7->setVisible(true);
+                                tubeP7->setVisible(true);
+                            }
+                            if (temp == rareBudBtn8)
+                            {
+                                rareBud8->setVisible(false);
+                                tuberose8->setVisible(true);
+                                tubeP8->setVisible(true);
+                            }
+                        }
+                        if (a1 == 2)
+                        {
+                            personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                            temp->setVisible(false);
+                            if (temp == rareBudBtn1)
+                            {
+                                rareBud1->setVisible(false);
+                                tulip1->setVisible(true);
+                                tulipP1->setVisible(true);
+                            }
+                            if (temp == rareBudBtn2)
+                            {
+                                rareBud2->setVisible(false);
+                                tulip2->setVisible(true);
+                                tulipP2->setVisible(true);
+                            }
+                            if (temp == rareBudBtn1)
+                            {
+                                rareBud3->setVisible(false);
+                                tulip3->setVisible(true);
+                                tulipP3->setVisible(true);
+                            }
+                            if (temp == rareBudBtn4)
+                            {
+                                rareBud4->setVisible(false);
+                                tulip4->setVisible(true);
+                                tulipP4->setVisible(true);
+                            }
+                            if (temp == rareBudBtn5)
+                            {
+                                rareBud5->setVisible(false);
+                                tulip5->setVisible(true);
+                                tulipP5->setVisible(true);
+                            }
+                            if (temp == rareBudBtn6)
+                            {
+                                rareBud6->setVisible(false);
+                                tulip6->setVisible(true);
+                                tulipP6->setVisible(true);
+                            }
+                            if (temp == rareBudBtn7)
+                            {
+                                rareBud7->setVisible(false);
+                                tulip7->setVisible(true);
+                                tulipP7->setVisible(true);
+                            }
+                            if (temp == rareBudBtn8)
+                            {
+                                rareBud8->setVisible(false);
+                                tulip8->setVisible(true);
+                                tulipP8->setVisible(true);
+                            }
+                        }
+                        if (a1 == 3)
+                        {
+                            personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                            temp->setVisible(false);
+                            if (temp == rareBudBtn1)
+                            {
+                                rareBud1->setVisible(false);
+                                hyacinth1->setVisible(true);
+                                hyacP1->setVisible(true);
+                            }
+                            if (temp == rareBudBtn2)
+                            {
+                                rareBud2->setVisible(false);
+                                hyacinth2->setVisible(true);
+                                hyacP2->setVisible(true);
+                            }
+                            if (temp == rareBudBtn3)
+                            {
+                                rareBud3->setVisible(false);
+                                hyacinth3->setVisible(true);
+                                hyacP3->setVisible(true);
+                            }
+                            if (temp == rareBudBtn4)
+                            {
+                                rareBud4->setVisible(false);
+                                hyacinth4->setVisible(true);
+                                hyacP4->setVisible(true);
+                            }
+                            if (temp == rareBudBtn5)
+                            {
+                                rareBud5->setVisible(false);
+                                hyacinth5->setVisible(true);
+                                hyacP5->setVisible(true);
+                            }
+                            if (temp == rareBudBtn6)
+                            {
+                                rareBud6->setVisible(false);
+                                hyacinth6->setVisible(true);
+                                hyacP6->setVisible(true);
+                            }
+                            if (temp == rareBudBtn7)
+                            {
+                                rareBud7->setVisible(false);
+                                hyacinth7->setVisible(true);
+                                hyacP7->setVisible(true);
+                            }
+                            if (temp == rareBudBtn8)
+                            {
+                                rareBud8->setVisible(false);
+                                hyacinth8->setVisible(true);
+                                hyacP8->setVisible(true);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (item == "تخریب")
+        {
+            try
+            {
+                RareFlowerbuds::inc_rareFlowerBud_count();
+                totalDeletedFLower++;
+                delete personPtr->get_RareFlowerbud();
+                temp->setVisible(false);
+                if (temp == rareBudBtn1)
+                {
+                    rareBud1->setVisible(false);
+                    empty1->setVisible(true);
+                    emptyBtn1->setVisible(true);
+                }
+                if (temp == rareBudBtn1)
+                {
+                    rareBud2->setVisible(false);
+                    empty2->setVisible(true);
+                    emptyBtn2->setVisible(true);
+                }
+                if (temp == rareBudBtn3)
+                {
+                    rareBud3->setVisible(false);
+                    empty3->setVisible(true);
+                    emptyBtn3->setVisible(true);
+                }
+                if (temp == rareBudBtn4)
+                {
+                    rareBud4->setVisible(false);
+                    empty4->setVisible(true);
+                    emptyBtn4->setVisible(true);
+                }
+                if (temp == rareBudBtn5)
+                {
+                    rareBud5->setVisible(false);
+                    empty5->setVisible(true);
+                    emptyBtn5->setVisible(true);
+                }
+                if (temp == rareBudBtn6)
+                {
+                    rareBud6->setVisible(false);
+                    empty6->setVisible(true);
+                    emptyBtn6->setVisible(true);
+                }
+                if (temp == rareBudBtn7)
+                {
+                    rareBud7->setVisible(false);
+                    empty7->setVisible(true);
+                    emptyBtn7->setVisible(true);
+                }
+                if (temp == rareBudBtn8)
+                {
+                    rareBud8->setVisible(false);
+                    empty8->setVisible(true);
+                    emptyBtn8->setVisible(true);
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                std::cout << e.what() << std::endl;
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.setFixedSize(500,200);
+            }
+        }
+    }
+}
+
+void GreenHouse::OnOrnamBudBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+    QStringList items;
+    items << tr("آب") << tr("تخریب");
+    bool ok;
+
+    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                        tr("Season:"), items, 0, false, &ok);
+
+    if (ok && !items.isEmpty())
+    {
+        if (item == "آب")
+        {
+            personPtr->set_flower(new OrnamentalFlowerBud(personPtr->get_OrnamentalBud(), personPtr->get_Water()));
+            QStringList items1;
+            items1 << tr("عصاره مگنولیا") << tr("عصاره ارکیده") << tr("عصاره لیلیوم") << tr("تخریب");
+            bool ok1;
+
+            QString item1 = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                                tr("Season:"), items1, 0, false, &ok1);
+
+            if (ok1 && !items1.isEmpty())
+            {
+                if (item1 == "عصاره مگنولیا")
+                {
+                    personPtr->set_flower(new Magnolia(personPtr->get_OrnamentalFlowerBud(), personPtr->get_MagnoliaExtract()));
+                    temp->setVisible(false);
+                    if (temp == ornamBudBtn1)
+                    {
+                        ornamentalBud1->setVisible(false);
+                        magnolia1->setVisible(true);
+                        magnP1->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn2)
+                    {
+                        ornamentalBud2->setVisible(false);
+                        magnolia2->setVisible(true);
+                        magnP2->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn3)
+                    {
+                        ornamentalBud3->setVisible(false);
+                        magnolia3->setVisible(true);
+                        magnP3->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn4)
+                    {
+                        ornamentalBud4->setVisible(false);
+                        magnolia4->setVisible(true);
+                        magnP4->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn5)
+                    {
+                        ornamentalBud5->setVisible(false);
+                        magnolia5->setVisible(true);
+                        magnP5->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn6)
+                    {
+                        ornamentalBud6->setVisible(false);
+                        magnolia6->setVisible(true);
+                        magnP6->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn7)
+                    {
+                        ornamentalBud7->setVisible(false);
+                        magnolia7->setVisible(true);
+                        magnP7->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn8)
+                    {
+                        ornamentalBud8->setVisible(false);
+                        magnolia8->setVisible(true);
+                        magnP8->setVisible(true);
+                    }
+                }
+                if (item1 == "عصاره لیلیوم")
+                {
+                    personPtr->set_flower(new Orchid(personPtr->get_OrnamentalFlowerBud(), personPtr->get_OrchidExtract()));
+                    temp->setVisible(false);
+                    if (temp == ornamBudBtn1)
+                    {
+                        ornamentalBud1->setVisible(false);
+                        lilium1->setVisible(true);
+                        liliP1->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn2)
+                    {
+                        ornamentalBud2->setVisible(false);
+                        lilium2->setVisible(true);
+                        liliP2->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn3)
+                    {
+                        ornamentalBud3->setVisible(false);
+                        lilium3->setVisible(true);
+                        liliP3->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn4)
+                    {
+                        ornamentalBud4->setVisible(false);
+                        lilium4->setVisible(true);
+                        liliP4->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn5)
+                    {
+                        ornamentalBud5->setVisible(false);
+                        lilium5->setVisible(true);
+                        liliP5->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn6)
+                    {
+                        ornamentalBud6->setVisible(false);
+                        lilium6->setVisible(true);
+                        liliP6->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn7)
+                    {
+                        ornamentalBud7->setVisible(false);
+                        lilium7->setVisible(true);
+                        liliP7->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn8)
+                    {
+                        ornamentalBud8->setVisible(false);
+                        lilium8->setVisible(true);
+                        liliP8->setVisible(true);
+                    }
+                }
+                if (item1 == "عصاره ارکیده")
+                {
+                    personPtr->set_flower(new Lilium(personPtr->get_OrnamentalFlowerBud(), personPtr->get_LiliumExtract()));
+                    temp->setVisible(false);
+                    if (temp == ornamBudBtn1)
+                    {
+                        ornamentalBud1->setVisible(false);
+                        orchid1->setVisible(true);
+                        orchP1->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn2)
+                    {
+                        ornamentalBud2->setVisible(false);
+                        orchid2->setVisible(true);
+                        orchP2->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn3)
+                    {
+                        ornamentalBud3->setVisible(false);
+                        orchid3->setVisible(true);
+                        orchP3->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn4)
+                    {
+                        ornamentalBud4->setVisible(false);
+                        orchid4->setVisible(true);
+                        orchP4->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn5)
+                    {
+                        ornamentalBud5->setVisible(false);
+                        orchid5->setVisible(true);
+                        orchP5->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn6)
+                    {
+                        ornamentalBud6->setVisible(false);
+                        orchid6->setVisible(true);
+                        orchP6->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn7)
+                    {
+                        ornamentalBud7->setVisible(false);
+                        orchid7->setVisible(true);
+                        orchP7->setVisible(true);
+                    }
+                    if (temp == ornamBudBtn8)
+                    {
+                        ornamentalBud8->setVisible(false);
+                        orchid8->setVisible(true);
+                        orchP8->setVisible(true);
+                    }
+                }
+                if (item1 == "تخریب")
+                {
+                    try
+                    {
+                        OrnamentalFlowerBud::inc_ornamentalFlowerBud_count();
+                        totalDeletedFLower++;
+                        delete personPtr->get_OrnamentalFlowerBud();
+                        temp->setVisible(false);
+                        if (temp == ornamBudBtn1)
+                        {
+                            ornamentalBud1->setVisible(false);
+                            empty1->setVisible(true);
+                            emptyBtn1->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn1)
+                        {
+                            ornamentalBud2->setVisible(false);
+                            empty2->setVisible(true);
+                            emptyBtn2->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn3)
+                        {
+                            ornamentalBud3->setVisible(false);
+                            empty3->setVisible(true);
+                            emptyBtn3->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn4)
+                        {
+                            ornamentalBud4->setVisible(false);
+                            empty4->setVisible(true);
+                            emptyBtn4->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn5)
+                        {
+                            ornamentalBud5->setVisible(false);
+                            empty5->setVisible(true);
+                            emptyBtn5->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn6)
+                        {
+                            ornamentalBud6->setVisible(false);
+                            empty6->setVisible(true);
+                            emptyBtn6->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn7)
+                        {
+                            ornamentalBud7->setVisible(false);
+                            empty7->setVisible(true);
+                            emptyBtn7->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn8)
+                        {
+                            ornamentalBud8->setVisible(false);
+                            empty8->setVisible(true);
+                            emptyBtn8->setVisible(true);
+                        }
+                    }
+                    catch (const std::runtime_error& e)
+                    {
+                        std::cout << e.what() << std::endl;
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error","پول کافی ندارید!");
+                        messageBox.setFixedSize(500,200);
+                    }
+                }
+            }
+        }
+        if (item == "تخریب")
+        {
+            try
+            {
+                OrnamentalBud::inc_ornamentalBud_count();
+                totalDeletedFLower++;
+                delete personPtr->get_OrnamentalBud();
+                temp->setVisible(false);
+                if (temp == ornamBudBtn1)
+                {
+                    ornamentalBud1->setVisible(false);
+                    empty1->setVisible(true);
+                    emptyBtn1->setVisible(true);
+                }
+                if (temp == ornamBudBtn1)
+                {
+                    ornamentalBud2->setVisible(false);
+                    empty2->setVisible(true);
+                    emptyBtn2->setVisible(true);
+                }
+                if (temp == ornamBudBtn3)
+                {
+                    ornamentalBud3->setVisible(false);
+                    empty3->setVisible(true);
+                    emptyBtn3->setVisible(true);
+                }
+                if (temp == ornamBudBtn4)
+                {
+                    ornamentalBud4->setVisible(false);
+                    empty4->setVisible(true);
+                    emptyBtn4->setVisible(true);
+                }
+                if (temp == ornamBudBtn5)
+                {
+                    ornamentalBud5->setVisible(false);
+                    empty5->setVisible(true);
+                    emptyBtn5->setVisible(true);
+                }
+                if (temp == ornamBudBtn6)
+                {
+                    ornamentalBud6->setVisible(false);
+                    empty6->setVisible(true);
+                    emptyBtn6->setVisible(true);
+                }
+                if (temp == ornamBudBtn7)
+                {
+                    ornamentalBud7->setVisible(false);
+                    empty7->setVisible(true);
+                    emptyBtn7->setVisible(true);
+                }
+                if (temp == ornamBudBtn8)
+                {
+                    ornamentalBud8->setVisible(false);
+                    empty8->setVisible(true);
+                    emptyBtn8->setVisible(true);
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                std::cout << e.what() << std::endl;
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.setFixedSize(500,200);
+            }
+        }
+    }
+}
+
+void GreenHouse::OnOrBudBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+    std::default_random_engine eng(static_cast<unsigned int>(time(0)));
+    std::uniform_int_distribution<unsigned int> myrand(1, 2);
+    int a = myrand(eng);
+
+
+    QStringList items;
+    items << tr("آب") << tr("تخریب");
+    bool ok;
+
+    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
+                                        tr("Season:"), items, 0, false, &ok);
+
+    if (ok && !items.isEmpty())
+    {
+        if (item == "آب")
+        {
+            if (a == 1)
+            {
+                try
+                {
+                    personPtr->set_flower(new Dahlia(personPtr->get_OrdinaryFlowerBud(), personPtr->get_Water()));
+                    temp->setVisible(false);
+                    if (temp == orBudBtn1)
+                    {
+                        ordinaryBud1->setVisible(false);
+                        dahliaP1->setVisible(true);
+                        dahlia1->setVisible(true);
+                    }
+                    if (temp == orBudBtn2)
+                    {
+                        ordinaryBud2->setVisible(false);
+                        dahliaP2->setVisible(true);
+                        dahlia2->setVisible(true);
+                    }
+                    if (temp == orBudBtn3)
+                    {
+                        ordinaryBud3->setVisible(false);
+                        dahliaP3->setVisible(true);
+                        dahlia3->setVisible(true);
+                    }
+                    if (temp == orBudBtn4)
+                    {
+                        ordinaryBud4->setVisible(false);
+                        dahliaP4->setVisible(true);
+                        dahlia4->setVisible(true);
+                    }
+                    if (temp == orBudBtn5)
+                    {
+                        ordinaryBud5->setVisible(false);
+                        dahliaP5->setVisible(true);
+                        dahlia5->setVisible(true);
+                    }
+                    if (temp == orBudBtn6)
+                    {
+                        ordinaryBud6->setVisible(false);
+                        dahliaP6->setVisible(true);
+                        dahlia6->setVisible(true);
+                    }
+                    if (temp == orBudBtn7)
+                    {
+                        ordinaryBud7->setVisible(false);
+                        dahliaP7->setVisible(true);
+                        dahlia7->setVisible(true);
+                    }
+                    if (temp == orBudBtn8)
+                    {
+                        ordinaryBud8->setVisible(false);
+                        dahliaP8->setVisible(true);
+                        dahlia8->setVisible(true);
+                    }
+                }
+                catch (const std::runtime_error& e)
+                {
+                    std::cout << e.what() << std::endl;
+                    QMessageBox messageBox;
+                    messageBox.critical(0,"Error","پول کافی ندارید!");
+                    messageBox.setFixedSize(500,200);
+                }
+                if (a == 2)
+                {
+                    try
+                    {
+                        personPtr->set_flower(new Amaryllis(personPtr->get_OrdinaryFlowerBud(), personPtr->get_Water()));
+                        temp->setVisible(false);
+                        if (temp == orBudBtn1)
+                        {
+                            ordinaryBud1->setVisible(false);
+                            amarP1->setVisible(true);
+                            amaryllis1->setVisible(true);
+                        }
+                        if (temp == orBudBtn2)
+                        {
+                            ordinaryBud2->setVisible(false);
+                            amarP2->setVisible(true);
+                            amaryllis2->setVisible(true);
+                        }
+                        if (temp == orBudBtn3)
+                        {
+                            ordinaryBud3->setVisible(false);
+                            amarP3->setVisible(true);
+                            amaryllis3->setVisible(true);
+                        }
+                        if (temp == orBudBtn4)
+                        {
+                            ordinaryBud4->setVisible(false);
+                            amarP4->setVisible(true);
+                            amaryllis4->setVisible(true);
+                        }
+                        if (temp == orBudBtn5)
+                        {
+                            ordinaryBud5->setVisible(false);
+                            amarP5->setVisible(true);
+                            amaryllis5->setVisible(true);
+                        }
+                        if (temp == orBudBtn6)
+                        {
+                            ordinaryBud6->setVisible(false);
+                            amarP6->setVisible(true);
+                            amaryllis6->setVisible(true);
+                        }
+                        if (temp == orBudBtn7)
+                        {
+                            ordinaryBud7->setVisible(false);
+                            amarP7->setVisible(true);
+                            amaryllis7->setVisible(true);
+                        }
+                        if (temp == orBudBtn8)
+                        {
+                            ordinaryBud8->setVisible(false);
+                            amarP8->setVisible(true);
+                            amaryllis8->setVisible(true);
+                        }
+                    }
+                    catch (const std::runtime_error& e)
+                    {
+                        std::cout << e.what() << std::endl;
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error","پول کافی ندارید!");
+                        messageBox.setFixedSize(500,200);
+                    }
+                }
+            }
+        }
+        if (item == "تخریب")
+        {
+            try
+            {
+                OrdinaryFlowerBuds::inc_ordinaryFlowerBud_count();
+                totalDeletedFLower++;
+                delete personPtr->get_OrdinaryFlowerBud();
+                temp->setVisible(false);
+                if (temp == orBudBtn1)
+                {
+                    ordinaryBud1->setVisible(false);
+                    empty1->setVisible(true);
+                    emptyBtn1->setVisible(true);
+                }
+                if (temp == orBudBtn2)
+                {
+                    ordinaryBud2->setVisible(false);
+                    empty2->setVisible(true);
+                    emptyBtn2->setVisible(true);
+                }
+                if (temp == orBudBtn3)
+                {
+                    ordinaryBud3->setVisible(false);
+                    empty3->setVisible(true);
+                    emptyBtn3->setVisible(true);
+                }
+                if (temp == orBudBtn4)
+                {
+                    ordinaryBud4->setVisible(false);
+                    empty4->setVisible(true);
+                    emptyBtn4->setVisible(true);
+                }
+                if (temp == orBudBtn5)
+                {
+                    ordinaryBud5->setVisible(false);
+                    empty5->setVisible(true);
+                    emptyBtn5->setVisible(true);
+                }
+                if (temp == orBudBtn6)
+                {
+                    ordinaryBud6->setVisible(false);
+                    empty6->setVisible(true);
+                    emptyBtn6->setVisible(true);
+                }
+                if (temp == orBudBtn7)
+                {
+                    ordinaryBud7->setVisible(false);
+                    empty7->setVisible(true);
+                    emptyBtn7->setVisible(true);
+                }
+                if (temp == orBudBtn8)
+                {
+                    ordinaryBud8->setVisible(false);
+                    empty8->setVisible(true);
+                    emptyBtn8->setVisible(true);
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                std::cout << e.what() << std::endl;
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.setFixedSize(500,200);
+            }
+        }
+    }
 }
 
 void GreenHouse::OnOrBtns()

@@ -68,7 +68,20 @@ private:
     QPushButton *ornamBudBtn1, *ornamBudBtn2, *ornamBudBtn3, *ornamBudBtn4, *ornamBudBtn5, *ornamBudBtn6, *ornamBudBtn7 , *ornamBudBtn8;
     QPushButton *dahliaP1, *dahliaP2, *dahliaP3, *dahliaP4, *dahliaP5, *dahliaP6, *dahliaP7, *dahliaP8;
     QPushButton *tulipP1, *tulipP2, *tulipP3, *tulipP4, *tulipP5, *tulipP6, *tulipP7, *tulipP8;
-
+    QPushButton *amarP1, *amarP2, *amarP3, *amarP4, *amarP5, *amarP6, *amarP7, *amarP8;
+    QPushButton *ornamFBudBtn1, *ornamFBudBtn2, *ornamFBudBtn3, *ornamFBudBtn4, *ornamFBudBtn5, *ornamFBudBtn6, *ornamFBudBtn7 , *ornamFBudBtn8;
+    QPushButton *tubeP1, *tubeP2, *tubeP3, *tubeP4, *tubeP5, *tubeP6, *tubeP7, *tubeP8;
+    QPushButton *hyacP1, *hyacP2, *hyacP3, *hyacP4, *hyacP5, *hyacP6, *hyacP7, *hyacP8;
+    QPushButton *magnP1, *magnP2, *magnP3, *magnP4, *magnP5, *magnP6, *magnP7, *magnP8;
+    QPushButton *liliP1, *liliP2, *liliP3, *liliP4, *liliP5, *liliP6, *liliP7, *liliP8;
+    QPushButton *orchP1, *orchP2, *orchP3, *orchP4, *orchP5, *orchP6, *orchP7, *orchP8;
+    void setOrnamFBudBtn();
+    void setTubePBtn();
+    void sethyacPBtn();
+    void setmagPBtn();
+    void setliliPBtn();
+    void setorchPBtn();
+    void setAmaryllisPBtn();
     void setDahliaPBtn();
     void setTulipPBtn();
     void setLockBtn();
@@ -102,6 +115,9 @@ private slots:
     void OnOrnamBtns();
     void OnOrBtns();
     void OnRareBtns();
+    void OnOrBudBtns();
+    void OnOrnamBudBtns();
+    void OnRareBudBtns();
 signals:
 
 };
