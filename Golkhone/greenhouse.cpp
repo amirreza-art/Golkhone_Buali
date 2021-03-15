@@ -2004,7 +2004,7 @@ void GreenHouse::OnRareBudBtns()
                             tulip2->setVisible(true);
                             tulipP2->setVisible(true);
                         }
-                        if (temp == rareBudBtn1)
+                        if (temp == rareBudBtn3)
                         {
                             rareBud3->setVisible(false);
                             tulip3->setVisible(true);

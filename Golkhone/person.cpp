@@ -22,7 +22,6 @@ void Person::pick_Tulip()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Tulip");
 }
 
 void Person::pick_Dahlia()
@@ -35,7 +34,6 @@ void Person::pick_Dahlia()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Dahlia");
 }
 
 void Person::pick_Tuberose()
@@ -48,7 +46,6 @@ void Person::pick_Tuberose()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Tuberose");
 }
 
 void Person::pick_Amaryllis()
@@ -61,7 +58,6 @@ void Person::pick_Amaryllis()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Amaryllis");
 }
 
 void Person::pick_Hyacinth()
@@ -74,7 +70,6 @@ void Person::pick_Hyacinth()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Hyacinth");
 }
 
 void Person::pick_Magnolia()
@@ -87,7 +82,6 @@ void Person::pick_Magnolia()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Magnolia");
 }
 
 void Person::pick_Lilium()
@@ -100,7 +94,6 @@ void Person::pick_Lilium()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Lilium");
 }
 
 void Person::pick_Orchid()
@@ -113,7 +106,6 @@ void Person::pick_Orchid()
             break;
         }
     }
-    throw std::runtime_error("you dont have any Orchid");
 }
 
 void Person::sel_Tulip(unsigned int count)
