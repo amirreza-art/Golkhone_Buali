@@ -82,3 +82,6 @@ HEADERS += \
     tuberose.h \
     tulip.h \
     water.h
+
+RESOURCES += \
+    res.qrc

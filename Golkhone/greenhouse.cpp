@@ -10,6 +10,7 @@
 #include <magnolia.h>
 #include <lilium.h>
 #include <orchis.h>
+#include <time.h>
 
 extern Profile *profilePtr;
 extern Shop *shopPtr;
@@ -32,13 +33,14 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
 
     setInventory();
 
+    setHyacinthPic();
     setLockPic();
     setEmptyPic();
     setDahliaPic();
     setTulipPic();
     setTuberosePic();
     setAmaryllisPic();
-    setHyacinthPic();
+
     setMagnoliaPic();
     seLiliumPic();
     setOrchidPic();
@@ -142,6 +144,77 @@ GreenHouse::GreenHouse(QWidget *parent) : QWidget(parent)
     connect(ornamBudBtn7, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
     connect(ornamBudBtn8, &QPushButton::clicked, this, &GreenHouse::OnOrnamBudBtns);
 
+    connect(dahliaP1, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP2, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP3, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP4, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP5, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP6, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP7, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+    connect(dahliaP8, &QPushButton::clicked, this, &GreenHouse::OnDahliaBtns);
+
+    connect(tulipP1, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP2, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP3, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP4, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP5, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP6, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP7, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+    connect(tulipP8, &QPushButton::clicked, this, &GreenHouse::OnTulipBtns);
+
+    connect(tubeP1, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP2, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP3, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP4, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP5, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP6, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP7, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+    connect(tubeP8, &QPushButton::clicked, this, &GreenHouse::OnTuberoseBtns);
+
+    connect(amarP1, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP2, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP3, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP4, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP5, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP6, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP7, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+    connect(amarP8, &QPushButton::clicked, this, &GreenHouse::OnAmarBtns);
+
+    connect(hyacP1, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP2, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP3, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP4, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP5, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP6, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP7, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+    connect(hyacP8, &QPushButton::clicked, this, &GreenHouse::OnhyacBtns);
+
+    connect(magnP1, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP2, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP3, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP4, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP5, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP6, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP7, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+    connect(magnP8, &QPushButton::clicked, this, &GreenHouse::OnMagnoliaBtns);
+
+    connect(liliP1, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP2, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP3, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP4, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP5, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP6, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP7, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+    connect(liliP8, &QPushButton::clicked, this, &GreenHouse::OnLiliumBtns);
+
+    connect(orchP1, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP2, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP3, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP4, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP5, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP6, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP7, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
+    connect(orchP8, &QPushButton::clicked, this, &GreenHouse::OnOrchidBtns);
 }
 
 
@@ -837,7 +910,7 @@ void GreenHouse::setTulipPBtn()
 
 void GreenHouse::setRareBtn()
 {
-    rareBtn1 = new QPushButton("افزودن خاک", this);
+    rareBtn1 = new QPushButton("خاک یا تخریب", this);
     rareBtn1->setGeometry(1000,340,160,25);
     rareBtn1->setAutoFillBackground(true);
     QPalette palette = rareBtn1->palette();
@@ -847,7 +920,7 @@ void GreenHouse::setRareBtn()
     rareBtn1->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn1->setVisible(false);
 
-    rareBtn2 = new QPushButton("افزودن خاک", this);
+    rareBtn2 = new QPushButton("خاک یا تخریب", this);
     rareBtn2->setGeometry(740,340,160,25);
     rareBtn2->setAutoFillBackground(true);
     rareBtn2->setPalette(palette);
@@ -855,7 +928,7 @@ void GreenHouse::setRareBtn()
     rareBtn2->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn2->setVisible(false);
 
-    rareBtn3 = new QPushButton("افزودن خاک", this);
+    rareBtn3 = new QPushButton("خاک یا تخریب", this);
     rareBtn3->setGeometry(480,340,160,25);
     rareBtn3->setAutoFillBackground(true);
     rareBtn3->setPalette(palette);
@@ -863,7 +936,7 @@ void GreenHouse::setRareBtn()
     rareBtn3->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn3->setVisible(false);
 
-    rareBtn4 = new QPushButton("افزودن خاک", this);
+    rareBtn4 = new QPushButton("خاک یا تخریب", this);
     rareBtn4->setGeometry(230,340,160,25);
     rareBtn4->setAutoFillBackground(true);
     rareBtn4->setPalette(palette);
@@ -871,7 +944,7 @@ void GreenHouse::setRareBtn()
     rareBtn4->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn4->setVisible(false);
 
-    rareBtn5 = new QPushButton("افزودن خاک", this);
+    rareBtn5 = new QPushButton("خاک یا تخریب", this);
     rareBtn5->setGeometry(1000,630,160,25);
     rareBtn5->setAutoFillBackground(true);
     rareBtn5->setPalette(palette);
@@ -879,7 +952,7 @@ void GreenHouse::setRareBtn()
     rareBtn5->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn5->setVisible(false);
 
-    rareBtn6 = new QPushButton("افزودن خاک", this);
+    rareBtn6 = new QPushButton("خاک یا تخریب", this);
     rareBtn6->setGeometry(740,630,160,25);
     rareBtn6->setAutoFillBackground(true);
     rareBtn6->setPalette(palette);
@@ -887,7 +960,7 @@ void GreenHouse::setRareBtn()
     rareBtn6->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn6->setVisible(false);
 
-    rareBtn7 = new QPushButton("افزودن خاک", this);
+    rareBtn7 = new QPushButton("خاک یا تخریب", this);
     rareBtn7->setGeometry(480,630,160,25);
     rareBtn7->setAutoFillBackground(true);
     rareBtn7->setPalette(palette);
@@ -895,7 +968,7 @@ void GreenHouse::setRareBtn()
     rareBtn7->setStyleSheet("background-color: #3cbaa2; solid black;");
     rareBtn7->setVisible(false);
 
-    rareBtn8 = new QPushButton("افزودن خاک", this);
+    rareBtn8 = new QPushButton("خاک یا تخریب", this);
     rareBtn8->setGeometry(230,630,160,25);
     rareBtn8->setAutoFillBackground(true);
     rareBtn8->setPalette(palette);
@@ -906,7 +979,7 @@ void GreenHouse::setRareBtn()
 
 void GreenHouse::setOrnamBtn()
 {
-    ornamBtn1 = new QPushButton("افزودن خاک", this);
+    ornamBtn1 = new QPushButton("خاک یا تخریب", this);
     ornamBtn1->setGeometry(1000,340,160,25);
     ornamBtn1->setAutoFillBackground(true);
     QPalette palette = ornamBtn1->palette();
@@ -916,7 +989,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn1->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn1->setVisible(false);
 
-    ornamBtn2 = new QPushButton("افزودن خاک", this);
+    ornamBtn2 = new QPushButton("خاک یا تخریب", this);
     ornamBtn2->setGeometry(740,340,160,25);
     ornamBtn2->setAutoFillBackground(true);
     ornamBtn2->setPalette(palette);
@@ -924,7 +997,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn2->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn2->setVisible(false);
 
-    ornamBtn3 = new QPushButton("افزودن خاک", this);
+    ornamBtn3 = new QPushButton("خاک یا تخریب", this);
     ornamBtn3->setGeometry(480,340,160,25);
     ornamBtn3->setAutoFillBackground(true);
     ornamBtn3->setPalette(palette);
@@ -932,7 +1005,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn3->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn3->setVisible(false);
 
-    ornamBtn4 = new QPushButton("افزودن خاک", this);
+    ornamBtn4 = new QPushButton("خاک یا تخریب", this);
     ornamBtn4->setGeometry(230,340,160,25);
     ornamBtn4->setAutoFillBackground(true);
     ornamBtn4->setPalette(palette);
@@ -940,7 +1013,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn4->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn4->setVisible(false);
 
-    ornamBtn5 = new QPushButton("افزودن خاک", this);
+    ornamBtn5 = new QPushButton("خاک یا تخریب", this);
     ornamBtn5->setGeometry(1000,630,160,25);
     ornamBtn5->setAutoFillBackground(true);
     ornamBtn5->setPalette(palette);
@@ -948,7 +1021,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn5->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn5->setVisible(false);
 
-    ornamBtn6 = new QPushButton("افزودن خاک", this);
+    ornamBtn6 = new QPushButton("خاک یا تخریب", this);
     ornamBtn6->setGeometry(740,630,160,25);
     ornamBtn6->setAutoFillBackground(true);
     ornamBtn6->setPalette(palette);
@@ -956,7 +1029,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn6->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn6->setVisible(false);
 
-    ornamBtn7 = new QPushButton("افزودن خاک", this);
+    ornamBtn7 = new QPushButton("خاک یا تخریب", this);
     ornamBtn7->setGeometry(480,630,160,25);
     ornamBtn7->setAutoFillBackground(true);
     ornamBtn7->setPalette(palette);
@@ -964,7 +1037,7 @@ void GreenHouse::setOrnamBtn()
     ornamBtn7->setStyleSheet("background-color: #3cbaa2; solid black;");
     ornamBtn7->setVisible(false);
 
-    ornamBtn8 = new QPushButton("افزودن خاک", this);
+    ornamBtn8 = new QPushButton("خاک یا تخریب", this);
     ornamBtn8->setGeometry(230,630,160,25);
     ornamBtn8->setAutoFillBackground(true);
     ornamBtn8->setPalette(palette);
@@ -975,7 +1048,7 @@ void GreenHouse::setOrnamBtn()
 
 void GreenHouse::setOrBtn()
 {
-    orBtn1 = new QPushButton("افزودن خاک", this);
+    orBtn1 = new QPushButton("خاک یا تخریب", this);
     orBtn1->setGeometry(1000,340,160,25);
     orBtn1->setAutoFillBackground(true);
     QPalette palette = orBtn1->palette();
@@ -985,7 +1058,7 @@ void GreenHouse::setOrBtn()
     orBtn1->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn1->setVisible(false);
 
-    orBtn2 = new QPushButton("افزودن خاک", this);
+    orBtn2 = new QPushButton("خاک یا تخریب", this);
     orBtn2->setGeometry(740,340,160,25);
     orBtn2->setAutoFillBackground(true);
     orBtn2->setPalette(palette);
@@ -993,7 +1066,7 @@ void GreenHouse::setOrBtn()
     orBtn2->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn2->setVisible(false);
 
-    orBtn3 = new QPushButton("افزودن خاک", this);
+    orBtn3 = new QPushButton("خاک یا تخریب", this);
     orBtn3->setGeometry(480,340,160,25);
     orBtn3->setAutoFillBackground(true);
     orBtn3->setPalette(palette);
@@ -1001,7 +1074,7 @@ void GreenHouse::setOrBtn()
     orBtn3->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn3->setVisible(false);
 
-    orBtn4 = new QPushButton("افزودن خاک", this);
+    orBtn4 = new QPushButton("خاک یا تخریب", this);
     orBtn4->setGeometry(230,340,160,25);
     orBtn4->setAutoFillBackground(true);
     orBtn4->setPalette(palette);
@@ -1009,7 +1082,7 @@ void GreenHouse::setOrBtn()
     orBtn4->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn4->setVisible(false);
 
-    orBtn5 = new QPushButton("افزودن خاک", this);
+    orBtn5 = new QPushButton("خاک یا تخریب", this);
     orBtn5->setGeometry(1000,630,160,25);
     orBtn5->setAutoFillBackground(true);
     orBtn5->setPalette(palette);
@@ -1017,7 +1090,7 @@ void GreenHouse::setOrBtn()
     orBtn5->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn5->setVisible(false);
 
-    orBtn6 = new QPushButton("افزودن خاک", this);
+    orBtn6 = new QPushButton("خاک یا تخریب", this);
     orBtn6->setGeometry(740,630,160,25);
     orBtn6->setAutoFillBackground(true);
     orBtn6->setPalette(palette);
@@ -1025,7 +1098,7 @@ void GreenHouse::setOrBtn()
     orBtn6->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn6->setVisible(false);
 
-    orBtn7 = new QPushButton("افزودن خاک", this);
+    orBtn7 = new QPushButton("خاک یا تخریب", this);
     orBtn7->setGeometry(480,630,160,25);
     orBtn7->setAutoFillBackground(true);
     orBtn7->setPalette(palette);
@@ -1033,7 +1106,7 @@ void GreenHouse::setOrBtn()
     orBtn7->setStyleSheet("background-color: #3cbaa2; solid black;");
     orBtn7->setVisible(false);
 
-    orBtn8 = new QPushButton("افزودن خاک", this);
+    orBtn8 = new QPushButton("خاک یا تخریب", this);
     orBtn8->setGeometry(230,630,160,25);
     orBtn8->setAutoFillBackground(true);
     orBtn8->setPalette(palette);
@@ -1310,197 +1383,744 @@ void GreenHouse::setOrnamBudBtn()
     ornamBudBtn8->setVisible(false);
 }
 
+void GreenHouse::OnDahliaBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Dahlia();
+        temp->setVisible(false);
+        if (temp == dahliaP1)
+        {
+            dahlia1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == dahliaP2)
+        {
+            dahlia2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == dahliaP3)
+        {
+            dahlia3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == dahliaP4)
+        {
+            dahlia4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == dahliaP5)
+        {
+            dahlia5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == dahliaP6)
+        {
+            dahlia6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == dahliaP7)
+        {
+            dahlia7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == dahliaP8)
+        {
+            dahlia8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnTulipBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Tulip();
+        temp->setVisible(false);
+        if (temp == tulipP1)
+        {
+            tulip1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == tulipP2)
+        {
+            tulip2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == tulipP3)
+        {
+            tulip3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == tulipP4)
+        {
+            tulip4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == tulipP5)
+        {
+            tulip5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == tulipP6)
+        {
+            tulip6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == tulipP7)
+        {
+            tulip7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == tulipP8)
+        {
+            tulip8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnTuberoseBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Tuberose();
+        temp->setVisible(false);
+        if (temp == tubeP1)
+        {
+            tuberose1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == tubeP2)
+        {
+            tuberose2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == tubeP3)
+        {
+            tuberose3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == tubeP4)
+        {
+            tuberose4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == tubeP5)
+        {
+            tuberose5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == tubeP6)
+        {
+            tuberose6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == tubeP7)
+        {
+            tuberose7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == tubeP8)
+        {
+            tuberose8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnMagnoliaBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Magnolia();
+        temp->setVisible(false);
+        if (temp == magnP1)
+        {
+            magnolia1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == magnP2)
+        {
+            magnolia2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == magnP3)
+        {
+            magnolia3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == magnP4)
+        {
+            magnolia4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == magnP5)
+        {
+            magnolia5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == magnP6)
+        {
+            magnolia6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == magnP7)
+        {
+            magnolia7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == magnP8)
+        {
+            magnolia8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnLiliumBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Lilium();
+        temp->setVisible(false);
+        if (temp == liliP1)
+        {
+            lilium1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == liliP2)
+        {
+            lilium2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == liliP3)
+        {
+            lilium3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == liliP4)
+        {
+            lilium4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == liliP5)
+        {
+            lilium5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == liliP6)
+        {
+            lilium6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == liliP7)
+        {
+            lilium7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == liliP8)
+        {
+            lilium8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnOrchidBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Orchid();
+        temp->setVisible(false);
+        if (temp == orchP1)
+        {
+            orchid1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == orchP2)
+        {
+            orchid2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == orchP3)
+        {
+            orchid3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == orchP4)
+        {
+            orchid4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == orchP5)
+        {
+            orchid5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == orchP6)
+        {
+            orchid6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == orchP7)
+        {
+            orchid7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == orchP7)
+        {
+            orchid8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnAmarBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Amaryllis();
+        temp->setVisible(false);
+        if (temp == amarP1)
+        {
+            amaryllis1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == amarP2)
+        {
+            amaryllis2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == amarP3)
+        {
+            amaryllis3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == amarP4)
+        {
+            amaryllis4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == amarP5)
+        {
+            amaryllis5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == amarP6)
+        {
+            amaryllis6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == amarP7)
+        {
+            amaryllis7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == amarP8)
+        {
+            amaryllis8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void GreenHouse::OnhyacBtns()
+{
+    QPushButton *temp = (QPushButton *)sender();
+
+    try
+    {
+        personPtr->pick_Hyacinth();
+        temp->setVisible(false);
+        if (temp == hyacP1)
+        {
+            hyacinth1->setVisible(false);
+            empty1->setVisible(true);
+            emptyBtn1->setVisible(true);
+        }
+        if (temp == hyacP2)
+        {
+            hyacinth2->setVisible(false);
+            empty2->setVisible(true);
+            emptyBtn2->setVisible(true);
+        }
+        if (temp == hyacP3)
+        {
+            hyacinth3->setVisible(false);
+            empty3->setVisible(true);
+            emptyBtn3->setVisible(true);
+        }
+        if (temp == hyacP4)
+        {
+            hyacinth4->setVisible(false);
+            empty4->setVisible(true);
+            emptyBtn4->setVisible(true);
+        }
+        if (temp == hyacP5)
+        {
+            hyacinth5->setVisible(false);
+            empty5->setVisible(true);
+            emptyBtn5->setVisible(true);
+        }
+        if (temp == hyacP6)
+        {
+            hyacinth6->setVisible(false);
+            empty6->setVisible(true);
+            emptyBtn6->setVisible(true);
+        }
+        if (temp == hyacP7)
+        {
+            hyacinth7->setVisible(false);
+            empty7->setVisible(true);
+            emptyBtn7->setVisible(true);
+        }
+        if (temp == hyacP8)
+        {
+            hyacinth8->setVisible(false);
+            empty8->setVisible(true);
+            emptyBtn8->setVisible(true);
+        }
+    }
+    catch (const std::runtime_error& e)
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
+    }
+}
+
 void GreenHouse::OnRareBudBtns()
 {
     QPushButton *temp = (QPushButton *)sender();
-    std::default_random_engine eng(static_cast<unsigned int>(time(0)));
-    std::uniform_int_distribution<unsigned int> myrand(1, 2);
-    int a = myrand(eng);
+
+    int ran = qrand() % 2;
 
     QStringList items;
     items << tr("آب") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
         if (item == "آب")
         {
-            if (a == 1)
+            if (ran == 0)
             {
-                std::default_random_engine eng1(static_cast<unsigned int>(time(0)));
-                std::uniform_int_distribution<unsigned int> myrand1(1, 3);
-                int a1 = myrand1(eng1);
-                if (a1 == 1)
+                int ran1 = qrand() % 3;
+                if (ran1 == 0)
                 {
-                    personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                    temp->setVisible(false);
-                    if (temp == rareBudBtn1)
+                    try
                     {
-                        rareBud1->setVisible(false);
-                        tuberose1->setVisible(true);
-                        tubeP1->setVisible(true);
+                        personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                        temp->setVisible(false);
+                        if (temp == rareBudBtn1)
+                        {
+                            rareBud1->setVisible(false);
+                            tuberose1->setVisible(true);
+                            tubeP1->setVisible(true);
+                        }
+                        if (temp == rareBudBtn2)
+                        {
+                            rareBud2->setVisible(false);
+                            tuberose2->setVisible(true);
+                            tubeP2->setVisible(true);
+                        }
+                        if (temp == rareBudBtn3)
+                        {
+                            rareBud3->setVisible(false);
+                            tuberose3->setVisible(true);
+                            tubeP3->setVisible(true);
+                        }
+                        if (temp == rareBudBtn4)
+                        {
+                            rareBud4->setVisible(false);
+                            tuberose4->setVisible(true);
+                            tubeP4->setVisible(true);
+                        }
+                        if (temp == rareBudBtn5)
+                        {
+                            rareBud5->setVisible(false);
+                            tuberose5->setVisible(true);
+                            tubeP5->setVisible(true);
+                        }
+                        if (temp == rareBudBtn6)
+                        {
+                            rareBud6->setVisible(false);
+                            tuberose6->setVisible(true);
+                            tubeP6->setVisible(true);
+                        }
+                        if (temp == rareBudBtn7)
+                        {
+                            rareBud7->setVisible(false);
+                            tuberose7->setVisible(true);
+                            tubeP7->setVisible(true);
+                        }
+                        if (temp == rareBudBtn8)
+                        {
+                            rareBud8->setVisible(false);
+                            tuberose8->setVisible(true);
+                            tubeP8->setVisible(true);
+                        }
                     }
-                    if (temp == rareBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        rareBud2->setVisible(false);
-                        tuberose2->setVisible(true);
-                        tubeP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == rareBudBtn3)
-                    {
-                        rareBud3->setVisible(false);
-                        tuberose3->setVisible(true);
-                        tubeP3->setVisible(true);
-                    }
-                    if (temp == rareBudBtn4)
-                    {
-                        rareBud4->setVisible(false);
-                        tuberose4->setVisible(true);
-                        tubeP4->setVisible(true);
-                    }
-                    if (temp == rareBudBtn5)
-                    {
-                        rareBud5->setVisible(false);
-                        tuberose5->setVisible(true);
-                        tubeP5->setVisible(true);
-                    }
-                    if (temp == rareBudBtn6)
-                    {
-                        rareBud6->setVisible(false);
-                        tuberose6->setVisible(true);
-                        tubeP6->setVisible(true);
-                    }
-                    if (temp == rareBudBtn7)
-                    {
-                        rareBud7->setVisible(false);
-                        tuberose7->setVisible(true);
-                        tubeP7->setVisible(true);
-                    }
-                    if (temp == rareBudBtn8)
-                    {
-                        rareBud8->setVisible(false);
-                        tuberose8->setVisible(true);
-                        tubeP8->setVisible(true);
-                    }
+
                 }
-                if (a1 == 2)
+                if (ran1 == 1)
                 {
-                    personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                    temp->setVisible(false);
-                    if (temp == rareBudBtn1)
+                    try
                     {
-                        rareBud1->setVisible(false);
-                        tulip1->setVisible(true);
-                        tulipP1->setVisible(true);
+                        personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                        temp->setVisible(false);
+                        if (temp == rareBudBtn1)
+                        {
+                            rareBud1->setVisible(false);
+                            tulip1->setVisible(true);
+                            tulipP1->setVisible(true);
+                        }
+                        if (temp == rareBudBtn2)
+                        {
+                            rareBud2->setVisible(false);
+                            tulip2->setVisible(true);
+                            tulipP2->setVisible(true);
+                        }
+                        if (temp == rareBudBtn1)
+                        {
+                            rareBud3->setVisible(false);
+                            tulip3->setVisible(true);
+                            tulipP3->setVisible(true);
+                        }
+                        if (temp == rareBudBtn4)
+                        {
+                            rareBud4->setVisible(false);
+                            tulip4->setVisible(true);
+                            tulipP4->setVisible(true);
+                        }
+                        if (temp == rareBudBtn5)
+                        {
+                            rareBud5->setVisible(false);
+                            tulip5->setVisible(true);
+                            tulipP5->setVisible(true);
+                        }
+                        if (temp == rareBudBtn6)
+                        {
+                            rareBud6->setVisible(false);
+                            tulip6->setVisible(true);
+                            tulipP6->setVisible(true);
+                        }
+                        if (temp == rareBudBtn7)
+                        {
+                            rareBud7->setVisible(false);
+                            tulip7->setVisible(true);
+                            tulipP7->setVisible(true);
+                        }
+                        if (temp == rareBudBtn8)
+                        {
+                            rareBud8->setVisible(false);
+                            tulip8->setVisible(true);
+                            tulipP8->setVisible(true);
+                        }
                     }
-                    if (temp == rareBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        rareBud2->setVisible(false);
-                        tulip2->setVisible(true);
-                        tulipP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == rareBudBtn1)
-                    {
-                        rareBud3->setVisible(false);
-                        tulip3->setVisible(true);
-                        tulipP3->setVisible(true);
-                    }
-                    if (temp == rareBudBtn4)
-                    {
-                        rareBud4->setVisible(false);
-                        tulip4->setVisible(true);
-                        tulipP4->setVisible(true);
-                    }
-                    if (temp == rareBudBtn5)
-                    {
-                        rareBud5->setVisible(false);
-                        tulip5->setVisible(true);
-                        tulipP5->setVisible(true);
-                    }
-                    if (temp == rareBudBtn6)
-                    {
-                        rareBud6->setVisible(false);
-                        tulip6->setVisible(true);
-                        tulipP6->setVisible(true);
-                    }
-                    if (temp == rareBudBtn7)
-                    {
-                        rareBud7->setVisible(false);
-                        tulip7->setVisible(true);
-                        tulipP7->setVisible(true);
-                    }
-                    if (temp == rareBudBtn8)
-                    {
-                        rareBud8->setVisible(false);
-                        tulip8->setVisible(true);
-                        tulipP8->setVisible(true);
-                    }
+
                 }
-                if (a1 == 3)
+                if (ran1 == 2)
                 {
-                    personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                    temp->setVisible(false);
-                    if (temp == rareBudBtn1)
+                    try
                     {
-                        rareBud1->setVisible(false);
-                        hyacinth1->setVisible(true);
-                        hyacP1->setVisible(true);
+                        personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                        temp->setVisible(false);
+                        if (temp == rareBudBtn1)
+                        {
+                            rareBud1->setVisible(false);
+                            hyacinth1->setVisible(true);
+                            hyacP1->setVisible(true);
+                        }
+                        if (temp == rareBudBtn2)
+                        {
+                            rareBud2->setVisible(false);
+                            hyacinth2->setVisible(true);
+                            hyacP2->setVisible(true);
+                        }
+                        if (temp == rareBudBtn3)
+                        {
+                            rareBud3->setVisible(false);
+                            hyacinth3->setVisible(true);
+                            hyacP3->setVisible(true);
+                        }
+                        if (temp == rareBudBtn4)
+                        {
+                            rareBud4->setVisible(false);
+                            hyacinth4->setVisible(true);
+                            hyacP4->setVisible(true);
+                        }
+                        if (temp == rareBudBtn5)
+                        {
+                            rareBud5->setVisible(false);
+                            hyacinth5->setVisible(true);
+                            hyacP5->setVisible(true);
+                        }
+                        if (temp == rareBudBtn6)
+                        {
+                            rareBud6->setVisible(false);
+                            hyacinth6->setVisible(true);
+                            hyacP6->setVisible(true);
+                        }
+                        if (temp == rareBudBtn7)
+                        {
+                            rareBud7->setVisible(false);
+                            hyacinth7->setVisible(true);
+                            hyacP7->setVisible(true);
+                        }
+                        if (temp == rareBudBtn8)
+                        {
+                            rareBud8->setVisible(false);
+                            hyacinth8->setVisible(true);
+                            hyacP8->setVisible(true);
+                        }
                     }
-                    if (temp == rareBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        rareBud2->setVisible(false);
-                        hyacinth2->setVisible(true);
-                        hyacP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == rareBudBtn3)
-                    {
-                        rareBud3->setVisible(false);
-                        hyacinth3->setVisible(true);
-                        hyacP3->setVisible(true);
-                    }
-                    if (temp == rareBudBtn4)
-                    {
-                        rareBud4->setVisible(false);
-                        hyacinth4->setVisible(true);
-                        hyacP4->setVisible(true);
-                    }
-                    if (temp == rareBudBtn5)
-                    {
-                        rareBud5->setVisible(false);
-                        hyacinth5->setVisible(true);
-                        hyacP5->setVisible(true);
-                    }
-                    if (temp == rareBudBtn6)
-                    {
-                        rareBud6->setVisible(false);
-                        hyacinth6->setVisible(true);
-                        hyacP6->setVisible(true);
-                    }
-                    if (temp == rareBudBtn7)
-                    {
-                        rareBud7->setVisible(false);
-                        hyacinth7->setVisible(true);
-                        hyacP7->setVisible(true);
-                    }
-                    if (temp == rareBudBtn8)
-                    {
-                        rareBud8->setVisible(false);
-                        hyacinth8->setVisible(true);
-                        hyacP8->setVisible(true);
-                    }
+
                 }
             }
-            if (a == 2)
+            if (ran == 1)
             {
                 QStringList items1;
                 items1 << tr("ماده سمپاشی");
                 bool ok1;
 
-                QString item1 = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                                    tr("Season:"), items1, 0, false, &ok1);
+                QString item1 = QInputDialog::getItem(this, tr("لیست"),
+                                                    tr("انتخاب:"), items1, 0, false, &ok1);
 
                 if (ok1 && !items1.isEmpty())
                 {
@@ -1511,162 +2131,192 @@ void GreenHouse::OnRareBudBtns()
                         int a1 = myrand1(eng1);
                         if (a1 == 1)
                         {
-                            personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                            temp->setVisible(false);
-                            if (temp == rareBudBtn1)
+                            try
                             {
-                                rareBud1->setVisible(false);
-                                tuberose1->setVisible(true);
-                                tubeP1->setVisible(true);
+                                personPtr->set_flower(new Tuberose(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                                temp->setVisible(false);
+                                if (temp == rareBudBtn1)
+                                {
+                                    rareBud1->setVisible(false);
+                                    tuberose1->setVisible(true);
+                                    tubeP1->setVisible(true);
+                                }
+                                if (temp == rareBudBtn2)
+                                {
+                                    rareBud2->setVisible(false);
+                                    tuberose2->setVisible(true);
+                                    tubeP2->setVisible(true);
+                                }
+                                if (temp == rareBudBtn3)
+                                {
+                                    rareBud3->setVisible(false);
+                                    tuberose3->setVisible(true);
+                                    tubeP3->setVisible(true);
+                                }
+                                if (temp == rareBudBtn4)
+                                {
+                                    rareBud4->setVisible(false);
+                                    tuberose4->setVisible(true);
+                                    tubeP4->setVisible(true);
+                                }
+                                if (temp == rareBudBtn5)
+                                {
+                                    rareBud5->setVisible(false);
+                                    tuberose5->setVisible(true);
+                                    tubeP5->setVisible(true);
+                                }
+                                if (temp == rareBudBtn6)
+                                {
+                                    rareBud6->setVisible(false);
+                                    tuberose6->setVisible(true);
+                                    tubeP6->setVisible(true);
+                                }
+                                if (temp == rareBudBtn7)
+                                {
+                                    rareBud7->setVisible(false);
+                                    tuberose7->setVisible(true);
+                                    tubeP7->setVisible(true);
+                                }
+                                if (temp == rareBudBtn8)
+                                {
+                                    rareBud8->setVisible(false);
+                                    tuberose8->setVisible(true);
+                                    tubeP8->setVisible(true);
+                                }
                             }
-                            if (temp == rareBudBtn2)
+                            catch (const std::runtime_error& e)
                             {
-                                rareBud2->setVisible(false);
-                                tuberose2->setVisible(true);
-                                tubeP2->setVisible(true);
+                                QMessageBox messageBox;
+                                messageBox.critical(0,"Error",e.what());
+                                messageBox.setFixedSize(500,200);
                             }
-                            if (temp == rareBudBtn3)
-                            {
-                                rareBud3->setVisible(false);
-                                tuberose3->setVisible(true);
-                                tubeP3->setVisible(true);
-                            }
-                            if (temp == rareBudBtn4)
-                            {
-                                rareBud4->setVisible(false);
-                                tuberose4->setVisible(true);
-                                tubeP4->setVisible(true);
-                            }
-                            if (temp == rareBudBtn5)
-                            {
-                                rareBud5->setVisible(false);
-                                tuberose5->setVisible(true);
-                                tubeP5->setVisible(true);
-                            }
-                            if (temp == rareBudBtn6)
-                            {
-                                rareBud6->setVisible(false);
-                                tuberose6->setVisible(true);
-                                tubeP6->setVisible(true);
-                            }
-                            if (temp == rareBudBtn7)
-                            {
-                                rareBud7->setVisible(false);
-                                tuberose7->setVisible(true);
-                                tubeP7->setVisible(true);
-                            }
-                            if (temp == rareBudBtn8)
-                            {
-                                rareBud8->setVisible(false);
-                                tuberose8->setVisible(true);
-                                tubeP8->setVisible(true);
-                            }
+
                         }
                         if (a1 == 2)
                         {
-                            personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                            temp->setVisible(false);
-                            if (temp == rareBudBtn1)
+                            try
                             {
-                                rareBud1->setVisible(false);
-                                tulip1->setVisible(true);
-                                tulipP1->setVisible(true);
+                                personPtr->set_flower(new Tulip(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                                temp->setVisible(false);
+                                if (temp == rareBudBtn1)
+                                {
+                                    rareBud1->setVisible(false);
+                                    tulip1->setVisible(true);
+                                    tulipP1->setVisible(true);
+                                }
+                                if (temp == rareBudBtn2)
+                                {
+                                    rareBud2->setVisible(false);
+                                    tulip2->setVisible(true);
+                                    tulipP2->setVisible(true);
+                                }
+                                if (temp == rareBudBtn1)
+                                {
+                                    rareBud3->setVisible(false);
+                                    tulip3->setVisible(true);
+                                    tulipP3->setVisible(true);
+                                }
+                                if (temp == rareBudBtn4)
+                                {
+                                    rareBud4->setVisible(false);
+                                    tulip4->setVisible(true);
+                                    tulipP4->setVisible(true);
+                                }
+                                if (temp == rareBudBtn5)
+                                {
+                                    rareBud5->setVisible(false);
+                                    tulip5->setVisible(true);
+                                    tulipP5->setVisible(true);
+                                }
+                                if (temp == rareBudBtn6)
+                                {
+                                    rareBud6->setVisible(false);
+                                    tulip6->setVisible(true);
+                                    tulipP6->setVisible(true);
+                                }
+                                if (temp == rareBudBtn7)
+                                {
+                                    rareBud7->setVisible(false);
+                                    tulip7->setVisible(true);
+                                    tulipP7->setVisible(true);
+                                }
+                                if (temp == rareBudBtn8)
+                                {
+                                    rareBud8->setVisible(false);
+                                    tulip8->setVisible(true);
+                                    tulipP8->setVisible(true);
+                                }
                             }
-                            if (temp == rareBudBtn2)
+                            catch (const std::runtime_error& e)
                             {
-                                rareBud2->setVisible(false);
-                                tulip2->setVisible(true);
-                                tulipP2->setVisible(true);
+                                QMessageBox messageBox;
+                                messageBox.critical(0,"Error",e.what());
+                                messageBox.setFixedSize(500,200);
                             }
-                            if (temp == rareBudBtn1)
-                            {
-                                rareBud3->setVisible(false);
-                                tulip3->setVisible(true);
-                                tulipP3->setVisible(true);
-                            }
-                            if (temp == rareBudBtn4)
-                            {
-                                rareBud4->setVisible(false);
-                                tulip4->setVisible(true);
-                                tulipP4->setVisible(true);
-                            }
-                            if (temp == rareBudBtn5)
-                            {
-                                rareBud5->setVisible(false);
-                                tulip5->setVisible(true);
-                                tulipP5->setVisible(true);
-                            }
-                            if (temp == rareBudBtn6)
-                            {
-                                rareBud6->setVisible(false);
-                                tulip6->setVisible(true);
-                                tulipP6->setVisible(true);
-                            }
-                            if (temp == rareBudBtn7)
-                            {
-                                rareBud7->setVisible(false);
-                                tulip7->setVisible(true);
-                                tulipP7->setVisible(true);
-                            }
-                            if (temp == rareBudBtn8)
-                            {
-                                rareBud8->setVisible(false);
-                                tulip8->setVisible(true);
-                                tulipP8->setVisible(true);
-                            }
+
                         }
                         if (a1 == 3)
                         {
-                            personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
-                            temp->setVisible(false);
-                            if (temp == rareBudBtn1)
+                            try
                             {
-                                rareBud1->setVisible(false);
-                                hyacinth1->setVisible(true);
-                                hyacP1->setVisible(true);
+                                personPtr->set_flower(new Hyacinth(personPtr->get_RareFlowerbud(), personPtr->get_Water()));
+                                temp->setVisible(false);
+                                if (temp == rareBudBtn1)
+                                {
+                                    rareBud1->setVisible(false);
+                                    hyacinth1->setVisible(true);
+                                    hyacP1->setVisible(true);
+                                }
+                                if (temp == rareBudBtn2)
+                                {
+                                    rareBud2->setVisible(false);
+                                    hyacinth2->setVisible(true);
+                                    hyacP2->setVisible(true);
+                                }
+                                if (temp == rareBudBtn3)
+                                {
+                                    rareBud3->setVisible(false);
+                                    hyacinth3->setVisible(true);
+                                    hyacP3->setVisible(true);
+                                }
+                                if (temp == rareBudBtn4)
+                                {
+                                    rareBud4->setVisible(false);
+                                    hyacinth4->setVisible(true);
+                                    hyacP4->setVisible(true);
+                                }
+                                if (temp == rareBudBtn5)
+                                {
+                                    rareBud5->setVisible(false);
+                                    hyacinth5->setVisible(true);
+                                    hyacP5->setVisible(true);
+                                }
+                                if (temp == rareBudBtn6)
+                                {
+                                    rareBud6->setVisible(false);
+                                    hyacinth6->setVisible(true);
+                                    hyacP6->setVisible(true);
+                                }
+                                if (temp == rareBudBtn7)
+                                {
+                                    rareBud7->setVisible(false);
+                                    hyacinth7->setVisible(true);
+                                    hyacP7->setVisible(true);
+                                }
+                                if (temp == rareBudBtn8)
+                                {
+                                    rareBud8->setVisible(false);
+                                    hyacinth8->setVisible(true);
+                                    hyacP8->setVisible(true);
+                                }
                             }
-                            if (temp == rareBudBtn2)
+                            catch (const std::runtime_error& e)
                             {
-                                rareBud2->setVisible(false);
-                                hyacinth2->setVisible(true);
-                                hyacP2->setVisible(true);
+                                QMessageBox messageBox;
+                                messageBox.critical(0,"Error",e.what());
+                                messageBox.setFixedSize(500,200);
                             }
-                            if (temp == rareBudBtn3)
-                            {
-                                rareBud3->setVisible(false);
-                                hyacinth3->setVisible(true);
-                                hyacP3->setVisible(true);
-                            }
-                            if (temp == rareBudBtn4)
-                            {
-                                rareBud4->setVisible(false);
-                                hyacinth4->setVisible(true);
-                                hyacP4->setVisible(true);
-                            }
-                            if (temp == rareBudBtn5)
-                            {
-                                rareBud5->setVisible(false);
-                                hyacinth5->setVisible(true);
-                                hyacP5->setVisible(true);
-                            }
-                            if (temp == rareBudBtn6)
-                            {
-                                rareBud6->setVisible(false);
-                                hyacinth6->setVisible(true);
-                                hyacP6->setVisible(true);
-                            }
-                            if (temp == rareBudBtn7)
-                            {
-                                rareBud7->setVisible(false);
-                                hyacinth7->setVisible(true);
-                                hyacP7->setVisible(true);
-                            }
-                            if (temp == rareBudBtn8)
-                            {
-                                rareBud8->setVisible(false);
-                                hyacinth8->setVisible(true);
-                                hyacP8->setVisible(true);
-                            }
+
                         }
                     }
                 }
@@ -1731,9 +2381,8 @@ void GreenHouse::OnRareBudBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -1747,8 +2396,8 @@ void GreenHouse::OnOrnamBudBtns()
     items << tr("آب") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -1759,169 +2408,199 @@ void GreenHouse::OnOrnamBudBtns()
             items1 << tr("عصاره مگنولیا") << tr("عصاره ارکیده") << tr("عصاره لیلیوم") << tr("تخریب");
             bool ok1;
 
-            QString item1 = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                                tr("Season:"), items1, 0, false, &ok1);
+            QString item1 = QInputDialog::getItem(this, tr("لیست"),
+                                                tr("انتخاب:"), items1, 0, false, &ok1);
 
             if (ok1 && !items1.isEmpty())
             {
                 if (item1 == "عصاره مگنولیا")
                 {
-                    personPtr->set_flower(new Magnolia(personPtr->get_OrnamentalFlowerBud(), personPtr->get_MagnoliaExtract()));
-                    temp->setVisible(false);
-                    if (temp == ornamBudBtn1)
+                    try
                     {
-                        ornamentalBud1->setVisible(false);
-                        magnolia1->setVisible(true);
-                        magnP1->setVisible(true);
+                        personPtr->set_flower(new Magnolia(personPtr->get_OrnamentalFlowerBud(), personPtr->get_MagnoliaExtract()));
+                        temp->setVisible(false);
+                        if (temp == ornamBudBtn1)
+                        {
+                            ornamentalBud1->setVisible(false);
+                            magnolia1->setVisible(true);
+                            magnP1->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn2)
+                        {
+                            ornamentalBud2->setVisible(false);
+                            magnolia2->setVisible(true);
+                            magnP2->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn3)
+                        {
+                            ornamentalBud3->setVisible(false);
+                            magnolia3->setVisible(true);
+                            magnP3->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn4)
+                        {
+                            ornamentalBud4->setVisible(false);
+                            magnolia4->setVisible(true);
+                            magnP4->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn5)
+                        {
+                            ornamentalBud5->setVisible(false);
+                            magnolia5->setVisible(true);
+                            magnP5->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn6)
+                        {
+                            ornamentalBud6->setVisible(false);
+                            magnolia6->setVisible(true);
+                            magnP6->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn7)
+                        {
+                            ornamentalBud7->setVisible(false);
+                            magnolia7->setVisible(true);
+                            magnP7->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn8)
+                        {
+                            ornamentalBud8->setVisible(false);
+                            magnolia8->setVisible(true);
+                            magnP8->setVisible(true);
+                        }
                     }
-                    if (temp == ornamBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        ornamentalBud2->setVisible(false);
-                        magnolia2->setVisible(true);
-                        magnP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == ornamBudBtn3)
-                    {
-                        ornamentalBud3->setVisible(false);
-                        magnolia3->setVisible(true);
-                        magnP3->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn4)
-                    {
-                        ornamentalBud4->setVisible(false);
-                        magnolia4->setVisible(true);
-                        magnP4->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn5)
-                    {
-                        ornamentalBud5->setVisible(false);
-                        magnolia5->setVisible(true);
-                        magnP5->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn6)
-                    {
-                        ornamentalBud6->setVisible(false);
-                        magnolia6->setVisible(true);
-                        magnP6->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn7)
-                    {
-                        ornamentalBud7->setVisible(false);
-                        magnolia7->setVisible(true);
-                        magnP7->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn8)
-                    {
-                        ornamentalBud8->setVisible(false);
-                        magnolia8->setVisible(true);
-                        magnP8->setVisible(true);
-                    }
+
                 }
                 if (item1 == "عصاره لیلیوم")
                 {
-                    personPtr->set_flower(new Orchid(personPtr->get_OrnamentalFlowerBud(), personPtr->get_OrchidExtract()));
-                    temp->setVisible(false);
-                    if (temp == ornamBudBtn1)
+                    try
                     {
-                        ornamentalBud1->setVisible(false);
-                        lilium1->setVisible(true);
-                        liliP1->setVisible(true);
+                        personPtr->set_flower(new Orchid(personPtr->get_OrnamentalFlowerBud(), personPtr->get_OrchidExtract()));
+                        temp->setVisible(false);
+                        if (temp == ornamBudBtn1)
+                        {
+                            ornamentalBud1->setVisible(false);
+                            lilium1->setVisible(true);
+                            liliP1->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn2)
+                        {
+                            ornamentalBud2->setVisible(false);
+                            lilium2->setVisible(true);
+                            liliP2->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn3)
+                        {
+                            ornamentalBud3->setVisible(false);
+                            lilium3->setVisible(true);
+                            liliP3->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn4)
+                        {
+                            ornamentalBud4->setVisible(false);
+                            lilium4->setVisible(true);
+                            liliP4->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn5)
+                        {
+                            ornamentalBud5->setVisible(false);
+                            lilium5->setVisible(true);
+                            liliP5->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn6)
+                        {
+                            ornamentalBud6->setVisible(false);
+                            lilium6->setVisible(true);
+                            liliP6->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn7)
+                        {
+                            ornamentalBud7->setVisible(false);
+                            lilium7->setVisible(true);
+                            liliP7->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn8)
+                        {
+                            ornamentalBud8->setVisible(false);
+                            lilium8->setVisible(true);
+                            liliP8->setVisible(true);
+                        }
                     }
-                    if (temp == ornamBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        ornamentalBud2->setVisible(false);
-                        lilium2->setVisible(true);
-                        liliP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == ornamBudBtn3)
-                    {
-                        ornamentalBud3->setVisible(false);
-                        lilium3->setVisible(true);
-                        liliP3->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn4)
-                    {
-                        ornamentalBud4->setVisible(false);
-                        lilium4->setVisible(true);
-                        liliP4->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn5)
-                    {
-                        ornamentalBud5->setVisible(false);
-                        lilium5->setVisible(true);
-                        liliP5->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn6)
-                    {
-                        ornamentalBud6->setVisible(false);
-                        lilium6->setVisible(true);
-                        liliP6->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn7)
-                    {
-                        ornamentalBud7->setVisible(false);
-                        lilium7->setVisible(true);
-                        liliP7->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn8)
-                    {
-                        ornamentalBud8->setVisible(false);
-                        lilium8->setVisible(true);
-                        liliP8->setVisible(true);
-                    }
+
                 }
                 if (item1 == "عصاره ارکیده")
                 {
-                    personPtr->set_flower(new Lilium(personPtr->get_OrnamentalFlowerBud(), personPtr->get_LiliumExtract()));
-                    temp->setVisible(false);
-                    if (temp == ornamBudBtn1)
+                    try
                     {
-                        ornamentalBud1->setVisible(false);
-                        orchid1->setVisible(true);
-                        orchP1->setVisible(true);
+                        personPtr->set_flower(new Lilium(personPtr->get_OrnamentalFlowerBud(), personPtr->get_LiliumExtract()));
+                        temp->setVisible(false);
+                        if (temp == ornamBudBtn1)
+                        {
+                            ornamentalBud1->setVisible(false);
+                            orchid1->setVisible(true);
+                            orchP1->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn2)
+                        {
+                            ornamentalBud2->setVisible(false);
+                            orchid2->setVisible(true);
+                            orchP2->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn3)
+                        {
+                            ornamentalBud3->setVisible(false);
+                            orchid3->setVisible(true);
+                            orchP3->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn4)
+                        {
+                            ornamentalBud4->setVisible(false);
+                            orchid4->setVisible(true);
+                            orchP4->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn5)
+                        {
+                            ornamentalBud5->setVisible(false);
+                            orchid5->setVisible(true);
+                            orchP5->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn6)
+                        {
+                            ornamentalBud6->setVisible(false);
+                            orchid6->setVisible(true);
+                            orchP6->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn7)
+                        {
+                            ornamentalBud7->setVisible(false);
+                            orchid7->setVisible(true);
+                            orchP7->setVisible(true);
+                        }
+                        if (temp == ornamBudBtn8)
+                        {
+                            ornamentalBud8->setVisible(false);
+                            orchid8->setVisible(true);
+                            orchP8->setVisible(true);
+                        }
                     }
-                    if (temp == ornamBudBtn2)
+                    catch (const std::runtime_error& e)
                     {
-                        ornamentalBud2->setVisible(false);
-                        orchid2->setVisible(true);
-                        orchP2->setVisible(true);
+                        QMessageBox messageBox;
+                        messageBox.critical(0,"Error",e.what());
+                        messageBox.setFixedSize(500,200);
                     }
-                    if (temp == ornamBudBtn3)
-                    {
-                        ornamentalBud3->setVisible(false);
-                        orchid3->setVisible(true);
-                        orchP3->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn4)
-                    {
-                        ornamentalBud4->setVisible(false);
-                        orchid4->setVisible(true);
-                        orchP4->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn5)
-                    {
-                        ornamentalBud5->setVisible(false);
-                        orchid5->setVisible(true);
-                        orchP5->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn6)
-                    {
-                        ornamentalBud6->setVisible(false);
-                        orchid6->setVisible(true);
-                        orchP6->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn7)
-                    {
-                        ornamentalBud7->setVisible(false);
-                        orchid7->setVisible(true);
-                        orchP7->setVisible(true);
-                    }
-                    if (temp == ornamBudBtn8)
-                    {
-                        ornamentalBud8->setVisible(false);
-                        orchid8->setVisible(true);
-                        orchP8->setVisible(true);
-                    }
+
                 }
                 if (item1 == "تخریب")
                 {
@@ -1982,9 +2661,8 @@ void GreenHouse::OnOrnamBudBtns()
                     }
                     catch (const std::runtime_error& e)
                     {
-                        std::cout << e.what() << std::endl;
                         QMessageBox messageBox;
-                        messageBox.critical(0,"Error","پول کافی ندارید!");
+                        messageBox.critical(0,"Error",e.what());
                         messageBox.setFixedSize(500,200);
                     }
                 }
@@ -2049,9 +2727,8 @@ void GreenHouse::OnOrnamBudBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2061,23 +2738,22 @@ void GreenHouse::OnOrnamBudBtns()
 void GreenHouse::OnOrBudBtns()
 {
     QPushButton *temp = (QPushButton *)sender();
-    std::default_random_engine eng(static_cast<unsigned int>(time(0)));
-    std::uniform_int_distribution<unsigned int> myrand(1, 2);
-    int a = myrand(eng);
+    int ran = qrand() % 2;
 
 
     QStringList items;
     items << tr("آب") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
         if (item == "آب")
         {
-            if (a == 1)
+            std::cout << ran << std::endl;
+            if (ran == 0)
             {
                 try
                 {
@@ -2134,12 +2810,12 @@ void GreenHouse::OnOrBudBtns()
                 }
                 catch (const std::runtime_error& e)
                 {
-                    std::cout << e.what() << std::endl;
                     QMessageBox messageBox;
                     messageBox.critical(0,"Error","پول کافی ندارید!");
                     messageBox.setFixedSize(500,200);
                 }
-                if (a == 2)
+            }
+                if (ran == 1)
                 {
                     try
                     {
@@ -2196,14 +2872,13 @@ void GreenHouse::OnOrBudBtns()
                     }
                     catch (const std::runtime_error& e)
                     {
-                        std::cout << e.what() << std::endl;
                         QMessageBox messageBox;
-                        messageBox.critical(0,"Error","پول کافی ندارید!");
+                        messageBox.critical(0,"Error",e.what());
                         messageBox.setFixedSize(500,200);
                     }
                 }
             }
-        }
+
         if (item == "تخریب")
         {
             try
@@ -2263,9 +2938,8 @@ void GreenHouse::OnOrBudBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2279,8 +2953,8 @@ void GreenHouse::OnOrBtns()
     items << tr("خاک") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2341,9 +3015,8 @@ void GreenHouse::OnOrBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2406,9 +3079,8 @@ void GreenHouse::OnOrBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2422,8 +3094,8 @@ void GreenHouse::OnRareBtns()
     items << tr("خاک") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2484,9 +3156,8 @@ void GreenHouse::OnRareBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2549,9 +3220,8 @@ void GreenHouse::OnRareBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2565,8 +3235,8 @@ void GreenHouse::OnOrnamBtns()
     items << tr("خاک") << tr("تخریب");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2627,9 +3297,8 @@ void GreenHouse::OnOrnamBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error",e.what());
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2653,7 +3322,7 @@ void GreenHouse::OnOrnamBtns()
                     empty2->setVisible(true);
                     emptyBtn2->setVisible(true);
                 }
-                if (temp == ornamBtn1)
+                if (temp == ornamBtn3)
                 {
                     ornamental3->setVisible(false);
                     empty3->setVisible(true);
@@ -2692,9 +3361,8 @@ void GreenHouse::OnOrnamBtns()
             }
             catch (const std::runtime_error& e)
             {
-                std::cout << e.what() << std::endl;
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2707,8 +3375,8 @@ void GreenHouse::OnEmptyBtn1()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2725,7 +3393,7 @@ void GreenHouse::OnEmptyBtn1()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2742,7 +3410,7 @@ void GreenHouse::OnEmptyBtn1()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2759,7 +3427,7 @@ void GreenHouse::OnEmptyBtn1()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2772,9 +3440,8 @@ void GreenHouse::OnEmptyBtn2()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
-
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
     if (ok && !items.isEmpty())
     {
         if (item == "پیاز گل عادی")
@@ -2790,7 +3457,7 @@ void GreenHouse::OnEmptyBtn2()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2807,7 +3474,7 @@ void GreenHouse::OnEmptyBtn2()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2824,7 +3491,7 @@ void GreenHouse::OnEmptyBtn2()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2837,8 +3504,8 @@ void GreenHouse::OnEmptyBtn3()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2855,7 +3522,7 @@ void GreenHouse::OnEmptyBtn3()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2872,7 +3539,7 @@ void GreenHouse::OnEmptyBtn3()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2889,7 +3556,7 @@ void GreenHouse::OnEmptyBtn3()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2902,8 +3569,8 @@ void GreenHouse::OnEmptyBtn4()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2920,7 +3587,7 @@ void GreenHouse::OnEmptyBtn4()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2937,7 +3604,7 @@ void GreenHouse::OnEmptyBtn4()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2954,7 +3621,7 @@ void GreenHouse::OnEmptyBtn4()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -2967,8 +3634,8 @@ void GreenHouse::OnEmptyBtn5()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -2985,7 +3652,7 @@ void GreenHouse::OnEmptyBtn5()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3002,7 +3669,7 @@ void GreenHouse::OnEmptyBtn5()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3019,7 +3686,7 @@ void GreenHouse::OnEmptyBtn5()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3032,8 +3699,8 @@ void GreenHouse::OnEmptyBtn6()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -3050,7 +3717,7 @@ void GreenHouse::OnEmptyBtn6()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3067,7 +3734,7 @@ void GreenHouse::OnEmptyBtn6()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3084,7 +3751,7 @@ void GreenHouse::OnEmptyBtn6()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3097,8 +3764,8 @@ void GreenHouse::OnEmptyBtn7()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -3115,7 +3782,7 @@ void GreenHouse::OnEmptyBtn7()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3132,7 +3799,7 @@ void GreenHouse::OnEmptyBtn7()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3149,7 +3816,7 @@ void GreenHouse::OnEmptyBtn7()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3162,8 +3829,8 @@ void GreenHouse::OnEmptyBtn8()
     items << tr("پیاز گل عادی") << tr("پیاز گل نادر") << tr("پیاز گل زینتی");
     bool ok;
 
-    QString item = QInputDialog::getItem(this, tr("QInputDialog::getItem()"),
-                                        tr("Season:"), items, 0, false, &ok);
+    QString item = QInputDialog::getItem(this, tr("لیست"),
+                                        tr("انتخاب:"), items, 0, false, &ok);
 
     if (ok && !items.isEmpty())
     {
@@ -3180,7 +3847,7 @@ void GreenHouse::OnEmptyBtn8()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل عادی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3197,7 +3864,7 @@ void GreenHouse::OnEmptyBtn8()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل نادر کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3214,7 +3881,7 @@ void GreenHouse::OnEmptyBtn8()
             else
             {
                 QMessageBox messageBox;
-                messageBox.critical(0,"Error","پول کافی ندارید!");
+                messageBox.critical(0,"Error","پیاز گل زینتی کافی ندارید!");
                 messageBox.setFixedSize(500,200);
             }
         }
@@ -3368,7 +4035,7 @@ void GreenHouse::OnLockBtn8()
 void GreenHouse::setDahliaPic()
 {
     dahlia1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/da.png");
+    QPixmap pic(":/new/da.png");
     dahlia1->setPixmap(pic);
     dahlia1->setFixedSize(pic.rect().size());
     dahlia1->setGeometry(1020,120,150,150);
@@ -3421,7 +4088,7 @@ void GreenHouse::setDahliaPic()
 void GreenHouse::setTulipPic()
 {
     tulip1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/la.png");
+    QPixmap pic(":/new/la.png");
     tulip1->setPixmap(pic);
     tulip1->setFixedSize(pic.rect().size());
     tulip1->setGeometry(1020,120,150,150);
@@ -3474,7 +4141,7 @@ void GreenHouse::setTulipPic()
 void GreenHouse::setTuberosePic()
 {
     tuberose1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/mar.png");
+    QPixmap pic(":/new/mar.png");
     tuberose1->setPixmap(pic);
     tuberose1->setFixedSize(pic.rect().size());
     tuberose1->setGeometry(1020,120,150,150);
@@ -3527,7 +4194,7 @@ void GreenHouse::setTuberosePic()
 void GreenHouse::setAmaryllisPic()
 {
     amaryllis1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/na.png");
+    QPixmap pic(":/new/na.png");
     amaryllis1->setPixmap(pic);
     amaryllis1->setFixedSize(pic.rect().size());
     amaryllis1->setGeometry(1020,120,150,150);
@@ -3580,7 +4247,7 @@ void GreenHouse::setAmaryllisPic()
 void GreenHouse::setHyacinthPic()
 {
     hyacinth1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/son.png");
+    QPixmap pic(":/new/son.png");
     hyacinth1->setPixmap(pic);
     hyacinth1->setFixedSize(pic.rect().size());
     hyacinth1->setGeometry(1020,120,150,150);
@@ -3633,7 +4300,7 @@ void GreenHouse::setHyacinthPic()
 void GreenHouse::setMagnoliaPic()
 {
     magnolia1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/ma.png");
+    QPixmap pic(":/new/ma.png");
     magnolia1->setPixmap(pic);
     magnolia1->setFixedSize(pic.rect().size());
     magnolia1->setGeometry(1020,120,150,150);
@@ -3686,7 +4353,7 @@ void GreenHouse::setMagnoliaPic()
 void GreenHouse::seLiliumPic()
 {
     lilium1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/li.png");
+    QPixmap pic(":/new/li.png");
     lilium1->setPixmap(pic);
     lilium1->setFixedSize(pic.rect().size());
     lilium1->setGeometry(1020,120,150,150);
@@ -3739,7 +4406,7 @@ void GreenHouse::seLiliumPic()
 void GreenHouse::setOrchidPic()
 {
     orchid1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/or.png");
+    QPixmap pic(":/new/or.png");
     orchid1->setPixmap(pic);
     orchid1->setFixedSize(pic.rect().size());
     orchid1->setGeometry(1020,120,150,150);
@@ -3792,7 +4459,7 @@ void GreenHouse::setOrchidPic()
 void GreenHouse::setOrdinaryPic()
 {
     ordinary1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     ordinary1->setPixmap(pic);
     ordinary1->setFixedSize(pic.rect().size());
     ordinary1->setGeometry(1020,120,150,150);
@@ -3845,7 +4512,7 @@ void GreenHouse::setOrdinaryPic()
 void GreenHouse::setOrdinaryBudPic()
 {
     ordinaryBud1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     ordinaryBud1->setPixmap(pic);
     ordinaryBud1->setFixedSize(pic.rect().size());
     ordinaryBud1->setGeometry(1020,120,150,150);
@@ -3898,7 +4565,7 @@ void GreenHouse::setOrdinaryBudPic()
 void GreenHouse::setOrnamentalPic()
 {
     ornamental1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     ornamental1->setPixmap(pic);
     ornamental1->setFixedSize(pic.rect().size());
     ornamental1->setGeometry(1020,120,150,150);
@@ -3951,7 +4618,7 @@ void GreenHouse::setOrnamentalPic()
 void GreenHouse::setOrnamentalBudPic()
 {
     ornamentalBud1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     ornamentalBud1->setPixmap(pic);
     ornamentalBud1->setFixedSize(pic.rect().size());
     ornamentalBud1->setGeometry(1020,120,150,150);
@@ -4004,7 +4671,7 @@ void GreenHouse::setOrnamentalBudPic()
 void GreenHouse::setOrnamentalFlowerBudPic()
 {
     ornamentalFlowerBud1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     ornamentalFlowerBud1->setPixmap(pic);
     ornamentalFlowerBud1->setFixedSize(pic.rect().size());
     ornamentalFlowerBud1->setGeometry(1020,120,150,150);
@@ -4057,7 +4724,7 @@ void GreenHouse::setOrnamentalFlowerBudPic()
 void GreenHouse::setRarePic()
 {
     rare1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     rare1->setPixmap(pic);
     rare1->setFixedSize(pic.rect().size());
     rare1->setGeometry(1020,120,150,150);
@@ -4110,7 +4777,7 @@ void GreenHouse::setRarePic()
 void GreenHouse::setRareBudPic()
 {
     rareBud1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/aa.png");
+    QPixmap pic(":/new/gh81.png");
     rareBud1->setPixmap(pic);
     rareBud1->setFixedSize(pic.rect().size());
     rareBud1->setGeometry(1020,120,150,150);
@@ -4164,7 +4831,7 @@ void GreenHouse::setEmptyPic()
 {
 
     empty1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/pic.png");
+    QPixmap pic(":/new/pic.png");
     empty1->setPixmap(pic);
     empty1->setFixedSize(pic.rect().size());
     empty1->setGeometry(1020,120,150,150);
@@ -4217,7 +4884,7 @@ void GreenHouse::setEmptyPic()
 void GreenHouse::setLockPic()
 {
     lock1 = new QLabel(this);
-    QPixmap pic("C:/Users/Abisys/Desktop/nnn/khali.png");
+    QPixmap pic(":/new/khali.png");
     lock1->setPixmap(pic);
     lock1->setFixedSize(pic.rect().size());
     lock1->setGeometry(1020,120,150,150);
@@ -4311,7 +4978,7 @@ void GreenHouse::WindowButtons()
 {
     profile = new QPushButton("", this);
     profile->setGeometry(1245,0,150,73);
-    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/menu14.png");
+    QPixmap pixmap(":/new/menu14.png");
     QIcon ButtonIcon(pixmap);
     profile->setIcon(ButtonIcon);
     profile->setIconSize(pixmap.rect().size());
@@ -4319,7 +4986,7 @@ void GreenHouse::WindowButtons()
 
     greenHouse = new QPushButton("", this);
     greenHouse->setGeometry(1095,0,150,73);
-    QPixmap pixmap1("C:/Users/Abisys/Desktop/nnn/menu15.png");
+    QPixmap pixmap1(":/new/menu15.png");
     QIcon ButtonIcon1(pixmap1);
     greenHouse->setIcon(ButtonIcon1);
     greenHouse->setIconSize(pixmap1.rect().size());
@@ -4327,7 +4994,7 @@ void GreenHouse::WindowButtons()
 
     shop = new QPushButton("", this);
     shop->setGeometry(945,0,150,73);
-    QPixmap pixmap2("C:/Users/Abisys/Desktop/nnn/menu03.png");
+    QPixmap pixmap2(":/new/menu03.png");
     QIcon ButtonIcon2(pixmap2);
     shop->setIcon(ButtonIcon2);
     shop->setIconSize(pixmap2.rect().size());
@@ -4335,7 +5002,7 @@ void GreenHouse::WindowButtons()
 
     laboratory = new QPushButton("", this);
     laboratory->setGeometry(795,0,150,73);
-    QPixmap pixmap3("C:/Users/Abisys/Desktop/nnn/menu04.png");
+    QPixmap pixmap3(":/new/menu04.png");
     QIcon ButtonIcon3(pixmap3);
     laboratory->setIcon(ButtonIcon3);
     laboratory->setIconSize(pixmap3.rect().size());
@@ -4346,7 +5013,7 @@ void GreenHouse::WindowButtons()
 void GreenHouse::setBackground()
 {
 
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//ghback.png");
+    QPixmap bkgnd(":/new/ghback.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);

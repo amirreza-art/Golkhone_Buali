@@ -78,7 +78,8 @@ SOURCES       = ..\Golkhone\amaryllis.cpp \
 		..\Golkhone\store.cpp \
 		..\Golkhone\tuberose.cpp \
 		..\Golkhone\tulip.cpp \
-		..\Golkhone\water.cpp release\moc_greenhouse.cpp \
+		..\Golkhone\water.cpp release\qrc_res.cpp \
+		release\moc_greenhouse.cpp \
 		release\moc_laboratory.cpp \
 		release\moc_profile.cpp \
 		release\moc_shop.cpp
@@ -114,6 +115,7 @@ OBJECTS       = release/amaryllis.o \
 		release/tuberose.o \
 		release/tulip.o \
 		release/water.o \
+		release/qrc_res.o \
 		release/moc_greenhouse.o \
 		release/moc_laboratory.o \
 		release/moc_profile.o \
@@ -200,10 +202,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Golkhone.zip $(SOURCES) $(DIST) ..\Golkhone\Golkhone.pro ..\..\5.12.10\mingw73_32\mkspecs\features\spec_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\qdevice.pri ..\..\5.12.10\mingw73_32\mkspecs\features\device_config.prf ..\..\5.12.10\mingw73_32\mkspecs\common\sanitize.conf ..\..\5.12.10\mingw73_32\mkspecs\common\gcc-base.conf ..\..\5.12.10\mingw73_32\mkspecs\common\g++-base.conf ..\..\5.12.10\mingw73_32\mkspecs\common\angle.conf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\5.12.10\mingw73_32\mkspecs\common\windows-vulkan.conf ..\..\5.12.10\mingw73_32\mkspecs\common\g++-win32.conf ..\..\5.12.10\mingw73_32\mkspecs\qconfig.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3drender.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axbase.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axserver.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_charts.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_charts_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_core.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_core_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_datavisualization.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_dbus.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designer.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gui.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_help.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_help_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_location.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_location_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_network.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_network_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_networkauth.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_nfc.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_opengl.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioning.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_purchasing.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_repparser.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_script.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_script_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scripttools.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scxml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sensors.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialport.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sql.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_svg.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_testlib.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uitools.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_websockets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_widgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_winextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\5.12.10\mingw73_32\mkspecs\features\qt_functions.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qt_config.prf ..\..\5.12.10\mingw73_32\mkspecs\win32-g++\qmake.conf ..\..\5.12.10\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\5.12.10\mingw73_32\mkspecs\features\exclusive_builds.prf ..\..\5.12.10\mingw73_32\mkspecs\features\toolchain.prf ..\..\5.12.10\mingw73_32\mkspecs\features\default_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\default_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\features\resolve_config.prf ..\..\5.12.10\mingw73_32\mkspecs\features\exclusive_builds_post.prf ..\..\5.12.10\mingw73_32\mkspecs\features\default_post.prf ..\..\5.12.10\mingw73_32\mkspecs\features\build_pass.prf ..\..\5.12.10\mingw73_32\mkspecs\features\resources.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qtquickcompiler.prf ..\..\5.12.10\mingw73_32\mkspecs\features\precompile_header.prf ..\..\5.12.10\mingw73_32\mkspecs\features\warn_on.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qt.prf ..\..\5.12.10\mingw73_32\mkspecs\features\moc.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\opengl.prf ..\..\5.12.10\mingw73_32\mkspecs\features\uic.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qmake_use.prf ..\..\5.12.10\mingw73_32\mkspecs\features\file_copies.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\windows.prf ..\..\5.12.10\mingw73_32\mkspecs\features\testcase_targets.prf ..\..\5.12.10\mingw73_32\mkspecs\features\exceptions.prf ..\..\5.12.10\mingw73_32\mkspecs\features\yacc.prf ..\..\5.12.10\mingw73_32\mkspecs\features\lex.prf ..\Golkhone\Golkhone.pro ..\..\5.12.10\mingw73_32\lib\Qt5Multimedia.prl ..\..\5.12.10\mingw73_32\lib\Qt5Widgets.prl ..\..\5.12.10\mingw73_32\lib\Qt5Gui.prl ..\..\5.12.10\mingw73_32\lib\Qt5Network.prl ..\..\5.12.10\mingw73_32\lib\Qt5Core.prl ..\..\5.12.10\mingw73_32\lib\qtmain.prl      ..\..\5.12.10\mingw73_32\mkspecs\features\data\dummy.cpp ..\Golkhone\amaryllis.h ..\Golkhone\dahlia.h ..\Golkhone\flower.h ..\Golkhone\greenhouse.h ..\Golkhone\hyacinth.h ..\Golkhone\laboratory.h ..\Golkhone\lilium.h ..\Golkhone\liliumextract.h ..\Golkhone\magnolia.h ..\Golkhone\magnoliaextract.h ..\Golkhone\orchis.h ..\Golkhone\orchisextract.h ..\Golkhone\ordinaryflowerbuds.h ..\Golkhone\ordinaryflowers.h ..\Golkhone\ordinaryunion.h ..\Golkhone\ornamentalbud.h ..\Golkhone\ornamentalflower.h ..\Golkhone\ornamentalflowerbud.h ..\Golkhone\ornamentalonion.h ..\Golkhone\person.h ..\Golkhone\profile.h ..\Golkhone\rareflower.h ..\Golkhone\rareflowerbuds.h ..\Golkhone\rareonion.h ..\Golkhone\shop.h ..\Golkhone\soil.h ..\Golkhone\sprayingmaterial.h ..\Golkhone\store.h ..\Golkhone\tuberose.h ..\Golkhone\tulip.h ..\Golkhone\water.h  ..\Golkhone\amaryllis.cpp ..\Golkhone\dahlia.cpp ..\Golkhone\flower.cpp ..\Golkhone\greenhouse.cpp ..\Golkhone\hyacinth.cpp ..\Golkhone\laboratory.cpp ..\Golkhone\lilium.cpp ..\Golkhone\liliumextract.cpp ..\Golkhone\magnolia.cpp ..\Golkhone\magnoliaextract.cpp ..\Golkhone\main.cpp ..\Golkhone\orchis.cpp ..\Golkhone\orchisextract.cpp ..\Golkhone\ordinaryflowerbuds.cpp ..\Golkhone\ordinaryflowers.cpp ..\Golkhone\ordinaryunion.cpp ..\Golkhone\ornamentalbud.cpp ..\Golkhone\ornamentalflower.cpp ..\Golkhone\ornamentalflowerbud.cpp ..\Golkhone\ornamentalonion.cpp ..\Golkhone\person.cpp ..\Golkhone\profile.cpp ..\Golkhone\rareflower.cpp ..\Golkhone\rareflowerbuds.cpp ..\Golkhone\rareonion.cpp ..\Golkhone\shop.cpp ..\Golkhone\soil.cpp ..\Golkhone\sprayingmaterial.cpp ..\Golkhone\store.cpp ..\Golkhone\tuberose.cpp ..\Golkhone\tulip.cpp ..\Golkhone\water.cpp     
+	$(ZIP) Golkhone.zip $(SOURCES) $(DIST) ..\Golkhone\Golkhone.pro ..\..\5.12.10\mingw73_32\mkspecs\features\spec_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\qdevice.pri ..\..\5.12.10\mingw73_32\mkspecs\features\device_config.prf ..\..\5.12.10\mingw73_32\mkspecs\common\sanitize.conf ..\..\5.12.10\mingw73_32\mkspecs\common\gcc-base.conf ..\..\5.12.10\mingw73_32\mkspecs\common\g++-base.conf ..\..\5.12.10\mingw73_32\mkspecs\common\angle.conf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\5.12.10\mingw73_32\mkspecs\common\windows-vulkan.conf ..\..\5.12.10\mingw73_32\mkspecs\common\g++-win32.conf ..\..\5.12.10\mingw73_32\mkspecs\qconfig.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3drender.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axbase.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axserver.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_charts.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_charts_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_core.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_core_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_datavisualization.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_dbus.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designer.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gui.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_help.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_help_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_location.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_location_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_network.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_network_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_networkauth.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_nfc.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_opengl.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioning.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_purchasing.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quick.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_repparser.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_script.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_script_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scripttools.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scxml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sensors.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialport.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sql.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_svg.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_testlib.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uitools.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_websockets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_widgets.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_winextras.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xml.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\5.12.10\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\5.12.10\mingw73_32\mkspecs\features\qt_functions.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qt_config.prf ..\..\5.12.10\mingw73_32\mkspecs\win32-g++\qmake.conf ..\..\5.12.10\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\5.12.10\mingw73_32\mkspecs\features\exclusive_builds.prf ..\..\5.12.10\mingw73_32\mkspecs\features\toolchain.prf ..\..\5.12.10\mingw73_32\mkspecs\features\default_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\default_pre.prf ..\..\5.12.10\mingw73_32\mkspecs\features\resolve_config.prf ..\..\5.12.10\mingw73_32\mkspecs\features\exclusive_builds_post.prf ..\..\5.12.10\mingw73_32\mkspecs\features\default_post.prf ..\..\5.12.10\mingw73_32\mkspecs\features\build_pass.prf ..\..\5.12.10\mingw73_32\mkspecs\features\resources.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qtquickcompiler.prf ..\..\5.12.10\mingw73_32\mkspecs\features\precompile_header.prf ..\..\5.12.10\mingw73_32\mkspecs\features\warn_on.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qt.prf ..\..\5.12.10\mingw73_32\mkspecs\features\moc.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\opengl.prf ..\..\5.12.10\mingw73_32\mkspecs\features\uic.prf ..\..\5.12.10\mingw73_32\mkspecs\features\qmake_use.prf ..\..\5.12.10\mingw73_32\mkspecs\features\file_copies.prf ..\..\5.12.10\mingw73_32\mkspecs\features\win32\windows.prf ..\..\5.12.10\mingw73_32\mkspecs\features\testcase_targets.prf ..\..\5.12.10\mingw73_32\mkspecs\features\exceptions.prf ..\..\5.12.10\mingw73_32\mkspecs\features\yacc.prf ..\..\5.12.10\mingw73_32\mkspecs\features\lex.prf ..\Golkhone\Golkhone.pro ..\Golkhone\res.qrc ..\..\5.12.10\mingw73_32\lib\Qt5Multimedia.prl ..\..\5.12.10\mingw73_32\lib\Qt5Widgets.prl ..\..\5.12.10\mingw73_32\lib\Qt5Gui.prl ..\..\5.12.10\mingw73_32\lib\Qt5Network.prl ..\..\5.12.10\mingw73_32\lib\Qt5Core.prl ..\..\5.12.10\mingw73_32\lib\qtmain.prl  ..\Golkhone\res.qrc    ..\..\5.12.10\mingw73_32\mkspecs\features\data\dummy.cpp ..\Golkhone\amaryllis.h ..\Golkhone\dahlia.h ..\Golkhone\flower.h ..\Golkhone\greenhouse.h ..\Golkhone\hyacinth.h ..\Golkhone\laboratory.h ..\Golkhone\lilium.h ..\Golkhone\liliumextract.h ..\Golkhone\magnolia.h ..\Golkhone\magnoliaextract.h ..\Golkhone\orchis.h ..\Golkhone\orchisextract.h ..\Golkhone\ordinaryflowerbuds.h ..\Golkhone\ordinaryflowers.h ..\Golkhone\ordinaryunion.h ..\Golkhone\ornamentalbud.h ..\Golkhone\ornamentalflower.h ..\Golkhone\ornamentalflowerbud.h ..\Golkhone\ornamentalonion.h ..\Golkhone\person.h ..\Golkhone\profile.h ..\Golkhone\rareflower.h ..\Golkhone\rareflowerbuds.h ..\Golkhone\rareonion.h ..\Golkhone\shop.h ..\Golkhone\soil.h ..\Golkhone\sprayingmaterial.h ..\Golkhone\store.h ..\Golkhone\tuberose.h ..\Golkhone\tulip.h ..\Golkhone\water.h  ..\Golkhone\amaryllis.cpp ..\Golkhone\dahlia.cpp ..\Golkhone\flower.cpp ..\Golkhone\greenhouse.cpp ..\Golkhone\hyacinth.cpp ..\Golkhone\laboratory.cpp ..\Golkhone\lilium.cpp ..\Golkhone\liliumextract.cpp ..\Golkhone\magnolia.cpp ..\Golkhone\magnoliaextract.cpp ..\Golkhone\main.cpp ..\Golkhone\orchis.cpp ..\Golkhone\orchisextract.cpp ..\Golkhone\ordinaryflowerbuds.cpp ..\Golkhone\ordinaryflowers.cpp ..\Golkhone\ordinaryunion.cpp ..\Golkhone\ornamentalbud.cpp ..\Golkhone\ornamentalflower.cpp ..\Golkhone\ornamentalflowerbud.cpp ..\Golkhone\ornamentalonion.cpp ..\Golkhone\person.cpp ..\Golkhone\profile.cpp ..\Golkhone\rareflower.cpp ..\Golkhone\rareflowerbuds.cpp ..\Golkhone\rareonion.cpp ..\Golkhone\shop.cpp ..\Golkhone\soil.cpp ..\Golkhone\sprayingmaterial.cpp ..\Golkhone\store.cpp ..\Golkhone\tuberose.cpp ..\Golkhone\tulip.cpp ..\Golkhone\water.cpp     
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\amaryllis.o release\dahlia.o release\flower.o release\greenhouse.o release\hyacinth.o release\laboratory.o release\lilium.o release\liliumextract.o release\magnolia.o release\magnoliaextract.o release\main.o release\orchis.o release\orchisextract.o release\ordinaryflowerbuds.o release\ordinaryflowers.o release\ordinaryunion.o release\ornamentalbud.o release\ornamentalflower.o release\ornamentalflowerbud.o release\ornamentalonion.o release\person.o release\profile.o release\rareflower.o release\rareflowerbuds.o release\rareonion.o release\shop.o release\soil.o release\sprayingmaterial.o release\store.o release\tuberose.o release\tulip.o release\water.o release\moc_greenhouse.o release\moc_laboratory.o release\moc_profile.o release\moc_shop.o
+	-$(DEL_FILE) release\amaryllis.o release\dahlia.o release\flower.o release\greenhouse.o release\hyacinth.o release\laboratory.o release\lilium.o release\liliumextract.o release\magnolia.o release\magnoliaextract.o release\main.o release\orchis.o release\orchisextract.o release\ordinaryflowerbuds.o release\ordinaryflowers.o release\ordinaryunion.o release\ornamentalbud.o release\ornamentalflower.o release\ornamentalflowerbud.o release\ornamentalonion.o release\person.o release\profile.o release\rareflower.o release\rareflowerbuds.o release\rareonion.o release\shop.o release\soil.o release\sprayingmaterial.o release\store.o release\tuberose.o release\tulip.o release\water.o release\qrc_res.o release\moc_greenhouse.o release\moc_laboratory.o release\moc_profile.o release\moc_shop.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -218,8 +220,40 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: release/qrc_res.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) release\qrc_res.cpp
+release/qrc_res.cpp: ../Golkhone/res.qrc \
+		../../5.12.10/mingw73_32/bin/rcc.exe \
+		../Golkhone/labback2.png \
+		../Golkhone/music0.png \
+		../Golkhone/khali.png \
+		../Golkhone/music1.png \
+		../Golkhone/na.png \
+		../Golkhone/profback.png \
+		../Golkhone/ma.png \
+		../Golkhone/menu2.png \
+		../Golkhone/menu3.png \
+		../Golkhone/mar.png \
+		../Golkhone/or.png \
+		../Golkhone/la.png \
+		../Golkhone/menu14.png \
+		../Golkhone/menu15.png \
+		../Golkhone/menu02.png \
+		../Golkhone/shopback1.png \
+		../Golkhone/menu03.png \
+		../Golkhone/pic.png \
+		../Golkhone/menu04.png \
+		../Golkhone/gh81.png \
+		../Golkhone/li.png \
+		../Golkhone/menu05.png \
+		../Golkhone/son.png \
+		../Golkhone/da.png \
+		../Golkhone/ghback.png \
+		../Golkhone/strip3.png \
+		../Golkhone/Chaartaar\ -\ Adineh.mp3
+	E:\qt\5.12.10\mingw73_32\bin\rcc.exe -name res ..\Golkhone\res.qrc -o release\qrc_res.cpp
+
 compiler_qmlcache_make_all:
 compiler_qmlcache_clean:
 compiler_qmlcache_loader_make_all: release/qmlcache_loader.cpp
@@ -628,11 +662,6 @@ release/moc_profile.cpp: ../Golkhone/profile.h \
 		../../5.12.10/mingw73_32/include/QtCore/qfiledevice.h \
 		../../5.12.10/mingw73_32/include/QtGui/qvector2d.h \
 		../../5.12.10/mingw73_32/include/QtGui/qtouchdevice.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/QGridLayout \
-		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QLabel \
 		../../5.12.10/mingw73_32/include/QtWidgets/qlabel.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/qframe.h \
@@ -641,6 +670,10 @@ release/moc_profile.cpp: ../Golkhone/profile.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		../../5.12.10/mingw73_32/include/QtGui/qicon.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QHBoxLayout \
+		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QVBoxLayout \
 		../../5.12.10/mingw73_32/include/QtMultimedia/QMediaPlaylist \
 		../../5.12.10/mingw73_32/include/QtMultimedia/qmediaplaylist.h \
@@ -684,6 +717,9 @@ release/moc_profile.cpp: ../Golkhone/profile.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h \
 		../Golkhone/store.h \
 		release/moc_predefs.h \
 		../../5.12.10/mingw73_32/bin/moc.exe
@@ -845,7 +881,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean 
 
 
 
@@ -1034,6 +1070,9 @@ release/greenhouse.o: ../Golkhone/greenhouse.cpp ../Golkhone/greenhouse.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h \
 		../Golkhone/store.h \
 		../Golkhone/shop.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QMessageBox \
@@ -1045,7 +1084,10 @@ release/greenhouse.o: ../Golkhone/greenhouse.cpp ../Golkhone/greenhouse.h \
 		../../5.12.10/mingw73_32/include/QtGui/qtextcursor.h \
 		../../5.12.10/mingw73_32/include/QtGui/qtextformat.h \
 		../../5.12.10/mingw73_32/include/QtGui/qpen.h \
-		../../5.12.10/mingw73_32/include/QtGui/qtextoption.h
+		../../5.12.10/mingw73_32/include/QtGui/qtextoption.h \
+		../Golkhone/magnolia.h \
+		../Golkhone/lilium.h \
+		../Golkhone/orchis.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\greenhouse.o ..\Golkhone\greenhouse.cpp
 
 release/hyacinth.o: ../Golkhone/hyacinth.cpp ../Golkhone/hyacinth.h \
@@ -1219,6 +1261,9 @@ release/laboratory.o: ../Golkhone/laboratory.cpp ../Golkhone/laboratory.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h \
 		../Golkhone/store.h \
 		../Golkhone/shop.h \
 		../Golkhone/greenhouse.h
@@ -1405,11 +1450,6 @@ release/main.o: ../Golkhone/main.cpp ../../5.12.10/mingw73_32/include/QtWidgets/
 		../../5.12.10/mingw73_32/include/QtGui/qinputmethod.h \
 		../Golkhone/profile.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QWidget \
-		../../5.12.10/mingw73_32/include/QtWidgets/QGridLayout \
-		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QLabel \
 		../../5.12.10/mingw73_32/include/QtWidgets/qlabel.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/qframe.h \
@@ -1418,6 +1458,10 @@ release/main.o: ../Golkhone/main.cpp ../../5.12.10/mingw73_32/include/QtWidgets/
 		../../5.12.10/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		../../5.12.10/mingw73_32/include/QtGui/qicon.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QHBoxLayout \
+		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QVBoxLayout \
 		../../5.12.10/mingw73_32/include/QtMultimedia/QMediaPlaylist \
 		../../5.12.10/mingw73_32/include/QtMultimedia/qmediaplaylist.h \
@@ -1461,19 +1505,13 @@ release/main.o: ../Golkhone/main.cpp ../../5.12.10/mingw73_32/include/QtWidgets/
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h \
 		../Golkhone/store.h \
 		../Golkhone/laboratory.h \
-		../Golkhone/shop.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/QDialog \
-		../../5.12.10/mingw73_32/include/QtWidgets/qdialog.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/QStackedWidget \
-		../../5.12.10/mingw73_32/include/QtWidgets/qstackedwidget.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/QLineEdit \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlineedit.h \
-		../../5.12.10/mingw73_32/include/QtGui/qtextcursor.h \
-		../../5.12.10/mingw73_32/include/QtGui/qtextformat.h \
-		../../5.12.10/mingw73_32/include/QtGui/qpen.h \
-		../../5.12.10/mingw73_32/include/QtGui/qtextoption.h
+		../../5.12.10/mingw73_32/include/QtWidgets/QGridLayout \
+		../Golkhone/shop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\Golkhone\main.cpp
 
 release/orchis.o: ../Golkhone/orchis.cpp ../Golkhone/orchis.h \
@@ -1561,7 +1599,10 @@ release/person.o: ../Golkhone/person.cpp ../Golkhone/person.h \
 		../Golkhone/tulip.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
-		../Golkhone/ornamentalonion.h
+		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\person.o ..\Golkhone\person.cpp
 
 release/profile.o: ../Golkhone/profile.cpp ../Golkhone/profile.h \
@@ -1668,11 +1709,6 @@ release/profile.o: ../Golkhone/profile.cpp ../Golkhone/profile.h \
 		../../5.12.10/mingw73_32/include/QtCore/qfiledevice.h \
 		../../5.12.10/mingw73_32/include/QtGui/qvector2d.h \
 		../../5.12.10/mingw73_32/include/QtGui/qtouchdevice.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/QGridLayout \
-		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
-		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QLabel \
 		../../5.12.10/mingw73_32/include/QtWidgets/qlabel.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/qframe.h \
@@ -1681,6 +1717,10 @@ release/profile.o: ../Golkhone/profile.cpp ../Golkhone/profile.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		../../5.12.10/mingw73_32/include/QtGui/qicon.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QHBoxLayout \
+		../../5.12.10/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayout.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/qgridlayout.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QVBoxLayout \
 		../../5.12.10/mingw73_32/include/QtMultimedia/QMediaPlaylist \
 		../../5.12.10/mingw73_32/include/QtMultimedia/qmediaplaylist.h \
@@ -1724,14 +1764,15 @@ release/profile.o: ../Golkhone/profile.cpp ../Golkhone/profile.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
-		../Golkhone/store.h \
-		../Golkhone/laboratory.h \
-		../Golkhone/shop.h \
-		../Golkhone/greenhouse.h \
-		../Golkhone/magnolia.h \
 		../Golkhone/ornamentalflowerbud.h \
 		../Golkhone/ornamentalbud.h \
 		../Golkhone/ornamentalflower.h \
+		../Golkhone/store.h \
+		../Golkhone/laboratory.h \
+		../../5.12.10/mingw73_32/include/QtWidgets/QGridLayout \
+		../Golkhone/shop.h \
+		../Golkhone/greenhouse.h \
+		../Golkhone/magnolia.h \
 		../Golkhone/lilium.h \
 		../Golkhone/orchis.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\profile.o ..\Golkhone\profile.cpp
@@ -1912,6 +1953,9 @@ release/shop.o: ../Golkhone/shop.cpp ../Golkhone/shop.h \
 		../Golkhone/orchisextract.h \
 		../Golkhone/hyacinth.h \
 		../Golkhone/ornamentalonion.h \
+		../Golkhone/ornamentalflowerbud.h \
+		../Golkhone/ornamentalbud.h \
+		../Golkhone/ornamentalflower.h \
 		../Golkhone/store.h \
 		../Golkhone/laboratory.h \
 		../Golkhone/greenhouse.h \
@@ -1926,9 +1970,6 @@ release/shop.o: ../Golkhone/shop.cpp ../Golkhone/shop.h \
 		../../5.12.10/mingw73_32/include/QtWidgets/QMessageBox \
 		../../5.12.10/mingw73_32/include/QtWidgets/qmessagebox.h \
 		../Golkhone/orchis.h \
-		../Golkhone/ornamentalflowerbud.h \
-		../Golkhone/ornamentalbud.h \
-		../Golkhone/ornamentalflower.h \
 		../Golkhone/lilium.h \
 		../Golkhone/magnolia.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\shop.o ..\Golkhone\shop.cpp
@@ -1970,6 +2011,9 @@ release/tulip.o: ../Golkhone/tulip.cpp ../Golkhone/tulip.h \
 
 release/water.o: ../Golkhone/water.cpp ../Golkhone/water.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\water.o ..\Golkhone\water.cpp
+
+release/qrc_res.o: release/qrc_res.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_res.o release\qrc_res.cpp
 
 release/moc_greenhouse.o: release/moc_greenhouse.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_greenhouse.o release\moc_greenhouse.cpp

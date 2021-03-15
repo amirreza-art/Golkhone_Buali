@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>Chaartaar - Adineh.mp3</file>
+        <file>da.png</file>
+        <file>gh81.png</file>
+        <file>ghback.png</file>
+        <file>khali.png</file>
+        <file>la.png</file>
+        <file>labback2.png</file>
+        <file>li.png</file>
+        <file>ma.png</file>
+        <file>mar.png</file>
+        <file>menu02.png</file>
+        <file>menu2.png</file>
+        <file>menu03.png</file>
+        <file>menu3.png</file>
+        <file>menu04.png</file>
+        <file>menu05.png</file>
+        <file>menu14.png</file>
+        <file>menu15.png</file>
+        <file>music0.png</file>
+        <file>music1.png</file>
+        <file>na.png</file>
+        <file>or.png</file>
+        <file>pic.png</file>
+        <file>profback.png</file>
+        <file>shopback1.png</file>
+        <file>son.png</file>
+        <file>strip3.png</file>
+    </qresource>
+</RCC>

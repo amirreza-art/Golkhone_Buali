@@ -2,6 +2,7 @@
 #include "profile.h"
 #include "shop.h"
 #include "greenhouse.h"
+#include <QMessageBox>
 
 extern Profile *profilePtr;
 extern Shop *shopPtr;
@@ -159,7 +160,9 @@ void Laboratory::OnLiliumExtractBtn()
     }
     catch (const std::runtime_error& e)
     {
-        std::cout << e.what() << std::endl;
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
     }
 }
 
@@ -175,7 +178,9 @@ void Laboratory::OnMagnoilaExtractBtn()
     }
     catch (const std::runtime_error& e)
     {
-        std::cout << e.what() << std::endl;
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
     }
 }
 
@@ -190,7 +195,9 @@ void Laboratory::OnOrchidExtractBtn()
     }
     catch (const std::runtime_error& e)
     {
-        std::cout << e.what() << std::endl;
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error",e.what());
+        messageBox.setFixedSize(500,200);
     }
 }
 
@@ -198,7 +205,7 @@ void Laboratory::WindowButtons()
 {
     profile = new QPushButton("", this);
     profile->setGeometry(1245,0,150,73);
-    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/menu14.png");
+    QPixmap pixmap(":/new/menu14.png");
     QIcon ButtonIcon(pixmap);
     profile->setIcon(ButtonIcon);
     profile->setIconSize(pixmap.rect().size());
@@ -206,7 +213,7 @@ void Laboratory::WindowButtons()
 
     greenHouse = new QPushButton("", this);
     greenHouse->setGeometry(1095,0,150,73);
-    QPixmap pixmap1("C:/Users/Abisys/Desktop/nnn/menu05.png");
+    QPixmap pixmap1(":/new/menu05.png");
     QIcon ButtonIcon1(pixmap1);
     greenHouse->setIcon(ButtonIcon1);
     greenHouse->setIconSize(pixmap1.rect().size());
@@ -214,7 +221,7 @@ void Laboratory::WindowButtons()
 
     shop = new QPushButton("", this);
     shop->setGeometry(945,0,150,73);
-    QPixmap pixmap2("C:/Users/Abisys/Desktop/nnn/menu03.png");
+    QPixmap pixmap2(":/new/menu03.png");
     QIcon ButtonIcon2(pixmap2);
     shop->setIcon(ButtonIcon2);
     shop->setIconSize(pixmap2.rect().size());
@@ -222,7 +229,7 @@ void Laboratory::WindowButtons()
 
     laboratory = new QPushButton("", this);
     laboratory->setGeometry(795,0,150,73);
-    QPixmap pixmap3("C:/Users/Abisys/Desktop/nnn/menu3.png");
+    QPixmap pixmap3(":/new/menu3.png");
     QIcon ButtonIcon3(pixmap3);
     laboratory->setIcon(ButtonIcon3);
     laboratory->setIconSize(pixmap3.rect().size());
@@ -233,7 +240,7 @@ void Laboratory::WindowButtons()
 void Laboratory::setBackground()
 {
 
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//labback2.png");
+    QPixmap bkgnd(":/new/labback2.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);

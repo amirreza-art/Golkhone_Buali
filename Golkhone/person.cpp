@@ -12,6 +12,110 @@ void Person::set_flower(Flower *ptr)
     flowers.push_back(ptr);
 }
 
+void Person::pick_Tulip()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Tulip")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Tulip");
+}
+
+void Person::pick_Dahlia()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Dahlia")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Dahlia");
+}
+
+void Person::pick_Tuberose()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Tuberose")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Tuberose");
+}
+
+void Person::pick_Amaryllis()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Amaryllis")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Amaryllis");
+}
+
+void Person::pick_Hyacinth()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Hyacinth")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Hyacinth");
+}
+
+void Person::pick_Magnolia()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Magnolia")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Magnolia");
+}
+
+void Person::pick_Lilium()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Lilium")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Lilium");
+}
+
+void Person::pick_Orchid()
+{
+    for (size_t i = 0; i < flowers.size(); i++)
+    {
+        if (flowers.at(i)->get_name() == "Orchid")
+        {
+            flowers.at(i)->picking();
+            break;
+        }
+    }
+    throw std::runtime_error("you dont have any Orchid");
+}
+
 void Person::sel_Tulip(unsigned int count)
 {
     for (size_t i = 0; i < count; i++)

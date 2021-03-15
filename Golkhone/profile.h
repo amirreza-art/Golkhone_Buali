@@ -2,7 +2,6 @@
 #define PROFILE_H
 
 #include <QWidget>
-#include <QGridLayout>
 #include <QLabel>
 #include <QPushButton>
 #include <QHBoxLayout>
@@ -34,7 +33,6 @@ private:
     QLabel *waterLabelIN, *soilLabelIN, *sprayingMaterialLabelIN, *extractsLabelIN;
     QLabel *saveLable, *loadLabel;
     QPushButton *profile, *shop, *laboratory, *greenHouse;
-    QGridLayout *gridLayout;
     QPushButton *soundOff;
     QPushButton *soundOn;
     QPushButton *save;

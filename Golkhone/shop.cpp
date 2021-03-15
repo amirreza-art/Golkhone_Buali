@@ -8,7 +8,7 @@
 #include "lilium.h"
 #include "magnolia.h"
 
-//QString str = QString::fromUtf8(content.c_str());
+
 extern long int money;
 extern Profile *profilePtr;
 extern Laboratory *laboratoryPtr;
@@ -294,9 +294,18 @@ void Shop::OnSprayingMaterialBtn()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_SprayingMaterial_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_SprayingMaterial(storePtr->get_SprayingMaterial());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_SprayingMaterial(storePtr->get_SprayingMaterial());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -324,9 +333,18 @@ void Shop::OnWaterBtn()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_Water_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_Water(storePtr->get_Water());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_Water(storePtr->get_Water());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -354,9 +372,18 @@ void Shop::OnSoilBtn()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_Soil_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_Soil(storePtr->get_Soil());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_Soil(storePtr->get_Soil());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -384,9 +411,18 @@ void Shop::OnRareOnionBtn1()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_RareOnion_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_RareOnion(storePtr->get_RareOnion());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_RareOnion(storePtr->get_RareOnion());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -414,9 +450,18 @@ void Shop::OnOrnamentalOnionBtn1()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_OrnamentalOnion_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_OrnamentalOnion(storePtr->get_OrnamentalOnion());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_OrnamentalOnion(storePtr->get_OrnamentalOnion());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -444,9 +489,18 @@ void Shop::OnOrdinaryOnionBtn1()
         unsigned int count = static_cast<unsigned int>(num);
         if (storePtr->get_OrdinaryUnion_count() >= count)
         {
-            for (size_t i = 0; i < count; i++)
+            try
             {
-                personPtr->add_OrdinaryUnion(storePtr->get_OrdinaryUnion());
+                for (size_t i = 0; i < count; i++)
+                {
+                    personPtr->add_OrdinaryUnion(storePtr->get_OrdinaryUnion());
+                }
+            }
+            catch (const std::runtime_error& e)
+            {
+                QMessageBox messageBox;
+                messageBox.critical(0,"Error",e.what());
+                messageBox.setFixedSize(500,200);
             }
         }
         else
@@ -733,7 +787,7 @@ void Shop::WindowButtons()
 {
     profile = new QPushButton("", this);
     profile->setGeometry(1245,0,150,73);
-    QPixmap pixmap("C:/Users/Abisys/Desktop/nnn/menu14.png");
+    QPixmap pixmap(":/new/menu14.png");
     QIcon ButtonIcon(pixmap);
     profile->setIcon(ButtonIcon);
     profile->setIconSize(pixmap.rect().size());
@@ -741,7 +795,7 @@ void Shop::WindowButtons()
 
     greenHouse = new QPushButton("", this);
     greenHouse->setGeometry(1095,0,150,73);
-    QPixmap pixmap1("C:/Users/Abisys/Desktop/nnn/menu05.png");
+    QPixmap pixmap1(":/new/menu05.png");
     QIcon ButtonIcon1(pixmap1);
     greenHouse->setIcon(ButtonIcon1);
     greenHouse->setIconSize(pixmap1.rect().size());
@@ -749,7 +803,7 @@ void Shop::WindowButtons()
 
     shop = new QPushButton("", this);
     shop->setGeometry(945,0,150,73);
-    QPixmap pixmap2("C:/Users/Abisys/Desktop/nnn/menu2.png");
+    QPixmap pixmap2(":/new/menu2.png");
     QIcon ButtonIcon2(pixmap2);
     shop->setIcon(ButtonIcon2);
     shop->setIconSize(pixmap2.rect().size());
@@ -757,7 +811,7 @@ void Shop::WindowButtons()
 
     laboratory = new QPushButton("", this);
     laboratory->setGeometry(795,0,150,73);
-    QPixmap pixmap3("C:/Users/Abisys/Desktop/nnn/menu04.png");
+    QPixmap pixmap3(":new/menu04.png");
     QIcon ButtonIcon3(pixmap3);
     laboratory->setIcon(ButtonIcon3);
     laboratory->setIconSize(pixmap3.rect().size());
@@ -768,7 +822,7 @@ void Shop::WindowButtons()
 void Shop::setBackground()
 {
 
-    QPixmap bkgnd("C://Users//Abisys//Desktop//nnn//shopback1.png");
+    QPixmap bkgnd(":/new/shopback1.png");
     QPalette palettee;
     palettee.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palettee);

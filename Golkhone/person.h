@@ -39,6 +39,14 @@ public:
     void sel_Magnolia(unsigned int);
     void sel_Lilium(unsigned int);
     void sel_Orchid(unsigned int);
+    void pick_Tulip();
+    void pick_Dahlia();
+    void pick_Tuberose();
+    void pick_Amaryllis();
+    void pick_Hyacinth();
+    void pick_Magnolia();
+    void pick_Lilium();
+    void pick_Orchid();
     OrdinaryFlowers * get_OrdinaryFlower();
     OrdinaryFlowerBuds * get_OrdinaryFlowerBud();
     RareFlower * get_RareFlower();

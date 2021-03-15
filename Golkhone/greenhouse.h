@@ -118,6 +118,14 @@ private slots:
     void OnOrBudBtns();
     void OnOrnamBudBtns();
     void OnRareBudBtns();
+    void OnDahliaBtns();
+    void OnTulipBtns();
+    void OnTuberoseBtns();
+    void OnMagnoliaBtns();
+    void OnLiliumBtns();
+    void OnOrchidBtns();
+    void OnAmarBtns();
+    void OnhyacBtns();
 signals:
 
 };

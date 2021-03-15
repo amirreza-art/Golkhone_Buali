@@ -223,6 +223,7 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 		../../5.12.10/mingw73_32/mkspecs/features/qt_config.prf \
 		../../5.12.10/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		../../5.12.10/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/toolchain.prf \
 		../../5.12.10/mingw73_32/mkspecs/features/default_pre.prf \
@@ -413,6 +414,7 @@ Makefile: ../Golkhone/Golkhone.pro ../../5.12.10/mingw73_32/mkspecs/win32-g++/qm
 ../../5.12.10/mingw73_32/mkspecs/features/qt_config.prf:
 ../../5.12.10/mingw73_32/mkspecs/win32-g++/qmake.conf:
 ../../5.12.10/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../5.12.10/mingw73_32/mkspecs/features/exclusive_builds.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/toolchain.prf:
 ../../5.12.10/mingw73_32/mkspecs/features/default_pre.prf:

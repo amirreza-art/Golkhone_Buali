@@ -30,6 +30,7 @@ debug/store.o
 debug/tuberose.o
 debug/tulip.o
 debug/water.o
+debug/qrc_res.o
 debug/moc_greenhouse.o
 debug/moc_laboratory.o
 debug/moc_profile.o
